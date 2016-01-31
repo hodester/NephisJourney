@@ -13,7 +13,6 @@ import nephisJourney.src.model.WarehouseSceneType;
 import nephisjourney.src.model.Altar;
 import nephisjourney.src.model.Game;
 import nephisjourney.src.model.Liahona;
-import nephisjourney.src.model.ReferenceMenu;
 
 /**
  *
@@ -84,15 +83,7 @@ public class NephisJourney {
         
         String WarehouseSceneTypeInfo = WarehouseSceneTypeOne.toString();
         System.out.println(WarehouseSceneTypeInfo);
-        
-        ReferenceMenu ReferenceMenuOne = new ReferenceMenu();
-        
-        ReferenceMenuOne.setName("Scripture Reference for locations visited");
-        ReferenceMenuOne.setLocationOneScripture("1 Nephi 1:4");
-        
-        String LocationOneScripture = ReferenceMenuOne.toString();
-        System.out.println(LocationOneScripture);
-        
+       
         Liahona LiahonaMenu = new Liahona();
         
         LiahonaMenu.setDescription("Information and Scriptuers about locations");
