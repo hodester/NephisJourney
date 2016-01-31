@@ -10,6 +10,7 @@ import nephisJourney.src.model.Player;
 import nephisJourney.src.model.RegularSceneType;
 import nephisJourney.src.model.ResourceSceneType;
 import nephisJourney.src.model.WarehouseSceneType;
+import nephisjourney.src.model.Liahona;
 import nephisjourney.src.model.ReferenceMenu;
 
 /**
@@ -90,5 +91,12 @@ public class NephisJourney {
         String LocationOneScripture = ReferenceMenuOne.toString();
         System.out.println(LocationOneScripture);
         
+        Liahona LiahonaMenu = new Liahona();
+        
+        LiahonaMenu.setDescription("Information and Scriptuers about locations");
+        LiahonaMenu.setAdditionalInformation("Scriptuer references for locations");
+        
+        String LiahonaInfo = LiahonaMenu.toString();
+        System.out.println(LiahonaInfo);
     }
 }
