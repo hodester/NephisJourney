@@ -73,10 +73,6 @@ public class ReferenceMenu implements Serializable{
         this.scriptureMenu = scriptureMenu;
     }
 
-    public void setLocationOne(String _Nephi_14) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public void setLocationOneScripture(String _Nephi_14) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
