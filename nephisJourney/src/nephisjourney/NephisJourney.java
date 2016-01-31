@@ -10,6 +10,8 @@ import nephisJourney.src.model.Player;
 import nephisJourney.src.model.RegularSceneType;
 import nephisJourney.src.model.ResourceSceneType;
 import nephisJourney.src.model.WarehouseSceneType;
+import nephisjourney.src.model.Altar;
+import nephisjourney.src.model.Game;
 import nephisjourney.src.model.Liahona;
 import nephisjourney.src.model.ReferenceMenu;
 
@@ -98,5 +100,32 @@ public class NephisJourney {
         
         String LiahonaInfo = LiahonaMenu.toString();
         System.out.println(LiahonaInfo);
+        
+        Game GameMenu = new Game();
+        
+        GameMenu.setHighScore(1000000);
+        GameMenu.setNoPeople(7);
+        
+        GameMenu.setRow(5);
+        GameMenu.setColumn(5);
+        GameMenu.setHighScore(1000000);
+        GameMenu.setNoPeople(7);
+        
+        Altar altarBuild = new Altar();
+        
+        altarBuild.setRow(6);
+        altarBuild.setColumn(6);
+        altarBuild.setDiameter(1);
+        altarBuild.setHeight(2);
+        altarBuild.setVolume(555);
+        altarBuild.setMaxWeight(5000);
+        altarBuild.setDescription("Build and Altar");
+        
+        String altarInfo = altarBuild.toString();
+        System.out.println(altarInfo);
+        
+
+        
+        
     }
 }
