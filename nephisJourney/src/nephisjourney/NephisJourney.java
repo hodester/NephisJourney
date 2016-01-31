@@ -13,6 +13,7 @@ import nephisJourney.src.model.WarehouseSceneType;
 import nephisjourney.src.model.Altar;
 import nephisjourney.src.model.Game;
 import nephisjourney.src.model.Liahona;
+import nephisjourney.src.model.ReferenceMenu;
 
 /**
  *
@@ -115,8 +116,14 @@ public class NephisJourney {
         String altarInfo = altarBuild.toString();
         System.out.println(altarInfo);
         
-
+        ReferenceMenu referenceMenuOne = new ReferenceMenu();
         
+        refernceMenuOne.setName('Location and Scriputer Reference');
+        refernceMenuOne.setScriputreReference('Scripture1');
         
+        String referenceMenuName = referenceMenuOne.toString();
+        System.out.println(referenceMenuName);
+        String scriputerOne = referenceMenuOne.toString();
+        System.out.println(scriputerOne);
     }
 }
