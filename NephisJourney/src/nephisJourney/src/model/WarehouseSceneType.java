@@ -96,7 +96,7 @@ public class WarehouseSceneType extends Location {
 
     @Override
     public String toString() {
-        return "WarehouseSceneType{" + "description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", noOfItems=" + noOfItems + '}';
+        return "WarehouseSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", noOfItems=" + noOfItems + '}';
     }
     
     
