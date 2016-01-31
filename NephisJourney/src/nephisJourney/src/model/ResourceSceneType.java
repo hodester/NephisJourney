@@ -109,7 +109,7 @@ public class ResourceSceneType extends Location {
 
     @Override
     public String toString() {
-        return "ResourceSceneType{" + "description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", amountAvailable=" + amountAvailable + ", resourceType=" + resourceType + '}';
+        return "ResourceSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", amountAvailable=" + amountAvailable + ", resourceType=" + resourceType + '}';
     }
     
     
