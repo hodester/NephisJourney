@@ -5,7 +5,6 @@
  */
 package nephisJourney.src.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -58,12 +57,60 @@ public class WarehouseSceneType extends Location {
     }
 
     @Override
+    public int getRow() {
+        return row;
+    }
+
+    @Override
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    @Override
+    public int getColumn() {
+        return column;
+    }
+
+    @Override
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    @Override
+    public boolean isVisited() {
+        return visited;
+    }
+
+    @Override
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public int getAmountRemaining() {
+        return amountRemaining;
+    }
+
+    /**
+     *
+     * @param amountRemaining
+     */
+    @Override
+    public void setAmountRemaining(int amountRemaining) {
+        this.amountRemaining = amountRemaining;
+    }
+
+    @Override
     public int hashCode() {
         int hash = 3;
-        hash = 61 * hash + Objects.hashCode(this.description);
-        hash = 61 * hash + Float.floatToIntBits(this.travelTime);
-        hash = 61 * hash + (this.blocked ? 1 : 0);
-        hash = 61 * hash + this.noOfItems;
+        hash = 13 * hash + Objects.hashCode(this.description);
+        hash = 13 * hash + Float.floatToIntBits(this.travelTime);
+        hash = 13 * hash + (this.blocked ? 1 : 0);
+        hash = 13 * hash + this.noOfItems;
         return hash;
     }
 
@@ -88,10 +135,7 @@ public class WarehouseSceneType extends Location {
         if (this.noOfItems != other.noOfItems) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.description, other.description);
     }
 
     @Override
@@ -99,7 +143,5 @@ public class WarehouseSceneType extends Location {
         return "WarehouseSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", noOfItems=" + noOfItems + '}';
     }
     
-    
-    
-    
+
 }

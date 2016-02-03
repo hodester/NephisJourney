@@ -5,7 +5,6 @@
  */
 package nephisJourney.src.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**

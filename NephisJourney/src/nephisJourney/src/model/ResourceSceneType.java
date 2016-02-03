@@ -5,7 +5,6 @@
  */
 package nephisJourney.src.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -101,17 +100,12 @@ public class ResourceSceneType extends Location {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.resourceType, other.resourceType)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.resourceType, other.resourceType);
     }
 
     @Override
     public String toString() {
         return "ResourceSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", amountAvailable=" + amountAvailable + ", resourceType=" + resourceType + '}';
-    }
-    
-    
+    }    
     
 }
