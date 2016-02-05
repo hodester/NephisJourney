@@ -7,6 +7,7 @@ package nephisJourney;
 
 import nephisJourney.src.model.Actor;
 import nephisJourney.src.model.Hunting;
+import nephisJourney.src.model.LiahonaReferences;
 import nephisJourney.src.model.Location;
 import nephisJourney.src.model.Map;
 import nephisJourney.src.model.Player;
@@ -133,8 +134,13 @@ public class NephisJourney {
         String SupplyInventoryInfo = SupplyInventoryOne.toString();
         System.out.println(SupplyInventoryInfo);
         
+        LiahonaReferences location1 = new LiahonaReferences();
         
+        location1.setLocationName("Jerusalem during the reign of Zedekiah, King of Judah");
+        location1.setScriptureReference("1 Nephi 1:4");
         
+        String scriptureInfo = location1.toString();
+        System.out.println(scriptureInfo);
     }
     
 }
