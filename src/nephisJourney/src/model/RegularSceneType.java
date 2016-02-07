@@ -5,7 +5,6 @@
  */
 package nephisJourney.src.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -83,7 +82,7 @@ public class RegularSceneType extends Location {
 
     @Override
     public String toString() {
-        return "RegularSceneType{" + "description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + '}';
+        return "RegularSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + '}';
     }
     
     
