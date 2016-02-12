@@ -14,10 +14,10 @@ import java.io.Serializable;
 public class Location implements Serializable {
     
     // class instance variables
-    private int row;
-    private int column;
-    private boolean visited;
-    private int amountRemaining;
+    protected int row;
+    protected int column;
+    protected boolean visited;
+    protected int amountRemaining;
 
     public Location() {
     }

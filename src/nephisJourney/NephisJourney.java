@@ -6,7 +6,11 @@
 package nephisJourney;
 
 import nephisJourney.src.model.Actor;
+import nephisJourney.src.model.Altar;
+import nephisJourney.src.model.Game;
 import nephisJourney.src.model.Hunting;
+import nephisJourney.src.model.Liahona;
+import nephisJourney.src.model.LiahonaReferences;
 import nephisJourney.src.model.Location;
 import nephisJourney.src.model.Map;
 import nephisJourney.src.model.Player;
@@ -133,8 +137,43 @@ public class NephisJourney {
         String SupplyInventoryInfo = SupplyInventoryOne.toString();
         System.out.println(SupplyInventoryInfo);
         
+        LiahonaReferences location1 = new LiahonaReferences();
         
+        location1.setLocationName("Jerusalem during the reign of Zedekiah, King"
+                + " of Judah");
+        location1.setScriptureReference("1 Nephi 1:4");
         
+        String scriptureInfo = location1.toString();
+        System.out.println(scriptureInfo);
+        
+        Liahona liahonaDescription = new Liahona();
+        
+        liahonaDescription.setDescription("A brass ball of curious workmanship.");
+        liahonaDescription.setDetails("A compass used to guide you on your "
+                + "journey to the promised land.");
+        
+        String brassBall = liahonaDescription.toString();
+        System.out.println(brassBall);
+        
+        String compass = liahonaDescription.toString();
+        System.out.println(compass);
+        
+        Altar altarScene = new Altar();
+        
+        altarScene.setName("Lehi's altar of worship.");
+        altarScene.setDescription("The altar Lehi used to give thanks to the"
+                + " Lord after he took his family into the wilderness.");
+        altarScene.setCoordinates(50);
+        
+        String altarName = altarScene.toString();
+        System.out.println(altarName);
+        String altarDesc = altarScene.toString();
+        System.out.println(altarDesc);
+        
+        Game gameMenu = new Game();
+        
+        gameMenu.setHighScore(525600);
+        gameMenu.setNoPeople(7);
     }
     
 }
