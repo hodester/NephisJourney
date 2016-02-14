@@ -13,10 +13,12 @@ public class AltarControl {
 
 //modifiers returnType functionName (datatype paramerer1, ...)
     public int calcAltarSize(int height, int width) { 
-        if (height < 1 || height > 4){ //test to check if the height is in range
+        if (height < 1 || height > 4){  //test to check if the height is 
+                                        //in range
 		return -1;
         }
-	if (width < 1 || width > 4) { //test to check if the width is in range
+	if (width < 1 || width > 4) {   //test to check if the width is 
+                                        //in range
 		return -2;
         }
         
