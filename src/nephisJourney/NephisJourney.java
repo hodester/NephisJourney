@@ -19,6 +19,7 @@ import nephisJourney.src.model.ResourceSceneType;
 import nephisJourney.src.model.Ship;
 import nephisJourney.src.model.SupplyInventory;
 import nephisJourney.src.model.WarehouseSceneType;
+import nephisJourney.view.StartProgramView;
 
 /**
  *
@@ -30,6 +31,10 @@ public class NephisJourney {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //create StartProgramViewOrig and disply the start program view
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+            
         Player playerOne = new Player();
         
         playerOne.setName("Nephi");
