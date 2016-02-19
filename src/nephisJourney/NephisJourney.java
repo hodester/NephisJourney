@@ -27,6 +27,25 @@ import nephisJourney.view.StartProgramView;
  */
 public class NephisJourney {
  
+    private static Game currentGame = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        NephisJourney.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        NephisJourney.player = player;
+    }
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */
