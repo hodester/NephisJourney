@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nephisJourney.view;
+package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.src.control.GameControl;

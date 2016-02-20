@@ -19,7 +19,7 @@ import nephisJourney.src.model.ResourceSceneType;
 import nephisJourney.src.model.Ship;
 import nephisJourney.src.model.SupplyInventory;
 import nephisJourney.src.model.WarehouseSceneType;
-import nephisJourney.view.StartProgramView;
+import nephisJourney.src.view.StartProgramView;
 
 /**
  *
