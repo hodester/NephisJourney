@@ -5,14 +5,223 @@
  */
 package nephisJourney.src.view;
 
+import java.util.Scanner;
+import nephisJourney.NephisJourney;
+import nephisJourney.src.control.GameControl;
 /**
  *
  * @author Jenaca
  */
-class GameMenuView {
+public class GameMenuView {
+//promptMessage = "Please select from the following options: "
 
-    void displayMenu() {
-        System.out.println("*** displayMenu function was called ***");
+    private String promptMessage;
+
+    public GameMenuView() {
+        this.promptMessage = "\nPlease select the letter corresponding "
+                + "to the menu item: ";
+
+        //display the menu when the view is created
+        this.displayMenu();
     }
-    
+
+    public void displayMenu() {
+        System.out.println(
+                "\n"
+                + "\n--------------------------------------------"
+                + "\n|Game Menu                                 |"
+                + "\n--------------------------------------------"
+                + "\nV - View map"
+                + "\nI - View Inventory"
+                + "\nA - View list of characters"
+                + "\nS - View path status"
+                + "\nL - View contents of location"
+                + "\nM - Move person to a new location"
+                + "\nE - Estimate the supplies needed"
+                + "\nC - Consult the Liahona"
+                + "\nD - Design altar"
+                + "\nT - Collect treasure"
+                + "\nG - Gather stones"
+                + "\nB - Use bow to hunt"
+                + "\nW - Build altar"
+                + "\nP - Pack ship"
+                + "\nJ - Launch ship"
+                + "\nH - Help menu"
+                + "\nQ - Quit"
+                + "\n--------------------------------------------");
+
+    }
+
+    public void displayGameMenuView() {
+
+        boolean done = false; // set flag to not done
+        do {
+            // prompt for and get user's menu option
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
+            {
+                return; // exit the game
+            }
+            // do the requested action and display the next view
+            done = this.doAction(menuOption);
+
+        } while (!done);
+    }
+
+    private String getMenuOption() {
+        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        String value = ""; //value to be returned
+        boolean valid = false; //initialize to not valid
+
+        while (!valid) { //loop while an invalid value is enter
+            System.out.println("\n" + this.promptMessage);
+
+            value = keyboard.nextLine(); //get next line typed on keyboard
+            value = value.trim(); //trim off leading and trailing white space
+
+            if (value.length() < 1) { //value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+            if (value.length() > 1) { //value is too long
+                System.out.println("\nInvalid value: Please select the letter "
+                        + "corresponding to the menu item.");
+                continue;
+            }
+            break; //end the loop
+        }
+
+        return value; //return the value entered
+    }
+
+    public boolean doAction(String menuOption) {
+
+        menuOption = menuOption.toUpperCase(); // convert choice to upper case
+
+        switch (menuOption) {
+            case "V": // View map
+                this.viewMap();
+                break;
+            case "I": // View a list of items in inventory
+                this.viewInventory();
+                break;
+            case "A": // View list of characters
+                this.viewCharacters();
+                break;
+            case "S": // View path status
+                this.viewStatus();
+                break;
+            case "L": // View contents of the location
+                this.viewLocationContents();
+                break;
+            case "M": // Move person to new location
+                this.moveToNewLocation();
+                break;
+            case "E": // Estimate the supplies needed
+                this.estimateNeededSupplies();
+                break;
+            case "C": // Consult the Liahona 
+                this.consultLiahona();
+                break;
+            case "D": // Design altar
+                this.designAltar();
+                break;
+            case "T": // Collect treasure
+                this.collectTreasure();
+                break;
+            case "G": // Gather stones
+                this.gatherStones();
+                break;
+            case "B": // Use bow to hunt
+                this.huntWithBow();
+                break;
+            case "W": // Build altar
+                this.buildAltar();
+                break;
+            case "P": // Pack ship
+                this.packShip();
+                break;
+            case "J": // Launch ship
+                this.launchShip();
+                break;
+            case "H": // display the help menu
+                this.displayHelpMenu();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection ***"
+                        + " Please select a valid display option ***");
+                break;
+
+        }
+        return false;
+
+    }
+
+    private void viewMap() {
+        System.out.println("*** viewMap function was called ***");
+    }
+
+    private void viewInventory() {
+        System.out.println("*** viewInventory function was called ***");
+    }
+
+    private void viewCharacters() {
+        System.out.println("*** viewCharacters function was called ***");
+    }
+
+    private void viewStatus() {
+        System.out.println("*** viewStatus function was called ***");
+    }
+
+    private void viewLocationContents() {
+        System.out.println("*** viewLocationContents function was called ***");
+    }
+
+    private void moveToNewLocation() {
+        System.out.println("*** moveToNewLocation function was called ***");
+    }
+
+    private void estimateNeededSupplies() {
+        System.out.println("*** estimateNeededSupplies function was called ***");
+    }
+
+    private void consultLiahona() {
+        System.out.println("*** consultLiahona function was called ***");
+    }
+
+    private void designAltar() {
+        System.out.println("*** designAltar function was called ***");
+    }
+
+    private void collectTreasure() {
+        System.out.println("*** collectTreasure function was called ***");
+    }
+
+    private void gatherStones() {
+        System.out.println("*** gatherStones function was called ***");
+    }
+
+    private void huntWithBow() {
+        System.out.println("*** huntWithBow function was called ***");
+    }
+
+    private void buildAltar() {
+        System.out.println("*** buildAltar function was called ***");
+    }
+
+    private void packShip() {
+        System.out.println("*** packShip function was called ***");
+    }
+
+    private void launchShip() {
+        System.out.println("*** launchShip function was called ***");
+    }
+
+    private void displayHelpMenu() {
+        //Create helpMenuView object
+        HelpMenuView helpMenuView = new HelpMenuView();
+        
+        //Display the help menu view
+        helpMenuView.displayHelpMenuView();
+    }
 }
