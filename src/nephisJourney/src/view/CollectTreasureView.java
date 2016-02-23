@@ -6,48 +6,45 @@ import java.util.Scanner;
  *
  * @author Jenaca
  */
-public class HelpMenuView {
-
+public class CollectTreasureView {
     //promptMessage = "Please select from the following options: "
+
     private String promptMessage;
 
-    public HelpMenuView() {
-
+    public CollectTreasureView() {
         this.promptMessage = "\nPlease select the letter corresponding "
                 + "to the menu item: ";
-
-        //display the menu when the view is created
-        this.displayMenu();
     }
 
-    private void displayMenu() {
-
+    public void displayMenu() {
         System.out.println(
                 "\n"
                 + "\n--------------------------------------------"
-                + "\n|Help Menu                                 |"
+                + "\n|Treasure Menu                                 |"
                 + "\n--------------------------------------------"
-                + "\nG - What is the goal of the game"
-                + "\nM - How to move"
-                + "\nE - Estimating the amount of resources"
-                + "\nH - Collect Inventory"
+                + "\nJ - Jewelry"
+                + "\nP - Precious gems"
+                + "\nT - Fine Tableware"
+                + "\nS - Silver coins"
+                + "\nG - Gold coins"
+                + "\nH - Help menu"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
     }
 
-    public void displayHelpMenuView() {
+    public void displayCollectTreasureView() {
 
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get player's name
+            // prompt for and get user's menu option
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
             {
-                //Create mainMenuView object when user quits help menu
-                //display main menu and exit help menu
+                //Create mainMenuView object when user quits collect treasure menu
+                //display main menu and exit collect treasure menu
                 MainMenuView mainMenuView = new MainMenuView();
-                return;
+                return; // exit collect treasure menu
             }
             // do the requested action and display the next view
             done = this.doAction(menuOption);
@@ -86,17 +83,23 @@ public class HelpMenuView {
         menuOption = menuOption.toUpperCase(); // convert choice to upper case
 
         switch (menuOption) {
-            case "G": // get goal of game instructions
-                this.goalOfGame();
+            case "J": // Jewelry
+                this.collectJewelry();
                 break;
-            case "M": // how to move instructions
-                this.howToMove();
+            case "P": // Precious gems
+                this.collectGems();
                 break;
-            case "E": // estimate resource instructions
-                this.estimateResource();
+            case "T": // Fine tableware
+                this.collectTableware();
                 break;
-            case "H": // collect inventory instructions
-                this.collectInventory();
+            case "S": // Silver coins
+                this.collectSilver();
+                break;
+            case "G": // Gold coins
+                this.collectGold();
+                break;
+            case "H": // display the help menu
+                this.displayHelpMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection ***"
@@ -105,22 +108,35 @@ public class HelpMenuView {
 
         }
         return false;
+
+}
+
+    private void displayHelpMenu() {
+        //Create helpMenuView object
+        HelpMenuView helpMenuView = new HelpMenuView();
+
+        //Display the help menu view
+        helpMenuView.displayHelpMenuView();
     }
 
-    private void goalOfGame() {
-        System.out.println("*** goalOfGame function was called ***");
+    private void collectJewelry() {
+        System.out.println("\nPlease enter how many pieces of jewelry "
+                + "you wish to collect: ");
     }
 
-    private void howToMove() {
-        System.out.println("*** howToMove function was called ***");
+    private void collectGems() {
+        System.out.println("*** collectGems function was called ***");
     }
 
-    private void estimateResource() {
-        System.out.println("*** estimateResource function was called ***");
+    private void collectTableware() {
+        System.out.println("*** collectTableware function was called ***");
     }
 
-    private void collectInventory() {
-        System.out.println("*** collectInventory function was called ***");
+    private void collectSilver() {
+        System.out.println("*** collectSilver function was called ***");
     }
 
+    private void collectGold() {
+        System.out.println("*** collectGold function was called ***");
+    }
 }

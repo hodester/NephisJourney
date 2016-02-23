@@ -66,59 +66,60 @@ public class StartProgramView {
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
-                
+
         while (!valid) { //loop while an invalid value is enter
             System.out.println("\n" + this.promptMessage);
-            
+
             value = keyboard.nextLine(); //get next line typed on keyboard
             value = value.trim(); //trim off leading and trailing white space
-            
-            if (value.length() <1) { //value is blank
+
+            if (value.length() < 1) { //value is blank
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
             }
-        
+
             break; //end the loop
         }
-    
+
         return value; //return the value entered
     }
 
     private boolean doAction(String playerName) {
-       
-        if (playerName.length() <2) {
+
+        if (playerName.length() < 2) {
             System.out.println("\nInvalid player's name: "
-                + "The name must be greater than one character in length");
+                    + "The name must be greater than one character in length");
             return false;
         }
         //call createPlayer() control function
         Player player = GameControl.createPlayer(playerName);
-        
+
         if (player == null) {//if unsuccessful
             System.out.println("\nError creating the player.");
             return false;
         }
-        
+
         //display next view
         this.displayNextView(player);
-        
+
         return true; // success!
     }
 
     private void displayNextView(Player player) {
-        
+
         //display a custom welcome message
         System.out.println("\n=============================================="
-                         + "\n Welcome to Nephi's Journey " + player.getName()
-                         + "\n We hope you have a fun adventure!"
-                         + "\n=============================================="
-                         );
-        
+                + "\n Welcome to Nephi's Journey, "
+                + player.getName() + "."
+                + "\n We hope you have a fun adventure!"
+                + "\n=============================================="
+        );
+
         //Create mainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
-        
+
         //Display the main menu view
         mainMenuView.displayMainMenuView();
     }
-    
+
 }

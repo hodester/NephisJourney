@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.view;
 
 import java.util.Scanner;
-import nephisJourney.NephisJourney;
-import nephisJourney.src.control.GameControl;
+
 /**
  *
  * @author Jenaca
@@ -15,14 +9,11 @@ import nephisJourney.src.control.GameControl;
 public class GameMenuView {
 //promptMessage = "Please select from the following options: "
 
-    private String promptMessage;
+    private final String promptMessage;
 
     public GameMenuView() {
         this.promptMessage = "\nPlease select the letter corresponding "
                 + "to the menu item: ";
-
-        //display the menu when the view is created
-        this.displayMenu();
     }
 
     public void displayMenu() {
@@ -37,7 +28,6 @@ public class GameMenuView {
                 + "\nS - View path status"
                 + "\nL - View contents of location"
                 + "\nM - Move person to a new location"
-                + "\nE - Estimate the supplies needed"
                 + "\nC - Consult the Liahona"
                 + "\nD - Design altar"
                 + "\nT - Collect treasure"
@@ -60,7 +50,10 @@ public class GameMenuView {
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
             {
-                return; // exit the game
+                //Create mainMenuView object when user quits main menu
+                //display main menu and exit the main menu
+                MainMenuView mainMenuView = new MainMenuView();
+                return; // exit the game menu
             }
             // do the requested action and display the next view
             done = this.doAction(menuOption);
@@ -116,9 +109,6 @@ public class GameMenuView {
                 break;
             case "M": // Move person to new location
                 this.moveToNewLocation();
-                break;
-            case "E": // Estimate the supplies needed
-                this.estimateNeededSupplies();
                 break;
             case "C": // Consult the Liahona 
                 this.consultLiahona();
@@ -181,10 +171,6 @@ public class GameMenuView {
         System.out.println("*** moveToNewLocation function was called ***");
     }
 
-    private void estimateNeededSupplies() {
-        System.out.println("*** estimateNeededSupplies function was called ***");
-    }
-
     private void consultLiahona() {
         System.out.println("*** consultLiahona function was called ***");
     }
@@ -194,7 +180,11 @@ public class GameMenuView {
     }
 
     private void collectTreasure() {
-        System.out.println("*** collectTreasure function was called ***");
+        //Create collectTreasureView object
+        CollectTreasureView collectTreasureView = new CollectTreasureView();
+
+        //Display the collect treasure view
+        collectTreasureView.displayCollectTreasureView();
     }
 
     private void gatherStones() {
@@ -220,7 +210,7 @@ public class GameMenuView {
     private void displayHelpMenu() {
         //Create helpMenuView object
         HelpMenuView helpMenuView = new HelpMenuView();
-        
+
         //Display the help menu view
         helpMenuView.displayHelpMenuView();
     }
