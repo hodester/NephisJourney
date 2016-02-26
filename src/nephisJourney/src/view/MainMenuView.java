@@ -27,7 +27,7 @@ public class MainMenuView {
         this.displayMenu();
     }
 
-    private void displayMenu() {
+    public void displayMenu() {
 
         System.out.println(
                 "\n"
@@ -104,8 +104,8 @@ public class MainMenuView {
             case "S": // save the current game
                 this.saveGame();
                 break;
-            case "R": // display Resource Menu
-                this.displayResourceMenu();
+            case "R": // display Reference Menu
+                this.displayReferenceMenu();
                 break;
             case "L": // display Location list
                 this.displayLocationList();
@@ -117,16 +117,22 @@ public class MainMenuView {
 
         }
         return false;
-    
+
     }
 
     private void startNewGame() {
         // create a new game
         GameControl.createNewGame(NephisJourney.getPlayer());
-        
+
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
+
+        //Create gameMenuView object
+        GameMenuView gameMenuView = new GameMenuView();
+
+        //Display the game menu view
+        gameMenuView.displayGameMenuView();
     }
 
     private void startExistingGame() {
@@ -136,7 +142,7 @@ public class MainMenuView {
     private void displayHelpMenu() {
         //Create helpMenuView object
         HelpMenuView helpMenuView = new HelpMenuView();
-        
+
         //Display the help menu view
         helpMenuView.displayHelpMenuView();
     }
@@ -145,8 +151,8 @@ public class MainMenuView {
         System.out.println("*** saveGame function was called ***");
     }
 
-    private void displayResourceMenu() {
-        System.out.println("*** displayResource function was called ***");
+    private void displayReferenceMenu() {
+        System.out.println("*** displayReference function was called ***");
     }
 
     private void displayLocationList() {

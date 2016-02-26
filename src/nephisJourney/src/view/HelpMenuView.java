@@ -47,6 +47,13 @@ public class HelpMenuView {
                 //Create mainMenuView object when user quits help menu
                 //display main menu and exit help menu
                 MainMenuView mainMenuView = new MainMenuView();
+                   
+                // display the main menu
+               // MainMenuView mainMenu = new MainMenuView();
+               // mainMenu.displayMenu();
+
+                //Display the game menu view
+                mainMenuView.displayMainMenuView();
                 return;
             }
             // do the requested action and display the next view

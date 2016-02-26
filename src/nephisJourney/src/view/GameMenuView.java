@@ -180,6 +180,9 @@ public class GameMenuView {
     }
 
     private void collectTreasure() {
+        //view treasure menu
+        CollectTreasureView collectTreasure = new CollectTreasureView();
+        collectTreasure.displayMenu();
         //Create collectTreasureView object
         CollectTreasureView collectTreasureView = new CollectTreasureView();
 
