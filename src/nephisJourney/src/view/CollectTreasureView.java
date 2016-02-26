@@ -1,6 +1,8 @@
 package nephisJourney.src.view;
 
 import java.util.Scanner;
+import nephisJourney.NephisJourney;
+import nephisJourney.src.control.InventoryControl;
 
 /**
  *
@@ -27,6 +29,7 @@ public class CollectTreasureView {
                 + "\nT - Fine Tableware"
                 + "\nS - Silver coins"
                 + "\nG - Gold coins"
+                + "\nC - Calculate Treasure Weight"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
@@ -42,7 +45,7 @@ public class CollectTreasureView {
             {
                 //Create gameMenuView object when user quits collect treasure menu
                 GameMenuView gameMenuView = new GameMenuView();
-                
+
                 //display game menu 
                 gameMenuView.displayMenu();
                 return; // exit collect treasure menu
@@ -85,7 +88,7 @@ public class CollectTreasureView {
 
         switch (menuOption) {
             case "J": // Jewelry
-                this.collectJewelry();
+                this.getNumJewelry();
                 break;
             case "P": // Precious gems
                 this.collectGems();
@@ -99,6 +102,9 @@ public class CollectTreasureView {
             case "G": // Gold coins
                 this.collectGold();
                 break;
+            case "C": // Calculate total treasure weight
+                this.calcTreasureWeight();
+                break;
             default:
                 System.out.println("\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
@@ -107,26 +113,34 @@ public class CollectTreasureView {
         }
         return false;
 
-}
+    }
 
-    private void collectJewelry() {
-        System.out.println("\nPlease enter how many pieces of jewelry "
+    private void getNumJewelry() {
+         System.out.println("\nPlease enter how many pieces of jewelry "
                 + "you wish to collect: ");
     }
 
-    private void collectGems() {
-        System.out.println("*** collectGems function was called ***");
+private void collectGems() {
+        System.out.println("\nPlease enter how many precious gems "
+                + "you wish to collect: ");
     }
 
     private void collectTableware() {
-        System.out.println("*** collectTableware function was called ***");
+        System.out.println("\nPlease enter how many pieces of fine "
+                + "tableware you wish to collect: ");
     }
 
     private void collectSilver() {
-        System.out.println("*** collectSilver function was called ***");
+        System.out.println("\nPlease enter how many pieces of silver "
+                + "you wish to collect: ");
     }
 
     private void collectGold() {
-        System.out.println("*** collectGold function was called ***");
+        System.out.println("\nPlease enter how many pieces of gold "
+                + "you wish to collect: ");
     }
+
+    private void calcTreasureWeight() {
+        System.out.println("\nThis will calculate total treasure weight: ");
+}
 }

@@ -1,21 +1,24 @@
 package nephisJourney.src.control;
 
+import nephisJourney.NephisJourney;
+
 /**
  *
  * @author Jenaca
  */
 public class InventoryControl {
-        
+
+          
     public int calcJewelryWeight (int numJewelry) {
             
             int jewelryWeight = numJewelry * 2;
+                                                
+            if (jewelryWeight < 0 || jewelryWeight > 50) {
+                    return -1;  // weight cannot be negative or over 50 lbs
+                                // option to exit Lehi's house or return
+                                // to collect more.
+      }
             
-            if (jewelryWeight < 0 || jewelryWeight > 50){
-                return -1;  // weight cannot be negative or over 50 lbs
-                            // option to exit Lehi's house or return
-                            // to collect more.
-            }
-
         return jewelryWeight;
     }
     

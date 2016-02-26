@@ -5,6 +5,7 @@
  */
 package nephisJourney;
 
+import nephisJourney.src.control.InventoryControl;
 import nephisJourney.src.model.Actor;
 import nephisJourney.src.model.Altar;
 import nephisJourney.src.model.Game;
@@ -199,5 +200,6 @@ public class NephisJourney {
         gameMenu.setHighScore(525600);
         gameMenu.setNoPeople(7);
     }
+            
     
 }
