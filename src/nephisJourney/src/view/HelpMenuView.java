@@ -30,7 +30,7 @@ public class HelpMenuView {
                 + "\nG - What is the goal of the game"
                 + "\nM - How to move"
                 + "\nE - Estimating the amount of resources"
-                + "\nH - Collect Inventory"
+                + "\nI - Collect Inventory"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
@@ -46,14 +46,14 @@ public class HelpMenuView {
             {
                 //Create mainMenuView object when user quits help menu
                 //display main menu and exit help menu
-                MainMenuView mainMenuView = new MainMenuView();
+            //    MainMenuView mainMenuView = new MainMenuView();
                    
                 // display the main menu
-               // MainMenuView mainMenu = new MainMenuView();
-               // mainMenu.displayMenu();
+               MainMenuView mainMenu = new MainMenuView();
+            //   mainMenu.displayMenu();
 
                 //Display the game menu view
-                mainMenuView.displayMainMenuView();
+              //  mainMenuView.displayMainMenuView();
                 return;
             }
             // do the requested action and display the next view
@@ -102,7 +102,7 @@ public class HelpMenuView {
             case "E": // estimate resource instructions
                 this.estimateResource();
                 break;
-            case "H": // collect inventory instructions
+            case "I": // collect inventory instructions
                 this.collectInventory();
                 break;
             default:

@@ -27,7 +27,6 @@ public class CollectTreasureView {
                 + "\nT - Fine Tableware"
                 + "\nS - Silver coins"
                 + "\nG - Gold coins"
-                + "\nH - Help menu"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
@@ -41,9 +40,11 @@ public class CollectTreasureView {
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
             {
-                //Create mainMenuView object when user quits collect treasure menu
-                //display main menu and exit collect treasure menu
-                MainMenuView mainMenuView = new MainMenuView();
+                //Create gameMenuView object when user quits collect treasure menu
+                GameMenuView gameMenuView = new GameMenuView();
+                
+                //display game menu 
+                gameMenuView.displayMenu();
                 return; // exit collect treasure menu
             }
             // do the requested action and display the next view
@@ -98,9 +99,6 @@ public class CollectTreasureView {
             case "G": // Gold coins
                 this.collectGold();
                 break;
-            case "H": // display the help menu
-                this.displayHelpMenu();
-                break;
             default:
                 System.out.println("\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
@@ -110,14 +108,6 @@ public class CollectTreasureView {
         return false;
 
 }
-
-    private void displayHelpMenu() {
-        //Create helpMenuView object
-        HelpMenuView helpMenuView = new HelpMenuView();
-
-        //Display the help menu view
-        helpMenuView.displayHelpMenuView();
-    }
 
     private void collectJewelry() {
         System.out.println("\nPlease enter how many pieces of jewelry "

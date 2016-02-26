@@ -36,7 +36,6 @@ public class GameMenuView {
                 + "\nW - Build altar"
                 + "\nP - Pack ship"
                 + "\nJ - Launch ship"
-                + "\nH - Help menu"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
@@ -134,9 +133,6 @@ public class GameMenuView {
             case "J": // Launch ship
                 this.launchShip();
                 break;
-            case "H": // display the help menu
-                this.displayHelpMenu();
-                break;
             default:
                 System.out.println("\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
@@ -210,11 +206,4 @@ public class GameMenuView {
         System.out.println("*** launchShip function was called ***");
     }
 
-    private void displayHelpMenu() {
-        //Create helpMenuView object
-        HelpMenuView helpMenuView = new HelpMenuView();
-
-        //Display the help menu view
-        helpMenuView.displayHelpMenuView();
-    }
 }
