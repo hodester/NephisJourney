@@ -108,19 +108,51 @@ public class HelpMenuView {
     }
 
     private void goalOfGame() {
-        System.out.println("*** goalOfGame function was called ***");
+        System.out.println(
+                "\n*******************************************************"
+                + "\n*                                                     *"
+                + "\n* Insert GOAL OF GAME help language here              *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+        );
     }
 
     private void howToMove() {
-        System.out.println("*** howToMove function was called ***");
+        System.out.println(
+                "\n*******************************************************"
+                + "\n*                                                     *"
+                + "\n* Insert HOW TO MOVE help language here               *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+        );
     }
 
     private void estimateResource() {
-        System.out.println("*** estimateResource function was called ***");
+        System.out.println(
+                "\n*******************************************************"
+                + "\n*                                                     *"
+                + "\n* Insert ESTIMATE RESOURCE help language here         *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+        );
     }
 
     private void collectInventory() {
-        System.out.println("*** collectInventory function was called ***");
+                System.out.println(
+                "\n*******************************************************"
+                + "\n*                                                     *"
+                + "\n* Insert COLLECT INVENTORY help language here         *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+        );
     }
 
 }

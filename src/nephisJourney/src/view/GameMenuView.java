@@ -50,8 +50,8 @@ public class GameMenuView {
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
             {
-                //Create mainMenuView object when user quits main menu
-                //display main menu and exit the main menu
+                //Create mainMenuView object when user quits game menu
+                //display main menu and exit the game menu
                 MainMenuView mainMenuView = new MainMenuView();
                 return; // exit the game menu
             }
