@@ -2,7 +2,7 @@ package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
-import nephisJourney.src.control.InventoryControl;
+import nephisJourney.src.control.TreasureControl;
 
 /**
  *
@@ -88,7 +88,7 @@ public class CollectTreasureView {
 
         switch (menuOption) {
             case "J": // Jewelry
-                this.getNumJewelry();
+                this.collectJewelry();
                 break;
             case "P": // Precious gems
                 this.collectGems();
@@ -115,12 +115,15 @@ public class CollectTreasureView {
 
     }
 
-    private void getNumJewelry() {
-         System.out.println("\nPlease enter how many pieces of jewelry "
+    private void collectJewelry() {
+        System.out.println("\nPlease enter how many precious gems "
                 + "you wish to collect: ");
+        //JewelryView jewelryView = new JewelryView();
+                 
+       // jewelryView.displayJewelryView();
     }
 
-private void collectGems() {
+    private void collectGems() {
         System.out.println("\nPlease enter how many precious gems "
                 + "you wish to collect: ");
     }

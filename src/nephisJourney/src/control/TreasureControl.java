@@ -6,9 +6,9 @@ import nephisJourney.NephisJourney;
  *
  * @author Jenaca
  */
-public class InventoryControl {
+public class TreasureControl {
 
-          
+            
     public int calcJewelryWeight (int numJewelry) {
             
             int jewelryWeight = numJewelry * 2;

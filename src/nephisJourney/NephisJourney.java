@@ -5,7 +5,7 @@
  */
 package nephisJourney;
 
-import nephisJourney.src.control.InventoryControl;
+import nephisJourney.src.control.TreasureControl;
 import nephisJourney.src.model.Actor;
 import nephisJourney.src.model.Altar;
 import nephisJourney.src.model.Game;
@@ -46,6 +46,25 @@ public class NephisJourney {
         NephisJourney.player = player;
     }
     private static Player player = null;
+    
+    //private static SupplyInventory currentInventory = null;
+
+//    public static SupplyInventory getCurrentInventory() {
+   //     return currentInventory;
+    //}
+
+   // public static void setCurrentInventory(SupplyInventory currentInventory) {
+     //   NephisJourney.currentInventory = currentInventory;
+    //}
+    //private static final int quantityInStock = 0;
+
+    //public static int getQuantityInStock() {
+      //  return quantityInStock;
+    //}
+
+    //public static void setQuantityInStock(QuantityInStock quantityInStock) {
+      //  NephisJourney.quantityInStock = quantityInStock;
+    //}
     
     /**
      * @param args the command line arguments
@@ -200,6 +219,9 @@ public class NephisJourney {
         gameMenu.setHighScore(525600);
         gameMenu.setNoPeople(7);
     }
-            
+
+    
+
+              
     
 }
