@@ -1,7 +1,8 @@
+
 package nephisJourney.src.view;
 
 import java.util.Scanner;
-
+import nephisJourney.NephisJourney;
 /**
  *
  * @author Jenaca
