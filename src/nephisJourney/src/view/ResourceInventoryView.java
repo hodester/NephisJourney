@@ -3,6 +3,7 @@ package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
+import nephisJourney.src.model.SupplyInventory;
 /**
  *
  * @author adamh_000

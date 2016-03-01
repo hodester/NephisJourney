@@ -1,5 +1,7 @@
 package nephisJourney.src.control;
 
+import nephisJourney.NephisJourney;
+
 /**
  *
  * @author Adam
