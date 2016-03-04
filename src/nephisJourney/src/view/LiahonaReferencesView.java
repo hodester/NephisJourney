@@ -7,21 +7,10 @@ import nephisJourney.src.model.LiahonaReferences;
  *
  * @author Hodes
  */
-public class LiahonaReferencesView {
+public class LiahonaReferencesView extends View {
     
     private String promptMessage;
     private int nephi2_4;
-    
-    public LiahonaReferencesView(){
-        //Displays a of scripture references associated with the location.
-        this.promptMessage = "\n Please select the number of letter "
-                + "corresponding to the menu item: ";
-        
-        //display the menu when the view is created
-        this.displayBanner();
-        this.displayMenu();
-            
-    }
 
     private void displayBanner() {
         System.out.println(
@@ -30,15 +19,15 @@ public class LiahonaReferencesView {
                 + "\n The menu below will allow you to see the scriptures *"
                 + "\n associated with the location of your player. The    *"
                 + "\n scriptures come from The Book of Mormon, Another    *"
-                + "\n Testiment of Jesus Crist.                           *"
+                + "\n Testament of Jesus Christ.                           *"
                 + "\n                                                     *"
                 + "\n******************************************************"
 
        );
     }
     
-    private void displayMenu() {
-        System.out.println(
+    private LiahonaReferencesView() {
+        super(
                 "\n"
                 + "\n--------------------------------------------"
                 + "\n|Liahona Reference Menu                    |"
@@ -81,58 +70,13 @@ public class LiahonaReferencesView {
         );
         
     }
-    
-    public void displayLiahonaReferencesView() {
-        
-        boolean done = false; //set flag to not done
-        do {
-            //promt for and get menu choice
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-            {
-                //Create mainMenuView object when user quits help menu
-                //display main menu and exit help menu
-                MainMenuView mainMenu = new MainMenuView();
-            
-                return;
-            }
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-            } while (!done);
-        }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner (System.in); //get infile for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
+    @Override
+    public boolean doAction(String value) {
 
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing white space
+        value = value.toUpperCase(); // convert choice to upper case
 
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            if (value.length() > 2) { //value is too long
-                System.out.println("\nInvalid value: Please select the number "
-                        + "or letter corresponding to the menu item.");
-                continue;
-            }
-            break; //end the loop
-        }
-
-        return value; //return the value entered
-    }
-
-    public boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase(); // convert choice to upper case
-
-        switch (menuOption) {
+        switch (value) {
             case "01": //  Jerusalem during the reign of Zedekiah, king of Judah.
                 this.Nephi1_4();
                 break;

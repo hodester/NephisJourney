@@ -7,7 +7,7 @@ import nephisJourney.NephisJourney;
  *
  * @author Jenaca
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 //promptMessage = "Please select from the following options: "
 
     private final String promptMessage;
@@ -179,12 +179,12 @@ public class GameMenuView {
     private void collectTreasure() {
         //view treasure menu
         CollectTreasureView collectTreasure = new CollectTreasureView();
-        collectTreasure.displayMenu();
+        collectTreasure.display();
         //Create collectTreasureView object
         CollectTreasureView collectTreasureView = new CollectTreasureView();
 
         //Display the collect treasure view
-        collectTreasureView.displayCollectTreasureView();
+        collectTreasureView.display();
     }
 
     private void gatherStones() {
@@ -194,12 +194,12 @@ public class GameMenuView {
     private void huntWithBow() {
         //view treasure menu
         HuntWithBowView huntWithBow = new HuntWithBowView();
-        huntWithBow.displayMenu();
+        huntWithBow.display();
         //Create collectTreasureView object
         HuntWithBowView huntWithBowView = new HuntWithBowView();
 
         //Display the collect treasure view
-        huntWithBowView.displayHuntWithBowView();
+        huntWithBowView.display();
     }
     
     private void buildAltar() {

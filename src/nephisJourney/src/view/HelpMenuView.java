@@ -6,23 +6,15 @@ import java.util.Scanner;
  *
  * @author Jenaca
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
     //promptMessage = "Please select from the following options: "
     private String promptMessage;
 
+       
     public HelpMenuView() {
 
-        this.promptMessage = "\nPlease select the letter corresponding "
-                + "to the menu item: ";
-
-        //display the menu when the view is created
-        this.displayMenu();
-    }
-
-    private void displayMenu() {
-
-        System.out.println(
+        super(
                 "\n"
                 + "\n--------------------------------------------"
                 + "\n|Help Menu                                 |"
@@ -35,58 +27,12 @@ public class HelpMenuView {
                 + "\n--------------------------------------------");
 
     }
+    @Override
+    public boolean doAction(String value) {
 
-    public void displayHelpMenuView() {
+        value = value.toUpperCase(); // convert choice to upper case
 
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get player's name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-            {
-                //Create mainMenuView object when user quits help menu
-                //display main menu and exit help menu
-                MainMenuView mainMenu = new MainMenuView();
-            
-                return;
-            }
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing white space
-
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            if (value.length() > 1) { //value is too long
-                System.out.println("\nInvalid value: Please select the letter "
-                        + "corresponding to the menu item.");
-                continue;
-            }
-            break; //end the loop
-        }
-
-        return value; //return the value entered
-    }
-
-    public boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase(); // convert choice to upper case
-
-        switch (menuOption) {
+        switch (value) {
             case "G": // get goal of game instructions
                 this.goalOfGame();
                 break;
