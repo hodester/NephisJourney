@@ -192,9 +192,16 @@ public class GameMenuView {
     }
 
     private void huntWithBow() {
-        System.out.println("*** huntWithBow function was called ***");
-    }
+        //view treasure menu
+        HuntWithBowView huntWithBow = new HuntWithBowView();
+        huntWithBow.displayMenu();
+        //Create collectTreasureView object
+        HuntWithBowView huntWithBowView = new HuntWithBowView();
 
+        //Display the collect treasure view
+        huntWithBowView.displayHuntWithBowView();
+    }
+    
     private void buildAltar() {
         System.out.println("*** buildAltar function was called ***");
     }
