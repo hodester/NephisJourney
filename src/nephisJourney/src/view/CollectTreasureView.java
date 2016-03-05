@@ -30,6 +30,30 @@ public class CollectTreasureView extends View {
                 + "\n--------------------------------------------");
 
     }
+    
+    @Override
+    public void display() {
+
+        boolean done = false; // set flag to not done
+        do {
+            // prompt for and get user's menu option
+            String value = this.getInput();
+            if (value.toUpperCase().equals("Q")) // user wants to quit
+            {
+                //Create gameMenuView object when user 
+                //quits collect treasure menu
+                GameMenuView gameMenuView = new GameMenuView();
+
+                //display game menu 
+                gameMenuView.displayMenu();
+                return; // exit view
+            }
+            // do the requested action and display the next view
+            done = this.doAction(value);
+
+        } while (!done);
+    }
+    
    @Override
     public boolean doAction(String value) {
 
@@ -65,11 +89,11 @@ public class CollectTreasureView extends View {
     }
 
     private void collectJewelry() {
-        System.out.println("\nPlease enter how many pieces of jewelry "
-                + "you wish to collect: ");
-        //JewelryView jewelryView = new JewelryView();
+        //System.out.println("\nPlease enter how many pieces of jewelry "
+        //        + "you wish to collect: ");
+        JewelryView jewelryView = new JewelryView();
                  
-       // jewelryView.displayJewelryView();
+        jewelryView.displayJewelryView();
     }
 
     private void collectGems() {

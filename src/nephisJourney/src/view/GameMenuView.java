@@ -1,14 +1,14 @@
-
 package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
+
 /**
  *
  * @author Jenaca
  */
 public class GameMenuView extends View {
-//promptMessage = "Please select from the following options: "
+//promptMessage = "Please select a letter...: "
 
     private final String promptMessage;
 
@@ -208,7 +208,7 @@ public class GameMenuView extends View {
         //Display the collect treasure view
         huntWithBowView.display();
     }
-    
+
     private void buildAltar() {
         System.out.println("*** buildAltar function was called ***");
     }

@@ -15,15 +15,17 @@ public class PlayerView extends View {
     public PlayerView() {
         super(
                 "\n"
-                +"\n--------------------------------------------"
-                +"\n|            High Scores!                  |"
-                +"\n--------------------------------------------"
-                +"\n1 - First Place"
-                +"\n2 - Second Place"
-                +"\n3 - Thrid Place"
-                +"\n4 - Top 10"
-                +"\nQ - Quit");
+                + "\n--------------------------------------------"
+                + "\n|            High Scores!                  |"
+                + "\n--------------------------------------------"
+                + "\n1 - First Place"
+                + "\n2 - Second Place"
+                + "\n3 - Third Place"
+                + "\n4 - Top 10"
+                + "\nQ - Quit"
+                + "\n--------------------------------------------");
     }
+
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();

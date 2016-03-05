@@ -4,13 +4,14 @@ import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
 
+
 /**
  *
  * @author Jenaca
  */
 public class JewelryView {
 
-        protected String promptMessage;
+    protected String promptMessage;
 
     public JewelryView() {
         this.promptMessage = "\nPlease enter how many pieces of jewelry "
@@ -24,9 +25,11 @@ public class JewelryView {
             int numJewelry = this.getNumJewelry();
             if (numJewelry == 0) // user wants to quit
             {
-                //Create collectTreasureView object when user quits inventory view
+                //Create collectTreasureView object 
+                //when user quits inventory view
                 //display collectTreasureView and exit the inventory view
-                CollectTreasureView collectTreasureView = new CollectTreasureView();
+                CollectTreasureView collectTreasureView = 
+                        new CollectTreasureView();
                 return; // exit the inventory view
             } else {
             }
@@ -46,7 +49,6 @@ public class JewelryView {
 
             //value = keyboard.nextLine(); //get next line typed on keyboard
             //value = value.trim(); //trim off leading and trailing white space
-
             if (value < 1) { //value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
@@ -62,17 +64,12 @@ public class JewelryView {
         return value; //return the value entered
 
     }
-    
+
     private boolean doAction(int numJewelry) {
-       System.out.println("\n doAction calcJewelryWeight called ");
-            // call treasure control to calculate jewelryWeight
-      //TreasureControl.calcJewelryWeight(numJewelry);
+        System.out.println("\n doAction calcJewelryWeight called ");
+        // call treasure control to calculate jewelryWeight
+        //TreasureControl.calcJewelryWeight(numJewelry);
         return true;
     }
 
-   
-
-    
-
 }
-

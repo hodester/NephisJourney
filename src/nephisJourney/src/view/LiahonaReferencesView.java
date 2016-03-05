@@ -8,7 +8,7 @@ import nephisJourney.src.model.LiahonaReferences;
  * @author Hodes
  */
 public class LiahonaReferencesView extends View {
-    
+
     private String promptMessage;
     private int nephi2_4;
 
@@ -22,10 +22,9 @@ public class LiahonaReferencesView extends View {
                 + "\n Testament of Jesus Christ.                           *"
                 + "\n                                                     *"
                 + "\n******************************************************"
-
-       );
+        );
     }
-    
+
     private LiahonaReferencesView() {
         super(
                 "\n"
@@ -68,7 +67,7 @@ public class LiahonaReferencesView extends View {
                 + "\nQ - Return to previous menu"
                 + "\n--------------------------------------------"
         );
-        
+
     }
 
     @Override
@@ -175,7 +174,7 @@ public class LiahonaReferencesView extends View {
                 break;
             case "33": // Arrive at promised land
                 this.nephi18_23();
-                break;    
+                break;
             default:
                 System.out.println("\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
@@ -184,7 +183,7 @@ public class LiahonaReferencesView extends View {
         }
         return false;
     }
-    
+
     private void Nephi1_4() {
         System.out.println(
                 "\n*******************************************************"
@@ -197,11 +196,11 @@ public class LiahonaReferencesView extends View {
                 + " Jerusalem must be destroyed."
                 + "\n"
                 + "\n*******************************************************"
-        );  
+        );
     }
 
     private void nephi2_4to5() {
-    System.out.println(
+        System.out.println(
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n 4. And it came to pass that he departed into the "
@@ -209,14 +208,14 @@ public class LiahonaReferencesView extends View {
                 + "\n inheritance, and his gold, and his silver, and his precious "
                 + "\n things, and took nothing with him, save it were his family, "
                 + "\n and provisions, and tents, and departed into the wilderness."
-                + "\n" 
+                + "\n"
                 + "\n 5. And he came down by the borders near the shore of the "
                 + "\n Red Sea; and he traveled in the wilderness in the borders "
                 + "\n which are nearer the Red Sea; and he did travel in the wilderness "
                 + "\n with his family, which consisted of my mother, Sariah, "
                 + "\n and my elder brothers, who were Laman, Lemuel, and Sam."
                 + "\n*******************************************************"
-        );  
+        );
     }
 
     private void nephi3_1() {
@@ -228,7 +227,7 @@ public class LiahonaReferencesView extends View {
                 + "\n*                                                     *"
                 + "\n*                                                     *"
                 + "\n*******************************************************"
-        );  
+        );
     }
 
     private void nephi3_2to3() {

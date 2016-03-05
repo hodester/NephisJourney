@@ -1,47 +1,47 @@
-
 package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.model.SupplyInventory;
+
 /**
  *
  * @author adamh_000
  */
 public class ResourceInventoryView extends View {
-    
+
     // Prompt message = "Please select from the following options:"
     private String promptMessage;
 
     public ResourceInventoryView() {
-        
+
         super(
-         "\n"
-        +"\n-------------------------------------------"
-        +"\n|            Resource Inventory            |"
-        +"\n-------------------------------------------"
-        +"\nP - Plates of Brass"
-        +"\nL - Liahona"
-        +"\nB - Bow"
-        +"\nS - Stones"
-        +"\nM - Meat"
-        +"\nT - Timber"        
-        +"\nO - Ore"
-        +"\nG - Grains"
-        +"\nO - Oil"
-        +"\nW - Water"
-        +"\nH - Honey"
-        +"\nA - Salt"
-        +"\nQ - Quit"
-        +"\n-------------------------------------------"
+                "\n"
+                + "\n-------------------------------------------"
+                + "\n|            Resource Inventory            |"
+                + "\n-------------------------------------------"
+                + "\nP - Plates of Brass"
+                + "\nL - Liahona"
+                + "\nB - Bow"
+                + "\nS - Stones"
+                + "\nM - Meat"
+                + "\nT - Timber"
+                + "\nO - Ore"
+                + "\nG - Grains"
+                + "\nO - Oil"
+                + "\nW - Water"
+                + "\nH - Honey"
+                + "\nA - Salt"
+                + "\nQ - Quit"
+                + "\n-------------------------------------------"
         );
-       
+
     }
-    
+
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        switch (value){
+        switch (value) {
             case "P": // access plates of brass
                 this.platesOfBrass();
                 break;
@@ -74,50 +74,59 @@ public class ResourceInventoryView extends View {
                 break;
             default:
                 System.out.println("\n*** Invalid selection ***"
-                                + "Please select a valid display option ***");
+                        + "Please select a valid display option ***");
                 break;
-               
+
         }
         return false;
     }
-    private static void platesOfBrass(){
-        System.out.println("\n displays amount in inventory");
- }
-    
-     private static void liahona(){
-        System.out.println("\n displays amount in inventory");
- }
-   private static void bow(){
-       System.out.println("\n displays amount in inventory");
- }
-    private static void stones(){
-        System.out.println("\n displays amount in inventory");
- }
-     private static void meat(){
-        System.out.println("\n displays amount in inventory");
- }
-      private static void timber(){
-       System.out.println("\n displays amount in inventory");
- }
-       private static void ore(){
-       System.out.println("\n displays amount in inventory");
-       }
-       private static void grains(){
-        System.out.println("\n displays amount in inventory");
- }
-       private static void oil(){
-        System.out.println("\n displays amount in inventory");
- }
-       private static void water(){
-        System.out.println("\n displays amount in inventory");
- }
-       private static void honey(){
-        System.out.println("\n displays amount in inventory");
-       }
-       private  static void salt(){
-        System.out.println("\n displays amount in inventory");
-       }
 
-    
-   
+    private static void platesOfBrass() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void liahona() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void bow() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void stones() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void meat() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void timber() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void ore() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void grains() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void oil() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void water() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void honey() {
+        System.out.println("\n displays amount in inventory");
+    }
+
+    private static void salt() {
+        System.out.println("\n displays amount in inventory");
+    }
+
 }

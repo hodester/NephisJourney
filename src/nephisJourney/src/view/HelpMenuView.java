@@ -11,7 +11,6 @@ public class HelpMenuView extends View {
     //promptMessage = "Please select from the following options: "
     private String promptMessage;
 
-       
     public HelpMenuView() {
 
         super(
@@ -27,6 +26,26 @@ public class HelpMenuView extends View {
                 + "\n--------------------------------------------");
 
     }
+    @Override
+    public void display() {
+
+        boolean done = false; // set flag to not done
+        do {
+            // prompt for and get user's menu option
+            String value = this.getInput();
+            if (value.toUpperCase().equals("Q")) // user wants to quit
+            {
+                //Create mainMenuView object when user quits help menu
+                //display main menu and exit help menu
+                MainMenuView mainMenu = new MainMenuView();
+                return; // exit view
+            }
+            // do the requested action and display the next view
+            done = this.doAction(value);
+
+        } while (!done);
+    }
+
     @Override
     public boolean doAction(String value) {
 
@@ -91,7 +110,7 @@ public class HelpMenuView extends View {
     }
 
     private void collectInventory() {
-                System.out.println(
+        System.out.println(
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert COLLECT INVENTORY help language here         *"

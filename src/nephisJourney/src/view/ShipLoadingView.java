@@ -9,11 +9,10 @@ import nephisJourney.src.control.ShipControl;
  * @author Hodes
  */
 public class ShipLoadingView extends View {
-        //promptMessage = "Please select from the following options: "
+    //promptMessage = "Please select from the following options: "
 
     private String promptMessage;
 
-   
     public ShipLoadingView() {
         super(
                 "\n"
@@ -32,7 +31,8 @@ public class ShipLoadingView extends View {
                 + "\n--------------------------------------------");
 
     }
-@Override
+
+    @Override
     public boolean doAction(String value) {
 
         value = value.toUpperCase(); // convert choice to upper case

@@ -19,17 +19,18 @@ public class HuntWithBowView extends View {
     public HuntWithBowView() {
 
         super(
-                "\n--------------------------------------------------------------"
-                + "\n|  Choose Direction                                          |"
-                + "\n--------------------------------------------------------------"
+                "\n-----------------------------------------------"
+                + "\n|  Choose Direction                         |"
+                + "\n---------------------------------------------"
                 + "\nN - North"
                 + "\nE - East"
                 + "\nS - South"
                 + "\nW - West"
-                + "\nQ - Quit Hunt");
+                + "\nQ - Quit Hunt"
+                + "\n--------------------------------------------");
     }
 
-   @Override
+    @Override
     public boolean doAction(String value) {
 
         value = value.toUpperCase();
