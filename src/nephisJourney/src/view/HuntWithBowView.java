@@ -64,43 +64,43 @@ public class HuntWithBowView extends View {
         String selectedRandomCommand = Character.toString(randomCommand.charAt(randomNum));
 
         if (randomNum == 'W') {
-            System.out.println("You found an animal!");
+            HuntingControl getWest = new HuntingControl();
         } else {
             return;
         }
         if (randomNum == 'N') {
-            System.out.println("You found an animal!");
+            HuntingControl getNorth = new HuntingControl();
         } else {
             return;
         }
         if (randomNum == 'E') {
-            System.out.println("You found an animal!");
+            HuntingControl getEast = new HuntingControl();
         } else {
             return;
         }
         if (randomNum == 'S') {
-            System.out.println("You found an animal!");
+            HuntingControl getSouth = new HuntingControl();
         } else {;
         }
     }
 
-    private void calcHuntWeight() {
+    private static void calcHuntWeight() {
         System.out.println("\n This will be changed");
     }
 
     private void getNorth() {
-        System.out.println("\n This will be changed");
+        System.out.println("\n Nothing here, keep searching!");
     }
 
     private void getSouth() {
-        System.out.println("\n This will be changed");
+        System.out.println("\n Nothing here, keep searching!");
     }
 
     private void getWest() {
-        System.out.println("\n This will be changed");
+        System.out.println("\n Nothing here, keep searching!");
     }
 
     private void getEast() {
-        System.out.println("\n This will be changed");
+        System.out.println("\n Nothing here, keep searching!");
     }
 }

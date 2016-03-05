@@ -1,12 +1,13 @@
 package nephisJourney.src.control;
 
 import nephisJourney.NephisJourney;
+import nephisJourney.src.view.HuntWithBowView;
 
 /**
  *
  * @author Adam
  */
-public class HuntingControl {
+public class HuntingControl extends HuntWithBowView {
     
     
     
