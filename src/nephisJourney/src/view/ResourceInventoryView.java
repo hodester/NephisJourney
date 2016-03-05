@@ -16,61 +16,60 @@ public class ResourceInventoryView extends View {
     public ResourceInventoryView() {
         
         super(
-         "/n"
-        +"/n-------------------------------------------"
-        +"/n|            Resource Inventor            |"
-        +"/n-------------------------------------------"
-        +"/n                                           "
-        +"/n P - Plates of Brass"
-        +"/n L - Liahona"
-        +"/n B - Bow"
-        +"/n S - Stones"
-        +"/n M - Meat"
-        +"/n T - Timber"        
-        +"/n O - Ore"
-        +"/n G - Grains"
-        +"/n O - Oil"
-        +"/n W - Water"
-        +"/n H - Honey"
-        +"/n A - Salt"
-        +"/n Q - Quit"
-        +"/n-------------------------------------------"
+         "\n"
+        +"\n-------------------------------------------"
+        +"\n|            Resource Inventory            |"
+        +"\n-------------------------------------------"
+        +"\nP - Plates of Brass"
+        +"\nL - Liahona"
+        +"\nB - Bow"
+        +"\nS - Stones"
+        +"\nM - Meat"
+        +"\nT - Timber"        
+        +"\nO - Ore"
+        +"\nG - Grains"
+        +"\nO - Oil"
+        +"\nW - Water"
+        +"\nH - Honey"
+        +"\nA - Salt"
+        +"\nQ - Quit"
+        +"\n-------------------------------------------"
         );
        
     }
     
-    
-    public void doAction(char value) {
-        
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         switch (value){
-            case 'P': // access plates of brass
+            case "P": // access plates of brass
                 this.platesOfBrass();
                 break;
-            case 'L': // access the Liahona inventory
+            case "L": // access the Liahona inventory
                 this.liahona();
                 break;
-            case 'B': // access Bow inventory
+            case "B": // access Bow inventory
                 this.bow();
                 break;
-            case 'S': // show amount of stones
+            case "S": // show amount of stones
                 this.stones();
                 break;
-            case 'M': // show how much meat is collected
+            case "M": // show how much meat is collected
                 this.meat();
                 break;
-            case 'T': // show amount of timber
+            case "T": // show amount of timber
                 this.timber();
                 break;
-            case 'O': // show amount of ore in inventory
+            case "O": // show amount of ore in inventory
                 this.ore();
                 break;
-            case 'W': // show amount of water in inventory
+            case "W": // show amount of water in inventory
                 this.water();
                 break;
-            case 'H': // show amount of honey in inventory
+            case "H": // show amount of honey in inventory
                 this.honey();
                 break;
-            case 'A': // show amount of salt in inventory
+            case "A": // show amount of salt in inventory
                 this.salt();
                 break;
             default:
@@ -79,51 +78,46 @@ public class ResourceInventoryView extends View {
                 break;
                
         }
+        return false;
     }
-    
-    private void platesOfBrass(){
+    private static void platesOfBrass(){
         System.out.println("\n displays amount in inventory");
  }
     
-     private void liahona(){
+     private static void liahona(){
         System.out.println("\n displays amount in inventory");
  }
-   private void bow(){
+   private static void bow(){
        System.out.println("\n displays amount in inventory");
  }
-    private void stones(){
+    private static void stones(){
         System.out.println("\n displays amount in inventory");
  }
-     private void meat(){
+     private static void meat(){
         System.out.println("\n displays amount in inventory");
  }
-      private void timber(){
+      private static void timber(){
        System.out.println("\n displays amount in inventory");
  }
-       private void ore(){
+       private static void ore(){
        System.out.println("\n displays amount in inventory");
        }
-       private void grains(){
+       private static void grains(){
         System.out.println("\n displays amount in inventory");
  }
-       private void oil(){
+       private static void oil(){
         System.out.println("\n displays amount in inventory");
  }
-       private void water(){
+       private static void water(){
         System.out.println("\n displays amount in inventory");
  }
-       private void honey(){
+       private static void honey(){
         System.out.println("\n displays amount in inventory");
        }
-       private void salt(){
+       private  static void salt(){
         System.out.println("\n displays amount in inventory");
        }
 
-    private String getMenuOptions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+   
 }

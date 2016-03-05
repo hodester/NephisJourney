@@ -149,7 +149,14 @@ public class GameMenuView extends View {
     }
 
     private void viewInventory() {
-        System.out.println("*** viewInventory function was called ***");
+        //view treasure menu
+        ResourceInventoryView viewInventory = new ResourceInventoryView();
+        viewInventory.display();
+        //Create collectTreasureView object
+        ResourceInventoryView viewInventoryView = new ResourceInventoryView();
+
+        //Display the collect treasure view
+        viewInventoryView.display();
     }
 
     private void viewCharacters() {

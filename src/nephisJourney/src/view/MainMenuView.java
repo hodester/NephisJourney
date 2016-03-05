@@ -27,6 +27,7 @@ public class MainMenuView extends View {
                 + "\nN - Start new game"
                 + "\nG - Get and start saved game"
                 + "\nH - Get help on how to play the game"
+                + "\nT - High Scores"
                 + "\nS - Save game"
                 + "\nR - Reference Menu"
                 + "\nL - Location List"
@@ -50,6 +51,9 @@ public class MainMenuView extends View {
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
+                break;
+            case "T":
+                this.playerView();
                 break;
             case "S": // save the current game
                 this.saveGame();
@@ -95,6 +99,12 @@ public class MainMenuView extends View {
 
         //Display the help menu view
         helpMenuView.display();
+    }
+    
+    private void playerView() {
+        PlayerView playerView = new PlayerView();
+        
+        playerView.display();
     }
 
     private void saveGame() {
