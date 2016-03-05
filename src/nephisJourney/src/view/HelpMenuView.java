@@ -22,6 +22,7 @@ public class HelpMenuView extends View {
                 + "\nM - How to move"
                 + "\nE - Estimating the amount of resources"
                 + "\nI - Collect Inventory"
+                + "\nL - Liahona References"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
@@ -63,6 +64,9 @@ public class HelpMenuView extends View {
                 break;
             case "I": // collect inventory instructions
                 this.collectInventory();
+                break;
+            case "L": //Display the Liahona Reference menu
+                this.displayLiahonaReference();
                 break;
             default:
                 System.out.println("\n*** Invalid selection ***"
@@ -114,6 +118,18 @@ public class HelpMenuView extends View {
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert COLLECT INVENTORY help language here         *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*                                                     *"
+                + "\n*******************************************************"
+        );
+    }
+
+    private void displayLiahonaReference() {
+                System.out.println(
+                "\n*******************************************************"
+                + "\n*                                                     *"
+                + "\n* Insert Liahona Reference Menu here                  *"
                 + "\n*                                                     *"
                 + "\n*                                                     *"
                 + "\n*                                                     *"

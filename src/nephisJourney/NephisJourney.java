@@ -199,9 +199,6 @@ public class NephisJourney {
         String brassBall = liahonaDescription.toString();
         System.out.println(brassBall);
         
-        String compass = liahonaDescription.toString();
-        System.out.println(compass);
-        
         Altar altarScene = new Altar();
         
         altarScene.setName("Lehi's altar of worship.");
@@ -211,8 +208,7 @@ public class NephisJourney {
         
         String altarName = altarScene.toString();
         System.out.println(altarName);
-        String altarDesc = altarScene.toString();
-        System.out.println(altarDesc);
+       
         
         Game gameMenu = new Game();
         
