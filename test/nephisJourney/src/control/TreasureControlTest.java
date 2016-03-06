@@ -33,15 +33,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight1() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight1() {
+        System.out.println("calcGemsWeight");
         int numGems = 10;
         TreasureControl instance = new TreasureControl();
         int expResult = 10;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -52,9 +52,9 @@ public class TreasureControlTest {
     @Test
     public void testCalcTablewareWeight1() {
         System.out.println("calcTablewareWeight");
-        int numTableware = 2;
+        int numTableware = 0;
         TreasureControl instance = new TreasureControl();
-        int expResult = 8;
+        int expResult = 0;
         int result = instance.calcTablewareWeight(numTableware);
         assertEquals(expResult, result);
       
@@ -66,11 +66,11 @@ public class TreasureControlTest {
     @Test
     public void testCalcSilverWeight1() {
         System.out.println("calcSilverWeight");
-        int numSilver = 4;
+        int numSilver = 1;
         TreasureControl instance = new TreasureControl();
-        double expResult = 2;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
+        int expResult = 2;
+        int result = instance.calcSilverWeight(numSilver);
+        int delta = 2;
         assertEquals(expResult, result, delta);
        
     }
@@ -81,7 +81,7 @@ public class TreasureControlTest {
     @Test
     public void testCalcGoldWeight1() {
         System.out.println("calcGoldWeight");
-        int numGold = 10;
+        int numGold = 1;
         TreasureControl instance = new TreasureControl();
         int expResult = 10;
         int result = instance.calcGoldWeight(numGold);
@@ -96,13 +96,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight1() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = 20;
-        int gemWeight = 10;
+        int gemsWeight = 10;
         int tablewareWeight = 8;
-        double silverWeight = 2;
+        int silverWeight = 2;
         int goldWeight = 10;
         TreasureControl instance = new TreasureControl();
         int expResult = 50;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight,
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight,
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         
@@ -123,15 +123,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight2() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight2() {
+        System.out.println("calcGemsWeight");
         int numGems = 10;
         TreasureControl instance = new TreasureControl();
         int expResult = 10;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -144,7 +144,7 @@ public class TreasureControlTest {
         System.out.println("calcTablewareWeight");
         int numTableware = 1;
         TreasureControl instance = new TreasureControl();
-        int expResult = 4;
+        int expResult = 5;
         int result = instance.calcTablewareWeight(numTableware);
         assertEquals(expResult, result);
       
@@ -158,9 +158,9 @@ public class TreasureControlTest {
         System.out.println("calcSilverWeight");
         int numSilver = 15;
         TreasureControl instance = new TreasureControl();
-        double expResult = 7.5;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
+        int expResult = 30;
+        int result = instance.calcSilverWeight(numSilver);
+        int delta = 2;
         assertEquals(expResult, result, delta);
        
     }
@@ -173,7 +173,7 @@ public class TreasureControlTest {
         System.out.println("calcGoldWeight");
         int numGold = 1;
         TreasureControl instance = new TreasureControl();
-        int expResult = 1;
+        int expResult = 10;
         int result = instance.calcGoldWeight(numGold);
         assertEquals(expResult, result);
        
@@ -186,13 +186,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight2() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = -1;
-        int gemWeight = 10;
-        int tablewareWeight = 4;
-        double silverWeight = 7.5;
-        int goldWeight = 1;
+        int gemsWeight = 10;
+        int tablewareWeight = 5;
+        int silverWeight = 30;
+        int goldWeight = 10;
         TreasureControl instance = new TreasureControl();
         int expResult = -1;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight, 
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight, 
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         
@@ -213,15 +213,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight3() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight3() {
+        System.out.println("calcGemsWeight");
         int numGems = 6;
         TreasureControl instance = new TreasureControl();
         int expResult = 6;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -248,10 +248,9 @@ public class TreasureControlTest {
         System.out.println("calcSilverWeight");
         int numSilver = 1;
         TreasureControl instance = new TreasureControl();
-        double expResult = 0;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
-        assertEquals(expResult, result, delta);
+        int expResult = 2;
+        int result = instance.calcSilverWeight(numSilver);
+        assertEquals(expResult, result);
        
     }
 
@@ -261,9 +260,9 @@ public class TreasureControlTest {
     @Test
     public void testCalcGoldWeight3() {
         System.out.println("calcGoldWeight");
-        int numGold = 6;
+        int numGold = 4;
         TreasureControl instance = new TreasureControl();
-        int expResult = 6;
+        int expResult = 40;
         int result = instance.calcGoldWeight(numGold);
         assertEquals(expResult, result);
        
@@ -276,13 +275,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight3() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = 30;
-        int gemWeight = 6;
+        int gemsWeight = 6;
         int tablewareWeight = -1;
-        double silverWeight = 0;
-        int goldWeight = 6;
+        int silverWeight = 2;
+        int goldWeight = 40;
         TreasureControl instance = new TreasureControl();
         int expResult = -1;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight, 
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight, 
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         
@@ -303,15 +302,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight4() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight4() {
+        System.out.println("calcGemsWeight");
         int numGems = 10;
         TreasureControl instance = new TreasureControl();
         int expResult = 10;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -324,7 +323,7 @@ public class TreasureControlTest {
         System.out.println("calcTablewareWeight");
         int numTableware = 2;
         TreasureControl instance = new TreasureControl();
-        int expResult = 8;
+        int expResult = 10;
         int result = instance.calcTablewareWeight(numTableware);
         assertEquals(expResult, result);
       
@@ -338,10 +337,9 @@ public class TreasureControlTest {
         System.out.println("calcSilverWeight");
         int numSilver = 3;
         TreasureControl instance = new TreasureControl();
-        double expResult = 1;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
-        assertEquals(expResult, result, delta);
+        int expResult = 6;
+        int result = instance.calcSilverWeight(numSilver);
+        assertEquals(expResult, result);
        
     }
 
@@ -351,7 +349,7 @@ public class TreasureControlTest {
     @Test
     public void testCalcGoldWeight4() {
         System.out.println("calcGoldWeight");
-        int numGold = 10;
+        int numGold = 1;
         TreasureControl instance = new TreasureControl();
         int expResult = 10;
         int result = instance.calcGoldWeight(numGold);
@@ -366,13 +364,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight4() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = 20;
-        int gemWeight = 10;
-        int tablewareWeight = 8;
-        double silverWeight = 1.5;
+        int gemsWeight = 10;
+        int tablewareWeight = 10;
+        int silverWeight = 6;
         int goldWeight = 10;
         TreasureControl instance = new TreasureControl();
         int expResult = -1;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight, 
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight, 
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         
@@ -393,15 +391,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight5() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight5() {
+        System.out.println("calcGemsWeight");
         int numGems = 0;
         TreasureControl instance = new TreasureControl();
         int expResult = 0;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -412,9 +410,9 @@ public class TreasureControlTest {
     @Test
     public void testCalcTablewareWeight5() {
         System.out.println("calcTablewareWeight");
-        int numTableware = 12;
+        int numTableware = 10;
         TreasureControl instance = new TreasureControl();
-        int expResult = 48;
+        int expResult = 50;
         int result = instance.calcTablewareWeight(numTableware);
         assertEquals(expResult, result);
       
@@ -428,9 +426,9 @@ public class TreasureControlTest {
         System.out.println("calcSilverWeight");
         int numSilver = 0;
         TreasureControl instance = new TreasureControl();
-        double expResult = 0;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
+        int expResult = 0;
+        int result = instance.calcSilverWeight(numSilver);
+        int delta = 2;
         assertEquals(expResult, result, delta);
        
     }
@@ -441,9 +439,9 @@ public class TreasureControlTest {
     @Test
     public void testCalcGoldWeight5() {
         System.out.println("calcGoldWeight");
-        int numGold = 2;
+        int numGold = 0;
         TreasureControl instance = new TreasureControl();
-        int expResult = 2;
+        int expResult = 0;
         int result = instance.calcGoldWeight(numGold);
         assertEquals(expResult, result);
        
@@ -456,13 +454,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight5() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = 0;
-        int gemWeight = 0;
-        int tablewareWeight = 48;
-        double silverWeight = 0;
-        int goldWeight = 2;
+        int gemsWeight = 0;
+        int tablewareWeight = 50;
+        int silverWeight = 0;
+        int goldWeight = 0;
         TreasureControl instance = new TreasureControl();
         int expResult = 50;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight, 
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight, 
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         
@@ -482,15 +480,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight6() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight6() {
+        System.out.println("calcGemsWeight");
         int numGems = 0;
         TreasureControl instance = new TreasureControl();
         int expResult = 0;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -517,9 +515,9 @@ public class TreasureControlTest {
         System.out.println("calcSilverWeight");
         int numSilver = 0;
         TreasureControl instance = new TreasureControl();
-        double expResult = 0;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
+        int expResult = 0;
+        int result = instance.calcSilverWeight(numSilver);
+        int delta = 2;
         assertEquals(expResult, result, delta);
        
     }
@@ -545,13 +543,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight6() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = 50;
-        int gemWeight = 0;
+        int gemsWeight = 0;
         int tablewareWeight = 0;
-        double silverWeight = 0;
+        int silverWeight = 0;
         int goldWeight = 0;
         TreasureControl instance = new TreasureControl();
         int expResult = 50;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight, 
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight, 
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         
@@ -572,15 +570,15 @@ public class TreasureControlTest {
     }
 
     /**
-     * Test of calcGemWeight method, of class TreasureControl.
+     * Test of calcGemsWeight method, of class TreasureControl.
      */
     @Test
-    public void testCalcGemWeight7() {
-        System.out.println("calcGemWeight");
+    public void testCalcGemsWeight7() {
+        System.out.println("calcGemsWeight");
         int numGems = 0;
         TreasureControl instance = new TreasureControl();
         int expResult = 0;
-        int result = instance.calcGemWeight(numGems);
+        int result = instance.calcGemsWeight(numGems);
         assertEquals(expResult, result);
       
     }
@@ -605,11 +603,11 @@ public class TreasureControlTest {
     @Test
     public void testCalcSilverWeight7() {
         System.out.println("calcSilverWeight");
-        int numSilver = 100;
+        int numSilver = 25;
         TreasureControl instance = new TreasureControl();
-        double expResult = 50;
-        double result = instance.calcSilverWeight(numSilver);
-        double delta = 2;
+        int expResult = 50;
+        int result = instance.calcSilverWeight(numSilver);
+        int delta = 2;
         assertEquals(expResult, result, delta);
        
     }
@@ -635,13 +633,13 @@ public class TreasureControlTest {
     public void testCalcTreasureWeight7() {
         System.out.println("calcTreasureWeight");
         int jewelryWeight = 0;
-        int gemWeight = 0;
+        int gemsWeight = 0;
         int tablewareWeight = 0;
-        double silverWeight = 50;
+        int silverWeight = 50;
         int goldWeight = 0;
         TreasureControl instance = new TreasureControl();
         int expResult = 50;
-        int result = instance.calcTreasureWeight(jewelryWeight, gemWeight, 
+        int result = instance.calcTreasureWeight(jewelryWeight, gemsWeight, 
                 tablewareWeight, silverWeight, goldWeight);
         assertEquals(expResult, result);
         

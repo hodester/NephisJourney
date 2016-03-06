@@ -10,7 +10,8 @@ import nephisJourney.src.control.TreasureControl;
  */
 public class CollectTreasureView extends View {
     //promptMessage = "Please select from the following options: "
-
+    // extended from View.java
+    
     private String promptMessage;
     
 
