@@ -88,9 +88,9 @@ public class CollectTreasureView extends View {
 
     }
 
-    private void collectJewelry() {
-        //System.out.println("\nPlease enter how many pieces of jewelry "
-        //        + "you wish to collect: ");
+    protected void collectJewelry() {
+        System.out.println("\nPlease enter how many pieces of jewelry "
+                + "you wish to collect: ");
         JewelryView jewelryView = new JewelryView();
                  
         jewelryView.displayJewelryView();
@@ -99,24 +99,40 @@ public class CollectTreasureView extends View {
     private void collectGems() {
         System.out.println("\nPlease enter how many precious gems "
                 + "you wish to collect: ");
+        GemsView gemsView = new GemsView();
+                 
+        gemsView.displayGemsView();
     }
 
     private void collectTableware() {
         System.out.println("\nPlease enter how many pieces of fine "
                 + "tableware you wish to collect: ");
+        TablewareView tablewareView = new TablewareView();
+                 
+        tablewareView.displayTablewareView();
     }
 
     private void collectSilver() {
         System.out.println("\nPlease enter how many pieces of silver "
                 + "you wish to collect: ");
+        SilverView silverView = new SilverView();
+                 
+        silverView.displaySilverView();
     }
 
     private void collectGold() {
-        System.out.println("\nPlease enter how many pieces of gold "
+        System.out.println("\nPlease enter how many bars of gold "
                 + "you wish to collect: ");
+        GoldView goldView = new GoldView();
+                 
+        goldView.displayGoldView();
     }
 
     private void calcTreasureWeight() {
-        System.out.println("\nThis will calculate total treasure weight: ");
+        System.out.println("\n total treasure weight called: ");
+        //System.out.println("\nThis will calculate total treasure weight: ");
+        //TreasureView treasureView = new TreasureView();
+                 
+        //treasureView.displayTreasureView();
 }
 }

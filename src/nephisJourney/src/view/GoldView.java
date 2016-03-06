@@ -8,20 +8,20 @@ import nephisJourney.src.control.TreasureControl;
  *
  * @author Jenaca
  */
-public class JewelryView {
+public class GoldView {
 
     protected String promptMessage;
 
-    public JewelryView() {
-        this.promptMessage = "\nLet's see how much your jewelry weighs: ";
+    public GoldView() {
+        this.promptMessage = "\nLet's see how much your gold weighs: ";
     }
 
-    public void displayJewelryView() {
+    public void displayGoldView() {
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get number of pieces of jewelry
-            int numJewelry = this.getNumJewelry();
-            if (numJewelry == 0) // user wants to quit
+            // prompt for and get number of bars of gold
+            int numGold = this.getNumGold();
+            if (numGold == 0) // user wants to quit
             {
                 //Create collectTreasureView object 
                 //when user quits inventory view
@@ -32,12 +32,12 @@ public class JewelryView {
             } else {
             }
             // do the requested action and display the next view
-            done = this.doAction(numJewelry);
+            done = this.doAction(numGold);
 
         } while (!done);
     }
 
-    public int getNumJewelry() {
+    public int getNumGold() {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -49,9 +49,9 @@ public class JewelryView {
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
             }
-            if (value > 25) { //value is too high
+            if (value > 5) { //value is too high
                 System.out.println("\nInvalid value: Please enter how many "
-                        + "pieces of jewelry you would like to collect.");
+                        + "bars of gold you would like to collect.");
                 continue;
             }
             break; //end the loop
@@ -61,12 +61,12 @@ public class JewelryView {
 
     }
 
-    private boolean doAction(int numJewelry) {
-        // call treasure control to calculate jewelryWeight
-        TreasureControl.calcJewelryWeight(numJewelry);
+    private boolean doAction(int numGold) {
+        // call treasure control to calculate goldWeight
+        TreasureControl.calcGoldWeight(numGold);
         
-        // display jewelry weight
-        System.out.println(TreasureControl.calcJewelryWeight(numJewelry));
+        // display gold weight
+        System.out.println(TreasureControl.calcGoldWeight(numGold));
         return true;
     }
 
