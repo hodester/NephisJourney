@@ -38,7 +38,7 @@ public class PlayerView extends View {
                 this.getSecondPlace();
                 break;
             case "3":
-                this.getThridPlace();
+                this.getThirdPlace();
                 break;
             case "4":
                 this.getTopTen();
@@ -59,7 +59,7 @@ public class PlayerView extends View {
         System.out.println("\n Insert code for ranking here.");
     }
 
-    private void getThridPlace() {
+    private void getThirdPlace() {
         System.out.println("\n Insert code for ranking here.");
     }
 

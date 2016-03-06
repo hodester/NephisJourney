@@ -18,7 +18,7 @@ public class ResourceInventoryView extends View {
         super(
                 "\n"
                 + "\n-------------------------------------------"
-                + "\n|            Resource Inventory            |"
+                + "\n|           Resource Inventory            |"
                 + "\n-------------------------------------------"
                 + "\nP - Plates of Brass"
                 + "\nL - Liahona"
@@ -27,31 +27,11 @@ public class ResourceInventoryView extends View {
                 + "\nM - Meat"
                 + "\nT - Timber"
                 + "\nO - Ore"
-                + "\nG - Grains"
-                + "\nO - Oil"
                 + "\nW - Water"
                 + "\nH - Honey"
                 + "\nA - Salt"
                 + "\nQ - Quit"
                 + "\n-------------------------------------------"
-         "\n"
-        +"\n-------------------------------------------"
-        +"\n|            Resource Inventory            |"
-        +"\n-------------------------------------------"
-        +"\nP - Plates of Brass"
-        +"\nL - Liahona"
-        +"\nB - Bow"
-        +"\nS - Stones"
-        +"\nM - Meat"
-        +"\nT - Timber"        
-        +"\nO - Ore"
-        +"\nG - Grains"
-        +"\nO - Oil"
-        +"\nW - Water"
-        +"\nH - Honey"
-        +"\nA - Salt"
-        +"\nQ - Quit"
-        +"\n-------------------------------------------"
         );
 
     }
@@ -124,14 +104,6 @@ public class ResourceInventoryView extends View {
     }
 
     private static void ore() {
-        System.out.println("\n displays amount in inventory");
-    }
-
-    private static void grains() {
-        System.out.println("\n displays amount in inventory");
-    }
-
-    private static void oil() {
         System.out.println("\n displays amount in inventory");
     }
 
