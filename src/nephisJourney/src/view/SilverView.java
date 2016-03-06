@@ -8,20 +8,20 @@ import nephisJourney.src.control.TreasureControl;
  *
  * @author Jenaca
  */
-public class JewelryView {
+public class SilverView {
 
     protected String promptMessage;
 
-    public JewelryView() {
-        this.promptMessage = "\nLet's see how much your jewelry weighs: ";
+    public SilverView() {
+        this.promptMessage = "\nLet's see how much your silver weighs: ";
     }
 
-    public void displayJewelryView() {
+    public void displaySilverView() {
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get number of pieces of jewelry
-            int numJewelry = this.getNumJewelry();
-            if (numJewelry == 0) // user wants to quit
+            // prompt for and get number of pieces of silver
+            int numSilver = this.getNumSilver();
+            if (numSilver == 0) // user wants to quit
             {
                 //Create collectTreasureView object 
                 //when user quits inventory view
@@ -32,12 +32,12 @@ public class JewelryView {
             } else {
             }
             // do the requested action and display the next view
-            done = this.doAction(numJewelry);
+            done = this.doAction(numSilver);
 
         } while (!done);
     }
 
-    public int getNumJewelry() {
+    public int getNumSilver() {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -51,7 +51,7 @@ public class JewelryView {
             }
             if (value > 25) { //value is too high
                 System.out.println("\nInvalid value: Please enter how many "
-                        + "pieces of jewelry you would like to collect.");
+                        + "pieces of silver you would like to collect.");
                 continue;
             }
             break; //end the loop
@@ -61,12 +61,12 @@ public class JewelryView {
 
     }
 
-    private boolean doAction(int numJewelry) {
-        // call treasure control to calculate jewelryWeight
-        TreasureControl.calcJewelryWeight(numJewelry);
+    private boolean doAction(int numSilver) {
+        // call treasure control to calculate silverWeight
+        TreasureControl.calcSilverWeight(numSilver);
         
-        // display jewelry weight
-        System.out.println(TreasureControl.calcJewelryWeight(numJewelry));
+        // display silver weight
+        System.out.println(TreasureControl.calcSilverWeight(numSilver));
         return true;
     }
 
