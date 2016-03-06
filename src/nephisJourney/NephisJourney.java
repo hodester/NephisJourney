@@ -47,25 +47,7 @@ public class NephisJourney {
     }
     private static Player player = null;
     
-    //private static SupplyInventory currentInventory = null;
-
-//    public static SupplyInventory getCurrentInventory() {
-   //     return currentInventory;
-    //}
-
-   // public static void setCurrentInventory(SupplyInventory currentInventory) {
-     //   NephisJourney.currentInventory = currentInventory;
-    //}
-    //private static final int quantityInStock = 0;
-
-    //public static int getQuantityInStock() {
-      //  return quantityInStock;
-    //}
-
-    //public static void setQuantityInStock(QuantityInStock quantityInStock) {
-      //  NephisJourney.quantityInStock = quantityInStock;
-    //}
-    
+      
     /**
      * @param args the command line arguments
      */
