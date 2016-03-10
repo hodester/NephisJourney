@@ -38,7 +38,7 @@ public class MainMenuView extends View {
 
     
    @Override
-    public boolean doAction(String value) {
+    public boolean doAction(String value) { 
 
         value = value.toUpperCase(); // convert choice to upper case
 

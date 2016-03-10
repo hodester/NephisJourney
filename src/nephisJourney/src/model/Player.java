@@ -38,6 +38,8 @@ public class Player implements Serializable {
     public void setHighScore(int highScore) {
         this.highScore = highScore;
     }
+    
+    
 
     @Override
     public int hashCode() {

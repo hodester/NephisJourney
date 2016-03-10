@@ -15,7 +15,12 @@ public class Game implements Serializable{
     //Class instance Variables
     private int highScore;
     private int noPeople;
-
+    private Player player;
+    private SupplyInventory[] inventory;
+    private Actor[] actor;
+    private Location[] map;
+    private LiahonaReferences[] liahona;
+    
     public Game() {
     }
 
@@ -33,8 +38,17 @@ public class Game implements Serializable{
 
     public void setNoPeople(int noPeople) {
         this.noPeople = noPeople;
+    }  
+    
+     public Player getPlayer() {
+        return player;
     }
 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
