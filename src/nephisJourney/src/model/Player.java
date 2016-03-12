@@ -17,8 +17,10 @@ public class Player implements Serializable {
     // class instance variables
     private String name;
     private int highScore;
+    private double maxWeight;
 
     public Player() {
+        this.maxWeight = 180;
     }
 
     

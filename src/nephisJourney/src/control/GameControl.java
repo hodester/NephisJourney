@@ -1,7 +1,11 @@
 package nephisJourney.src.control;
 
 import nephisJourney.NephisJourney;
+import nephisJourney.src.enums.Item;
+import nephisJourney.src.model.Game;
+import nephisJourney.src.model.Map;
 import nephisJourney.src.model.Player;
+import nephisJourney.src.model.SupplyInventory;
 import nephisJourney.src.view.GameMenuView;
 
 /**
@@ -25,8 +29,93 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("*** createNewGame function was called ***");
+        Game game = new Game();
+        NephisJourney.setCurrentGame(game);
 
+        game.setPlayer(player);
+
+        SupplyInventory[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+
+        Map map = MapControl.createMap();
+        game.setMap(map);
+
+        MapControl.moveActorsToStartingLocaton(map);
+
+    }
+
+    public static SupplyInventory[] createInventoryList() {
+       // created array(list) of inventory items    
+       SupplyInventory[] inventory =
+           new SupplyInventory[12];    
+
+        SupplyInventory platesOfBrass = new SupplyInventory();
+        platesOfBrass.setDescription("Plates Of Brass");
+        platesOfBrass.setQuantityInStock(1);
+        platesOfBrass.setRequiredAmount(1);
+        inventory[Item.platesOfBrass.ordinal()] = platesOfBrass;
+
+        SupplyInventory liahona = new SupplyInventory();
+        liahona.setDescription("Liahona");
+        liahona.setQuantityInStock(1);
+        liahona.setRequiredAmount(1);
+        inventory[Item.liahona.ordinal()] = liahona;
+
+        SupplyInventory bow = new SupplyInventory();
+        bow.setDescription("Bow");
+        bow.setQuantityInStock(1);
+        bow.setRequiredAmount(0);
+        inventory[Item.bow.ordinal()] = bow;
+
+        SupplyInventory stones = new SupplyInventory();
+        stones.setDescription("Stones");
+        stones.setQuantityInStock(0);
+        stones.setRequiredAmount(4);
+        inventory[Item.stones.ordinal()] = stones;
+
+        SupplyInventory meat = new SupplyInventory();
+        meat.setDescription("Life blood");
+        meat.setQuantityInStock(0);
+        meat.setRequiredAmount(0);
+        inventory[Item.meat.ordinal()] = meat;
+
+        SupplyInventory timber = new SupplyInventory();
+        timber.setDescription("Timber");
+        timber.setQuantityInStock(0);
+        timber.setRequiredAmount(0);
+        inventory[Item.timber.ordinal()] = timber;
+
+        SupplyInventory grains = new SupplyInventory();
+        grains.setDescription("Grains");
+        grains.setQuantityInStock(0);
+        grains.setRequiredAmount(0);
+        inventory[Item.grains.ordinal()] = grains;
+
+        SupplyInventory oil = new SupplyInventory();
+        oil.setDescription("Oil");
+        oil.setQuantityInStock(0);
+        oil.setRequiredAmount(0);
+        inventory[Item.oil.ordinal()] = oil;
+
+        SupplyInventory water = new SupplyInventory();
+        water.setDescription("Cell regenerator");
+        water.setQuantityInStock(0);
+        water.setRequiredAmount(0);
+        inventory[Item.water.ordinal()] = water;
+
+        SupplyInventory honey = new SupplyInventory();
+        honey.setDescription("Honey");
+        honey.setQuantityInStock(0);
+        honey.setRequiredAmount(0);
+        inventory[Item.honey.ordinal()] = honey;
+
+        SupplyInventory salt = new SupplyInventory();
+        salt.setDescription("Salt");
+        salt.setQuantityInStock(0);
+        salt.setRequiredAmount(0);
+        inventory[Item.salt.ordinal()] = salt;
+        
+        return inventory;
     }
 
 }

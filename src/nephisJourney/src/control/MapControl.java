@@ -5,10 +5,20 @@
  */
 package nephisJourney.src.control;
 
+import nephisJourney.src.model.Map;
+
 /**
  *
  * @author Jenaca
  */
 public class MapControl {
+
+    static Map createMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void moveActorsToStartingLocaton(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -82,6 +82,10 @@ public class SupplyInventory implements Serializable{
         }
         return true;
     }
+
+    public void setDescription(String plates_Of_Brass) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

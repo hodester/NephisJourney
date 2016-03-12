@@ -5,6 +5,7 @@
  */
 package nephisJourney.src.model;
 
+import nephisJourney.src.enums.Actor;
 import java.io.Serializable;
 
 /**
@@ -81,6 +82,14 @@ public class Game implements Serializable{
     @Override
     public String toString() {
         return "Game{" + "highScore=" + highScore + ", noPeople=" + noPeople + '}';
+    }
+
+    public void setInventory(SupplyInventory[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
