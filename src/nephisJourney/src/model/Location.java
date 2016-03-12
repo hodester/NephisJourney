@@ -1,28 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import javafx.scene.Scene;
 
 /**
  *
  * @author Jenaca
  */
 public class Location implements Serializable {
-    
+
     // class instance variables
     protected int row;
     protected int column;
     protected boolean visited;
+    public String getMapSymbol;
     protected int amountRemaining;
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public Location() {
     }
-    
-    
 
     public int getRow() {
         return row;
@@ -46,6 +44,14 @@ public class Location implements Serializable {
 
     public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+
+    public String getGetMapSymbol() {
+        return getMapSymbol;
+    }
+
+    public void setGetMapSymbol(String getMapSymbol) {
+        this.getMapSymbol = getMapSymbol;
     }
 
     public int getAmountRemaining() {
@@ -97,8 +103,32 @@ public class Location implements Serializable {
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
     }
-    
-    
-    
-    
+
+    public void setScene(Scene scene) {
+        System.out.println("\n*** setScene stub function called ***");
+
+    }
+
+    public Scene getScene() {
+        System.out.println("\n*** getScene stub function called ***");
+        return null;
+    }
+
+    public boolean getMapSymbol() {
+        System.out.println("\n***getMapSymbol stub function called ***");
+        return false;
+    }
+
+    public void setDescription(String __Jerusalem_during_reign_of_Zedekiah_king) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMapSymbol(String _jz_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

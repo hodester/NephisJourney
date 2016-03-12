@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.model;
 
 import java.io.Serializable;
@@ -11,18 +6,49 @@ import java.io.Serializable;
  *
  * @author adamh_000
  */
-public class Map implements Serializable{
-    
+public class Map implements Serializable {
+
     //class instance variables
     private int rowCount;
     private int columnCount;
+    private Location[][] locations;
 
     public Map() {
     }
-    
-    
 
-    public int getRowCount() {
+    public Map(int rowCount, int columnCount) {
+        if (rowCount < 1 || columnCount < 1) {
+        System.out.println("The number of rows and columns must"
+                + " be greater than zero.");
+        return;
+    
+    }
+     
+    this.rowCount = rowCount;
+
+     
+    this.columnCount = columnCount;
+
+    // create a 2-D array for Location objects
+     
+    this.locations = new Location[rowCount][columnCount];
+
+    for (int row = 0; row < rowCount; row++) {
+        for (int column = 0; column < columnCount; column++) {
+            // create and initialize new Location object instance
+            Location location = new Location();
+            location.setColumn(column);
+            location.setRow(row);
+            location.setVisited(false);
+
+            // assign the Location object to the 
+            // current position in array
+            locations[row][column] = location;
+        }
+    }
+    }
+
+public int getRowCount() {
         return rowCount;
     }
 
@@ -39,7 +65,7 @@ public class Map implements Serializable{
     }
 
     @Override
-    public int hashCode() {
+        public int hashCode() {
         int hash = 7;
         hash = 89 * hash + this.rowCount;
         hash = 89 * hash + this.columnCount;
@@ -48,7 +74,7 @@ public class Map implements Serializable{
 
     
     @Override
-    public boolean equals(Object obj) {
+        public boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
@@ -65,16 +91,21 @@ public class Map implements Serializable{
         return true;
     }
     @Override
-    public String toString() {
+        public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
 
     public void setrowCount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setrowCount stub function called ***");
     }
 
     public void setcolumnCount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setcolumncount stub function called ***");
+    }
+
+    public Location[][] getLocations() {
+        System.out.println("*** getLocations stub function called ***");
+        return null;
     }
     
     

@@ -1,8 +1,11 @@
 package nephisJourney.src.control;
 
+import javafx.scene.Scene;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.enums.Item;
+import nephisJourney.src.enums.SceneType;
 import nephisJourney.src.model.Game;
+import nephisJourney.src.model.Location;
 import nephisJourney.src.model.Map;
 import nephisJourney.src.model.Player;
 import nephisJourney.src.model.SupplyInventory;
@@ -45,9 +48,9 @@ public class GameControl {
     }
 
     public static SupplyInventory[] createInventoryList() {
-       // created array(list) of inventory items    
-       SupplyInventory[] inventory =
-           new SupplyInventory[12];    
+        // created array(list) of inventory items    
+        SupplyInventory[] inventory
+                = new SupplyInventory[12];
 
         SupplyInventory platesOfBrass = new SupplyInventory();
         platesOfBrass.setDescription("Plates Of Brass");
@@ -114,8 +117,54 @@ public class GameControl {
         salt.setQuantityInStock(0);
         salt.setRequiredAmount(0);
         inventory[Item.salt.ordinal()] = salt;
-        
+
         return inventory;
+    }
+
+    protected static void assignScenesToLocations(Map map, Scene[] scenes) {
+
+        Location[][] locations = map.getLocations();
+
+        //start point
+        locations[0][1].setScene(scenes[SceneType.Nephi1_4a.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi1_4.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.Nephi2_4to5.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.Nephi3_1.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi3_2to3.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi3_10.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi3_16.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi3_24to25.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.Nephi3_26.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.Nephi3_29.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi4_7to18.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi4_20.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi4_24.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.Nephi4_28_38.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.Nephi5_7to8.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Nephi7_3to5.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.Nephi7_6to7.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.Nephi7_22.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.Nephi9_2.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.Nephi16_7.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.Nephi16_10.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.Nephi16_12.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.Nephi16_13.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.Nephi16_14.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.Nephi16_17.ordinal()]);
+        locations[6][2].setScene(scenes[SceneType.Nephi16_18.ordinal()]);
+        locations[7][2].setScene(scenes[SceneType.Nephi16_27to30.ordinal()]);
+        locations[8][4].setScene(scenes[SceneType.Nephi17_1.ordinal()]);
+        
+    }
+
+    public static SupplyInventory[] getSortedSupplyInventoryList() {
+        System.out.println("\n*** getSortedInventoryList stub function called ***");
+        return null;
+    }
+
+    public static Location[][] getMapLocations() {
+        System.out.println("\n*** getMapLocations stub function called ***");
+        return null;
     }
 
 }

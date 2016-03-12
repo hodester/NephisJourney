@@ -31,39 +31,39 @@ public class LiahonaReferencesView extends View {
                 + "\n--------------------------------------------"
                 + "\n|Liahona Reference Menu                    |"
                 + "\n--------------------------------------------"
-                + "\n01 - What is the goal of the game"
-                + "\n02 - How to move"
-                + "\n03 - Estimating the amount of resources"
-                + "\n04 - Collect Inventory"
-                + "\n05 - Quit"
-                + "\n06 - What is the goal of the game"
-                + "\n07 - How to move"
-                + "\n08 - Estimating the amount of resources"
-                + "\n09 - Collect Inventory"
-                + "\n10 - Quit"
-                + "\n11 - What is the goal of the game"
-                + "\n12 - How to move"
-                + "\n13 - Estimating the amount of resources"
-                + "\n14 - Collect Inventory"
-                + "\n15 - Quit"
-                + "\n16 - What is the goal of the game"
-                + "\n17 - How to move"
-                + "\n18 - Estimating the amount of resources"
-                + "\n19 - Collect Inventory"
-                + "\n20 - Quit"
-                + "\n21 - What is the goal of the game"
-                + "\n22 - How to move"
-                + "\n23 - Estimating the amount of resources"
-                + "\n24 - Collect Inventory"
-                + "\n25 - Quit"
-                + "\n26 - What is the goal of the game"
-                + "\n27 - How to move"
-                + "\n28 - Estimating the amount of resources"
-                + "\n29 - Collect Inventory"
-                + "\n30 - Quit"
-                + "\n31 - What is the goal of the game"
-                + "\n32 - How to move"
-                + "\n33 - Estimating the amount of resources"
+                + "\n01 - Jerusalem during the reign of Zedekiah, king of Judah."
+                + "\n02 - Enters the wilderness, traveled the shores of the Red Sea."
+                + "\n03 - Lehi’s tent by the Red Sea."
+                + "\n04 - Wilderness - Return to Jerusalem to get the Plates of Brass."
+                + "\n05 - Jerusalem – House of Laban."
+                + "\n06 - Lehi’s house – collect treasures."
+                + "\n07 - House of Laban with treasures."
+                + "\n08 - Wilderness – flee from Laban’s servants."
+                + "\n09 - Angel visit."
+                + "\n10 - Streets of Jerusalem, night time – try3 – Nephi slays Laban."
+                + "\n11 - House of Laban, retrieve plates."
+                + "\n12 - Laban’s treasury."
+                + "\n13 - Wilderness with Zoram, return to Lehi."
+                + "\n14 - Lehi’s camp, Sariah rejoices."
+                + "\n15 - Ishmael’s home to get Wives."
+                + "\n16 - Wilderness – rebellion of brothers."
+                + "\n17 - Lehi’s camp with Ishmael’s family."
+                + "\n18 - Plate making – Lehi’s camp."
+                + "\n19 - Valley of Lemuel, Marriage."
+                + "\n20 - Lehi’s tent – finds the Liahona."
+                + "\n21 - River Laman crossing."
+                + "\n22 - Travel to Shazer."
+                + "\n23 - Hunting by Shazer."
+                + "\n24 - Wilderness travel."
+                + "\n25 - Hunting – Nephi breaks bow."
+                + "\n26 - Lehi consults Liahona, where Nephi needs to hunt."
+                + "\n27 - Wilderness travel east."
+                + "\n28 - Land of Bountiful."
+                + "\n29 - Nephi Builds a ship."
+                + "\n30 - Shocking experience."
+                + "\n31 - Enter the ship."
+                + "\n32 - Sail to the promised land."
+                + "\n33 - Arrive at promised land."
                 + "\nQ - Return to previous menu"
                 + "\n--------------------------------------------"
         );
@@ -79,100 +79,100 @@ public class LiahonaReferencesView extends View {
             case "01": //  Jerusalem during the reign of Zedekiah, king of Judah.
                 this.Nephi1_4();
                 break;
-            case "02": // Enters the wilderness, traveled the shores of the Red Sea
+            case "02": // Enters the wilderness, traveled the shores of the Red Sea.
                 this.nephi2_4to5();
                 break;
-            case "03": // Lehi’s tent by the Red Sea
+            case "03": // Lehi’s tent by the Red Sea.
                 this.nephi3_1();
                 break;
-            case "04": // Wilderness - Return to Jerusalem to get the Plates of Brass
+            case "04": // Wilderness - Return to Jerusalem to get the Plates of Brass.
                 this.nephi3_2to3();
                 break;
-            case "05": // Jerusalem – House of Laban
+            case "05": // Jerusalem – House of Laban.
                 this.nephi3_10();
                 break;
-            case "06": // Lehi’s house – collect treasures
+            case "06": // Lehi’s house – collect treasures.
                 this.nephi3_16();
                 break;
-            case "07": // House of Laban with treasures
-                this.nephi3_24to24();
+            case "07": // House of Laban with treasures.
+                this.nephi3_24to25();
                 break;
-            case "08": // Wilderness – flee from Laban’s servants 
+            case "08": // Wilderness – flee from Laban’s servants.
                 this.nephi3_26();
                 break;
-            case "09": // Angel visit
+            case "09": // Angel visit.
                 this.nephi3_29();
                 break;
-            case "10": // Streets of Jerusalem, night time – try3 – Nephi slays Laban 
+            case "10": // Streets of Jerusalem, night time – try3 – Nephi slays Laban. 
                 this.nephi4_7to18();
                 break;
-            case "11": // House of Laban, retrieve plates
+            case "11": // House of Laban, retrieve plates.
                 this.nephi4_20();
                 break;
-            case "12": // Laban’s treasury
+            case "12": // Laban’s treasury.
                 this.nephi4_24();
                 break;
-            case "13": // Wilderness with Zoram, return to Lehi 
+            case "13": // Wilderness with Zoram, return to Lehi. 
                 this.nephi4_28_38();
                 break;
-            case "14": // Lehi’s camp, Sariah rejoices
+            case "14": // Lehi’s camp, Sariah rejoices.
                 this.nephi5_7to8();
                 break;
-            case "15": // Ishmael’s home to get Wives 
+            case "15": // Ishmael’s home to get Wives.
                 this.nephi7_3to5();
                 break;
-            case "16": // Wilderness – rebellion of brothers
+            case "16": // Wilderness – rebellion of brothers.
                 this.nephi7_6to7();
                 break;
-            case "17": // Lehi’s camp with Ishmael’s family
+            case "17": // Lehi’s camp with Ishmael’s family.
                 this.nephi7_22();
                 break;
-            case "18": //Plate making – Lehi’s camp
+            case "18": //Plate making – Lehi’s camp.
                 this.nephi9_2();
                 break;
-            case "19": // Valley of Lemuel, Marriage
+            case "19": // Valley of Lemuel, Marriage.
                 this.nephi16_7();
                 break;
-            case "20": // Lehi’s tent – finds the Liahona
+            case "20": // Lehi’s tent – finds the Liahona.
                 this.nephi16_10();
                 break;
-            case "21": //  River Laman crossing
+            case "21": //  River Laman crossing.
                 this.nephi16_12();
                 break;
-            case "22": // Travel to Shazer
+            case "22": // Travel to Shazer.
                 this.nephi16_13();
                 break;
-            case "23": //  Hunting by Shazer
+            case "23": //  Hunting by Shazer.
                 this.nephi16_14();
                 break;
-            case "24": // Wilderness travel 
+            case "24": // Wilderness travel. 
                 this.nephi16_17();
                 break;
-            case "25": //  Hunting – Nephi breaks bow
+            case "25": //  Hunting – Nephi breaks bow.
                 this.nephi16_18();
                 break;
-            case "26": // Lehi consults Liahona, where Nephi needs to hunt
+            case "26": // Lehi consults Liahona, where Nephi needs to hunt.
                 this.nephi16_27to30();
                 break;
-            case "27": // Wilderness travel east
+            case "27": // Wilderness travel east.
                 this.nephi17_1();
                 break;
-            case "28": //  Land of Bountiful
+            case "28": //  Land of Bountiful.
                 this.nephi17_5();
                 break;
-            case "29": // Nephi Builds a ship
+            case "29": // Nephi Builds a ship.
                 this.nephi17_8();
                 break;
-            case "30": // Shocking experience 
+            case "30": // Shocking experience. 
                 this.nephi17_54();
                 break;
-            case "31": // Enter the ship
+            case "31": // Enter the ship.
                 this.nephi18_5();
                 break;
-            case "32": // Sail to the promised land 
+            case "32": // Sail to the promised land. 
                 this.nephi18_8();
                 break;
-            case "33": // Arrive at promised land
+            case "33": // Arrive at promised land.
                 this.nephi18_23();
                 break;
             default:
@@ -266,7 +266,7 @@ public class LiahonaReferencesView extends View {
         );
     }
 
-    private void nephi3_24to24() {
+    private void nephi3_24to25() {
         System.out.println(
                 "\n*******************************************************"
                 + "\n*                                                     *"
