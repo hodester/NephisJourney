@@ -39,15 +39,11 @@ public enum Actor implements Serializable {
     }
 
     public void setName(String lehi) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setDescription(String father_of_Nephi) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("*** setName function was called ***");
     }
 
     public void setCoordinates(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setCoordinates function was called ***");
     }
 
 }

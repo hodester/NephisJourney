@@ -18,6 +18,9 @@ public class Location implements Serializable {
     protected int amountRemaining;
     private Scene scene;
     private ArrayList<Actor> actors;
+    private String mapSymbol;
+    private String description;
+    private boolean blocked;
 
     public Location() {
     }
@@ -118,17 +121,19 @@ public class Location implements Serializable {
         System.out.println("\n***getMapSymbol stub function called ***");
         return false;
     }
-
-    public void setDescription(String __Jerusalem_during_reign_of_Zedekiah_king) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+    
+     public void setDescription(String description) {
+        this.description = description;
+    }
+     
+     public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
-    public void setMapSymbol(String _jz_) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setBlocked(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
 }

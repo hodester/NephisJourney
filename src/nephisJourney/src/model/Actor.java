@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.model;
 
 import java.awt.Point;
@@ -21,10 +16,6 @@ public class Actor implements Serializable {
     public Actor(String description) {
         this.description = description;
         coordinates = new Point(1,1);
-    }
-
-    public Actor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getDescription() {

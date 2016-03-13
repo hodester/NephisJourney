@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.model;
 
 import java.io.Serializable;
@@ -18,6 +13,7 @@ public class SupplyInventory implements Serializable{
     private String InventoryType;
     private int quantityInStock;
     private int requiredAmount;
+    private String description;
 
     public SupplyInventory() {
     }
@@ -83,12 +79,13 @@ public class SupplyInventory implements Serializable{
         return true;
     }
 
-    public void setDescription(String plates_Of_Brass) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** getDescription function was called ***");
+        return "-1";
     }
     
     

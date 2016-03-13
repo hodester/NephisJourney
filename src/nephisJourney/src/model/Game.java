@@ -84,15 +84,13 @@ public class Game implements Serializable{
         return "Game{" + "highScore=" + highScore + ", noPeople=" + noPeople + '}';
     }
 
-    public void setInventory(SupplyInventory[] inventoryList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setInventory(SupplyInventory[] inventory) {
+        this.inventory = inventory;
     }
 
     public void setMap(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setMap function was called ***");
     }
-    
-    
-    
+
     
 }

@@ -62,14 +62,14 @@ public enum SceneType {
     }
 
     public void setName(String nephi1_4) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setName function was called ***");
     }
 
-    public void setDescription(String lehis_house) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    /*public void setDescription(String lehis_house) {
+        System.out.println("*** setDescription function was called ***");
+    }*/
 
     public void setCoordinates(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** setCoordinates function was called ***");
     }
 }

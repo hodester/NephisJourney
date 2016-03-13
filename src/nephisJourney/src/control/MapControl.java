@@ -12,11 +12,9 @@ import nephisJourney.src.model.Game;
 import nephisJourney.src.model.Location;
 import nephisJourney.src.model.Map;
 import nephisJourney.src.model.ResourceSceneType;
-import nephisJourney.src.model.RegularSceneType;
 import nephisJourney.src.model.WarehouseSceneType;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import static nephisJourney.src.control.GameControl.assignScenesToLocations;
@@ -31,10 +29,10 @@ public class MapControl {
         Map map = new Map(8, 8);
         
         // create the scenes for the game
-        Scene[] scenes = createScenes();
+        Scene[] location = createScenes();
         
         // assign scenes to locations
-        assignScenesToLocations(map, scenes);
+        assignScenesToLocations(map, location);
         
         return map;
     }

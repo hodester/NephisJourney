@@ -104,8 +104,7 @@ public int getRowCount() {
     }
 
     public Location[][] getLocations() {
-        System.out.println("*** getLocations stub function called ***");
-        return null;
+        return locations;
     }
     
     

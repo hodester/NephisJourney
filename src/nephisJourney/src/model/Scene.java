@@ -6,14 +6,14 @@ import java.util.Objects;
  *
  * @author Jenaca
  */
-public class RegularSceneType extends Location {
+public class Scene extends Location {
     
     // class instance variables
     private String description;
     private float travelTime;
     private boolean blocked;
 
-    public RegularSceneType() {
+    public Scene() {
     }
     
     
@@ -62,7 +62,7 @@ public class RegularSceneType extends Location {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final RegularSceneType other = (RegularSceneType) obj;
+        final Scene other = (Scene) obj;
         if (Float.floatToIntBits(this.travelTime) != Float.floatToIntBits(other.travelTime)) {
             return false;
         }

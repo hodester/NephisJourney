@@ -11,7 +11,7 @@ import nephisJourney.src.model.LiahonaReferences;
 import nephisJourney.src.model.Location;
 import nephisJourney.src.model.Map;
 import nephisJourney.src.model.Player;
-import nephisJourney.src.model.RegularSceneType;
+import nephisJourney.src.model.Scene;
 import nephisJourney.src.model.ResourceSceneType;
 import nephisJourney.src.model.Ship;
 import nephisJourney.src.model.SupplyInventory;
@@ -84,7 +84,7 @@ public class NephisJourney {
         String ResourceSceneTypeInfo = ResourceSceneTypeOne.toString();
         System.out.println(ResourceSceneTypeInfo);
 
-        RegularSceneType RegularSceneTypeOne = new RegularSceneType();
+        Scene RegularSceneTypeOne = new Scene();
 
         RegularSceneTypeOne.setRow(3);
         RegularSceneTypeOne.setColumn(3);
@@ -192,7 +192,9 @@ public class NephisJourney {
     }
 
     public static PrintWriter getOutFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("*** getOutFile print function was called ***");
+        PrintWriter outFile = null;
+       return outFile;
     }
 
 }
