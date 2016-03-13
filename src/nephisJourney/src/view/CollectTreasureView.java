@@ -46,7 +46,7 @@ public class CollectTreasureView extends View {
                 GameMenuView gameMenuView = new GameMenuView();
 
                 //display game menu 
-                gameMenuView.displayMenu();
+               /* gameMenuView.MainMenuView();*/
                 return; // exit view
             }
             // do the requested action and display the next view

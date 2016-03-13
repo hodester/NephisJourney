@@ -1,5 +1,6 @@
 package nephisJourney;
 
+import java.io.BufferedReader;
 import java.io.PrintWriter;
 import nephisJourney.src.control.TreasureControl;
 import nephisJourney.src.enums.Actor;
@@ -25,6 +26,11 @@ import nephisJourney.src.view.StartProgramView;
 public class NephisJourney {
 
     private static Game currentGame = null;
+    private static Player player = null;  
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -41,7 +47,6 @@ public class NephisJourney {
     public static void setPlayer(Player player) {
         NephisJourney.player = player;
     }
-    private static Player player = null;
 
     /**
      * @param args the command line arguments
@@ -86,7 +91,7 @@ public class NephisJourney {
 
         Scene RegularSceneTypeOne = new Scene();
 
-        RegularSceneTypeOne.setRow(3);
+        /*RegularSceneTypeOne.setRow(3);
         RegularSceneTypeOne.setColumn(3);
         RegularSceneTypeOne.setVisited(true);
         RegularSceneTypeOne.setAmountRemaining(3);
@@ -109,7 +114,7 @@ public class NephisJourney {
         WarehouseSceneTypeOne.setNoOfItems(1);
 
         String WarehouseSceneTypeInfo = WarehouseSceneTypeOne.toString();
-        System.out.println(WarehouseSceneTypeInfo);
+        System.out.println(WarehouseSceneTypeInfo);*/
 
         Hunting HuntingOne = new Hunting();
 
@@ -188,7 +193,7 @@ public class NephisJourney {
         Game gameMenu = new Game();
 
         gameMenu.setHighScore(525600);
-        gameMenu.setNoPeople(7);
+        gameMenu.setNumPeople(7);
     }
 
     public static PrintWriter getOutFile() {

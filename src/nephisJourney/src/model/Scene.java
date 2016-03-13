@@ -1,22 +1,29 @@
 package nephisJourney.src.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Jenaca
  */
-public class Scene extends Location {
+public class Scene implements Serializable {
     
     // class instance variables
     private String description;
-    private float travelTime;
+    private String mapSymbol;
+    private double travelTime;
     private boolean blocked;
 
     public Scene() {
     }
     
-    
+    public Scene(String description, String mapSymbol, double travelTime, boolean blocked) {
+        this.description = description;
+        this.mapSymbol = mapSymbol;
+        this.travelTime = travelTime;
+        this.blocked = blocked;
+    }
 
     public String getDescription() {
         return description;
@@ -25,12 +32,20 @@ public class Scene extends Location {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
 
-    public float getTravelTime() {
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    public double getTravelTime() {
         return travelTime;
     }
 
-    public void setTravelTime(float travelTime) {
+    public void setTravelTime(double travelTime) {
         this.travelTime = travelTime;
     }
 
@@ -42,44 +57,6 @@ public class Scene extends Location {
         this.blocked = blocked;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + Float.floatToIntBits(this.travelTime);
-        hash = 97 * hash + (this.blocked ? 1 : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Scene other = (Scene) obj;
-        if (Float.floatToIntBits(this.travelTime) != Float.floatToIntBits(other.travelTime)) {
-            return false;
-        }
-        if (this.blocked != other.blocked) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "RegularSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + '}';
-    }
-    
     
     
 }

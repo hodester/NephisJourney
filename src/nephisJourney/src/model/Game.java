@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.model;
 
 import nephisJourney.src.enums.Actor;
@@ -15,11 +10,11 @@ import java.io.Serializable;
 public class Game implements Serializable{
     //Class instance Variables
     private int highScore;
-    private int noPeople;
+    private int numPeople;
     private Player player;
     private SupplyInventory[] inventory;
-    private Actor[] actor;
-    private Location[] map;
+    /*private Actor[] actor;*/
+    private Map map;
     private LiahonaReferences[] liahona;
     
     public Game() {
@@ -33,12 +28,12 @@ public class Game implements Serializable{
         this.highScore = highScore;
     }
 
-    public int getNoPeople() {
-        return noPeople;
+    public int getNumPeople() {
+        return numPeople;
     }
 
-    public void setNoPeople(int noPeople) {
-        this.noPeople = noPeople;
+    public void setNumPeople(int numPeople) {
+        this.numPeople = numPeople;
     }  
     
      public Player getPlayer() {
@@ -49,12 +44,35 @@ public class Game implements Serializable{
         this.player = player;
     }
     
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
     
-    @Override
+    public SupplyInventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(SupplyInventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public LiahonaReferences[] getLiahona() {
+        return liahona;
+    }
+
+    public void setLiahona(LiahonaReferences[] liahona) {
+        this.liahona = liahona;
+    }
+    
+    /*@Override
     public int hashCode() {
         int hash = 5;
         hash = 97 * hash + this.highScore;
-        hash = 97 * hash + this.noPeople;
+        hash = 97 * hash + this.numPeople;
         return hash;
     }
 
@@ -73,24 +91,24 @@ public class Game implements Serializable{
         if (this.highScore != other.highScore) {
             return false;
         }
-        if (this.noPeople != other.noPeople) {
+        if (this.numPeople != other.numPeople) {
             return false;
         }
         return true;
-    }
+    }*/
 
     @Override
     public String toString() {
-        return "Game{" + "highScore=" + highScore + ", noPeople=" + noPeople + '}';
+        return "Game{" + "highScore=" + highScore + ", player=" + player.toString() + '}';
     }
 
-    public void setInventory(SupplyInventory[] inventory) {
+    /*public void setInventory(SupplyInventory[] inventory) {
         this.inventory = inventory;
     }
 
     public void setMap(Map map) {
         System.out.println("*** setMap function was called ***");
-    }
+    }*/
 
     
 }

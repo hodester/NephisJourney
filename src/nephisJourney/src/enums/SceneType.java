@@ -10,7 +10,41 @@ import java.awt.Point;
 
 public enum SceneType {
     
-    Nephi1_4a("Jerusalem during reign of Zedekiah, king of Judah."),
+    Nephi1_4a,
+    Nephi1_4,
+    Nephi2_4to5,
+    Nephi3_1,
+    Nephi3_2to3,
+    Nephi3_10,
+    Nephi3_16,
+    Nephi3_24to25,
+    Nephi3_26,
+    Nephi3_29,
+    Nephi4_7to18,
+    Nephi4_20,
+    Nephi4_24,
+    Nephi4_28_38,
+    Nephi5_7to8,
+    Nephi7_3to5,
+    Nephi7_6to7,
+    Nephi7_22,
+    Nephi9_2,
+    Nephi16_7,
+    Nephi16_10,
+    Nephi16_12,
+    Nephi16_13,
+    Nephi16_14,
+    Nephi16_17,
+    Nephi16_18,
+    Nephi16_27to30,
+    Nephi17_1,
+    Nephi17_5,
+    Nephi17_8,
+    Nephi17_54,
+    Nephi18_5,
+    Nephi18_8;
+    
+   /* Nephi1_4a("Jerusalem during reign of Zedekiah, king of Judah."),
     Nephi1_4("Enters the wilderness, traveled the shores of the Red Sea."),
     Nephi2_4to5("Lehi’s tent by the Red Sea."),
     Nephi3_1("Wilderness - Return to Jerusalem to get the Plates of Brass."),
@@ -44,7 +78,7 @@ public enum SceneType {
     Nephi18_5("Sail to the promised land."),
     Nephi18_8("Arrive at promised land.");
   
-    private final String description;
+    /*private final String description;
     private final Point coordinates;
 
     SceneType(String description) {
@@ -69,7 +103,7 @@ public enum SceneType {
         System.out.println("*** setDescription function was called ***");
     }*/
 
-    public void setCoordinates(int i) {
+    /*public void setCoordinates(int i) {
         System.out.println("*** setCoordinates function was called ***");
-    }
+    }*/
 }

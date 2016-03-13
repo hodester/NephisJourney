@@ -25,8 +25,6 @@ public class Map implements Serializable {
     }
      
     this.rowCount = rowCount;
-
-     
     this.columnCount = columnCount;
 
     // create a 2-D array for Location objects
@@ -48,7 +46,7 @@ public class Map implements Serializable {
     }
     }
 
-public int getRowCount() {
+    public int getRowCount() {
         return rowCount;
     }
 
@@ -63,18 +61,30 @@ public int getRowCount() {
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
+    
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
 
     @Override
-        public int hashCode() {
+    public String toString() {
+        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    }
+
+    @Override
+    public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + this.rowCount;
-        hash = 89 * hash + this.columnCount;
+        hash = 37 * hash + (int) (this.rowCount ^ (this.rowCount >>> 32));
+        hash = 37 * hash + (int) (this.columnCount ^ (this.columnCount >>> 32));
         return hash;
     }
 
-    
     @Override
-        public boolean equals(Object obj) {
+    public boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
@@ -90,23 +100,5 @@ public int getRowCount() {
         }
         return true;
     }
-    @Override
-        public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
-    }
-
-    public void setrowCount(int i) {
-        System.out.println("*** setrowCount stub function called ***");
-    }
-
-    public void setcolumnCount(int i) {
-        System.out.println("*** setcolumncount stub function called ***");
-    }
-
-    public Location[][] getLocations() {
-        return locations;
-    }
-    
-    
     
 }

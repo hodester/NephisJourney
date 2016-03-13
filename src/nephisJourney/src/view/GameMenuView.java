@@ -15,15 +15,15 @@ import nephisJourney.src.model.SupplyInventory;
 public class GameMenuView extends View {
 //promptMessage = "Please select a letter...: "
 
-    private final String promptMessage;
+    /*private final String promptMessage;
 
     public GameMenuView() {
         this.promptMessage = "\nPlease select the letter corresponding "
                 + "to the menu item: ";
-    }
+    }*/
 
-    public void displayMenu() {
-        System.out.println(
+    public GameMenuView() {
+        super(
                 "\n"
                 + "\n--------------------------------------------"
                 + "\n|Game Menu                                 |"
@@ -47,7 +47,7 @@ public class GameMenuView extends View {
 
     }
 
-    public void displayGameMenuView() {
+    /*public void displayGameMenuView() {
 
         boolean done = false; // set flag to not done
         do {
@@ -64,9 +64,9 @@ public class GameMenuView extends View {
             done = this.doAction(menuOption);
 
         } while (!done);
-    }
+    }*/
 
-    private String getMenuOption() {
+    /*private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -90,8 +90,9 @@ public class GameMenuView extends View {
         }
 
         return value; //return the value entered
-    }
+    }*/
 
+    @Override
     public boolean doAction(String menuOption) {
 
         menuOption = menuOption.toUpperCase(); // convert choice to upper case

@@ -1,47 +1,25 @@
 package nephisJourney.src.model;
 
 import java.util.Objects;
+import nephisJourney.src.enums.Item;
 
 /**
  *
  * @author Jenaca
  */
-public class ResourceSceneType extends Location {
+public class ResourceSceneType extends Scene {
     
     // class instance variables
-    private String description;
-    private float travelTime;
-    private boolean blocked;
     private int amountAvailable;
-    private String resourceType;
+    private Item resourceType;
 
     public ResourceSceneType() {
     }
     
-    
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public float getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(float travelTime) {
-        this.travelTime = travelTime;
-    }
-
-    public boolean isBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
+    public ResourceSceneType(String description,  String mapSymbol, double travelTime, boolean blocked, int amountAvailable, Item resourceType) {
+        super(description, mapSymbol, travelTime, blocked);
+        this.amountAvailable = amountAvailable;
+        this.resourceType = resourceType;
     }
 
     public int getAmountAvailable() {
@@ -52,55 +30,32 @@ public class ResourceSceneType extends Location {
         this.amountAvailable = amountAvailable;
     }
 
-    public String getResourceType() {
+    public Item getResourceType() {
         return resourceType;
     }
 
-    public void setResourceType(String resourceType) {
+    public void setResourceType(Item resourceType) {
         this.resourceType = resourceType;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + Float.floatToIntBits(this.travelTime);
-        hash = 79 * hash + (this.blocked ? 1 : 0);
-        hash = 79 * hash + this.amountAvailable;
-        hash = 79 * hash + Objects.hashCode(this.resourceType);
-        return hash;
+    public void setRow(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ResourceSceneType other = (ResourceSceneType) obj;
-        if (Float.floatToIntBits(this.travelTime) != Float.floatToIntBits(other.travelTime)) {
-            return false;
-        }
-        if (this.blocked != other.blocked) {
-            return false;
-        }
-        if (this.amountAvailable != other.amountAvailable) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return Objects.equals(this.resourceType, other.resourceType);
+    public void setColumn(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public String toString() {
-        return "ResourceSceneType{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", amountAvailable=" + amountAvailable + ", resourceType=" + resourceType + '}';
-    }    
+    public void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAmountRemaining(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setResourceType(String treasure) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

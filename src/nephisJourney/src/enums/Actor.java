@@ -22,11 +22,11 @@ public enum Actor implements Serializable {
     LamansWife("Picked the last one left...");
 
     private final String description;
-    private final Point coordinates;
+   /* private final Point coordinates;*/
 
     Actor(String description) {
         this.description = description;
-        coordinates = new Point(1, 1);
+      /*  coordinates = new Point(1, 1);*/
         
     }
    
@@ -34,7 +34,7 @@ public enum Actor implements Serializable {
         return description;
     }
 
-    public Point getCoordinates() {
+    /*public Point getCoordinates() {
         return coordinates;
     }
 
@@ -44,6 +44,6 @@ public enum Actor implements Serializable {
 
     public void setCoordinates(int i) {
         System.out.println("*** setCoordinates function was called ***");
-    }
+    }*/
 
 }

@@ -17,6 +17,9 @@ import nephisJourney.src.view.GameMenuView;
  */
 public class GameControl {
 
+    public GameControl() {
+    }
+
     public static Player createPlayer(String name) {
 
         if (name == null) {
@@ -43,7 +46,7 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
 
-        MapControl.moveActorsToStartingLocaton(map);
+     /*   MapControl.moveActorsToStartingLocation(map);*/
 
     }
 
@@ -121,50 +124,35 @@ public class GameControl {
         return inventory;
     }
 
-    protected static void assignScenesToLocations(Map map, Scene[] location) {
-
-        Location[][] locations = map.getLocations();
-
-        //start point
-        locations[0][1].setScene(location[SceneType.Nephi1_4a.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi1_4.ordinal()]);
-        locations[1][1].setScene(location[SceneType.Nephi2_4to5.ordinal()]);
-        locations[2][1].setScene(location[SceneType.Nephi3_1.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi3_2to3.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi3_10.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi3_16.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi3_24to25.ordinal()]);
-        locations[1][1].setScene(location[SceneType.Nephi3_26.ordinal()]);
-        locations[1][1].setScene(location[SceneType.Nephi3_29.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi4_7to18.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi4_20.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi4_24.ordinal()]);
-        locations[1][1].setScene(location[SceneType.Nephi4_28_38.ordinal()]);
-        locations[2][1].setScene(location[SceneType.Nephi5_7to8.ordinal()]);
-        locations[0][1].setScene(location[SceneType.Nephi7_3to5.ordinal()]);
-        locations[1][1].setScene(location[SceneType.Nephi7_6to7.ordinal()]);
-        locations[2][1].setScene(location[SceneType.Nephi7_22.ordinal()]);
-        locations[2][1].setScene(location[SceneType.Nephi9_2.ordinal()]);
-        locations[2][0].setScene(location[SceneType.Nephi16_7.ordinal()]);
-        locations[3][0].setScene(location[SceneType.Nephi16_10.ordinal()]);
-        locations[3][1].setScene(location[SceneType.Nephi16_12.ordinal()]);
-        locations[4][2].setScene(location[SceneType.Nephi16_13.ordinal()]);
-        locations[4][1].setScene(location[SceneType.Nephi16_14.ordinal()]);
-        locations[5][2].setScene(location[SceneType.Nephi16_17.ordinal()]);
-        locations[6][2].setScene(location[SceneType.Nephi16_18.ordinal()]);
-        locations[7][2].setScene(location[SceneType.Nephi16_27to30.ordinal()]);
-        locations[8][4].setScene(location[SceneType.Nephi17_1.ordinal()]);
-        
-    }
-
     public static SupplyInventory[] getSortedSupplyInventoryList() {
-        System.out.println("\n*** getSortedInventoryList stub function called ***");
-        return null;
+        // get inventory list for the current game
+        SupplyInventory[] originalInventoryList
+                = NephisJourney.getCurrentGame().getInventory();
+
+        // make a copy of original List
+        SupplyInventory[] inventoryList = originalInventoryList.clone();
+
+        // using a BubbleSort to sort the list of inventoryList by name
+        SupplyInventory tempInventoryItem;
+        for (int i = 0; i < inventoryList.length - 1; i++) {
+            for (int j = 0; j < inventoryList.length - 1 - i; j++) {
+                if (inventoryList[j].getDescription().
+                        compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
+                    tempInventoryItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j + 1];
+                    inventoryList[j + 1] = tempInventoryItem;
+                }
+            }
+        }
+
+        return inventoryList;
     }
 
     public static Location[][] getMapLocations() {
-        System.out.println("\n*** getMapLocations stub function called ***");
-        return null;
+        return NephisJourney.getCurrentGame().getMap().getLocations();
+    }
+    public static SupplyInventory[] getInventory() {
+        return NephisJourney.getCurrentGame().getInventory();
     }
 
 }

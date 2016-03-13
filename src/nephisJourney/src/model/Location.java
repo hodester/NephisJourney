@@ -14,15 +14,30 @@ public class Location implements Serializable {
     protected int row;
     protected int column;
     protected boolean visited;
-    public String getMapSymbol;
-    protected int amountRemaining;
     private Scene scene;
     private ArrayList<Actor> actors;
-    private String mapSymbol;
+
+    /*private String mapSymbol;
     private String description;
     private boolean blocked;
+    public String getMapSymbol;
+    protected int amountRemaining;*/
+
+    public Location(int row, int column, Scene scene, ArrayList<Actor> actors) {
+        this.row = row;
+        this.column = column;
+        this.visited = false;
+        this.scene = scene;
+        this.actors = actors;
+    }
 
     public Location() {
+        this.actors = new ArrayList<Actor>();
+    }
+
+    public Location(int row, int column) {
+        this.row = row;
+        this.column = column;
     }
 
     public int getRow() {
@@ -49,37 +64,52 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public String getGetMapSymbol() {
-        return getMapSymbol;
+    public Scene getScene() {
+        return scene;
     }
 
-    public void setGetMapSymbol(String getMapSymbol) {
-        this.getMapSymbol = getMapSymbol;
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
-    public int getAmountRemaining() {
-        return amountRemaining;
+    public ArrayList<Actor> getActors() {
+        return actors;
     }
 
-    public void setAmountRemaining(int amountRemaining) {
-        this.amountRemaining = amountRemaining;
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    public void removeActor(Actor actor) {
+        if (actor == null) {
+            return;
+        }
+        this.actors.remove(actor);
+    }
+
+    public void addActor(Actor actor) {
+        if (actor == null || this.actors.contains(actor)) {
+            return;
+        }
+
+        this.actors.add(actor);
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 23 * hash + this.row;
-        hash = 23 * hash + this.column;
-        hash = 23 * hash + (this.visited ? 1 : 0);
-        hash = 23 * hash + this.amountRemaining;
+        int hash = 5;
+        hash = 67 * hash + this.row;
+        hash = 67 * hash + this.column;
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (obj == null) {
             return false;
         }
@@ -93,47 +123,17 @@ public class Location implements Serializable {
         if (this.column != other.column) {
             return false;
         }
-        if (this.visited != other.visited) {
-            return false;
-        }
-        if (this.amountRemaining != other.amountRemaining) {
-            return false;
-        }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
-    }
-
-    public void setScene(Scene scene) {
-        System.out.println("\n*** setScene stub function called ***");
-
-    }
-
-    public Scene getScene() {
-        System.out.println("\n*** getScene stub function called ***");
-        return null;
+    public void setAmountRemaining(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public boolean getMapSymbol() {
-        System.out.println("\n***getMapSymbol stub function called ***");
-        return false;
-    }
-    
-    public void setMapSymbol(String mapSymbol) {
-        this.mapSymbol = mapSymbol;
-    }
-    
-     public void setDescription(String description) {
-        this.description = description;
-    }
-     
-     public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-  
+
 
 }

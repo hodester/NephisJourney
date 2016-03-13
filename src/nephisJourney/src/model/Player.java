@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nephisJourney.src.model;
 
 import java.io.Serializable;
@@ -18,12 +13,16 @@ public class Player implements Serializable {
     private String name;
     private int highScore;
     private double maxWeight;
-
+    
     public Player() {
-        this.maxWeight = 180;
     }
 
-    
+    public Player(String name, int highScore, double maxWeight) {
+        this.name = name;
+        this.highScore = highScore;
+        this.maxWeight = maxWeight;
+    }
+
     
     public String getName() {
         return name;
@@ -40,8 +39,19 @@ public class Player implements Serializable {
     public void setHighScore(int highScore) {
         this.highScore = highScore;
     }
+
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(double maxWeight) {
+        this.maxWeight = maxWeight;
+    }
     
-    
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", highScore=" + highScore +  "maxWeight=" + maxWeight + '}';
+    }
 
     @Override
     public int hashCode() {
@@ -51,10 +61,7 @@ public class Player implements Serializable {
         return hash;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", highScore=" + highScore + '}';
-    }
+    
 
     @Override
     public boolean equals(Object obj) {

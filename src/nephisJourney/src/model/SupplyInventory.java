@@ -10,7 +10,7 @@ import java.util.Objects;
 public class SupplyInventory implements Serializable{
     
     //class instance variables
-    private String InventoryType;
+    private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
     private String description;
@@ -18,17 +18,31 @@ public class SupplyInventory implements Serializable{
     public SupplyInventory() {
     }
     
+    public SupplyInventory( String inventoryType, String description, int quantityInStock, int requiredAmount) {
+        this.inventoryType = inventoryType;
+        this.description = description;
+        this.quantityInStock = quantityInStock;
+        this.requiredAmount = requiredAmount;
+    }
     
 
     public String getInventoryType() {
-        return InventoryType;
+        return inventoryType;
     }
 
-    public void setInventoryType(String InventoryType) {
-        this.InventoryType = InventoryType;
+    public void setInventoryType(String inventoryType) {
+        this.inventoryType = inventoryType;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getQuantityInStock() {
+    public double getQuantityInStock() {
         return quantityInStock;
     }
 
@@ -44,18 +58,20 @@ public class SupplyInventory implements Serializable{
         this.requiredAmount = requiredAmount;
     }
 
+    
+    @Override
+    public String toString() {
+        return "SupplyInventory{" + "description=" + description + ", InventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.InventoryType);
+        hash = 17 * hash + Objects.hashCode(this.inventoryType);
+         hash = 17 * hash + Objects.hashCode(this.description);
         hash = 17 * hash + this.quantityInStock;
         hash = 17 * hash + this.requiredAmount;
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "SupplyInventory{" + "InventoryType=" + InventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
 
     @Override
@@ -67,7 +83,10 @@ public class SupplyInventory implements Serializable{
             return false;
         }
         final SupplyInventory other = (SupplyInventory) obj;
-        if (!Objects.equals(this.InventoryType, other.InventoryType)) {
+        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         if (this.quantityInStock != other.quantityInStock) {
@@ -79,14 +98,7 @@ public class SupplyInventory implements Serializable{
         return true;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDescription() {
-        System.out.println("*** getDescription function was called ***");
-        return "-1";
-    }
+    
     
     
     
