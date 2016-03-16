@@ -19,33 +19,33 @@ public class HuntWithBowView extends View {
     public HuntWithBowView() {
 
         super(
-                "\n-----------------------------------------------"
-                + "\n|  Choose Direction                         |"
-                + "\n---------------------------------------------"
-                + "\nN - North"
-                + "\nE - East"
-                + "\nS - South"
-                + "\nW - West"
-                + "\nQ - Quit Hunt"
-                + "\n--------------------------------------------");
+                "\n--------------------------------------------------------------"
+                + "\n|  Choose Direction                                          |"
+                + "\n--------------------------------------------------------------"
+                + "\n1 - North"
+                + "\n2 - East"
+                + "\n3 - South"
+                + "\n4 - West"
+                + "\nC - Total Weight of Meat"
+                + "\nQ - Quit Hunt");
     }
 
     @Override
-    public boolean doAction(String value) {
+    public boolean doAction(String menuOption) {
 
-        value = value.toUpperCase();
+        menuOption = menuOption.toUpperCase();
 
-        switch (value) {
-            case "N": //north
+        switch (menuOption) {
+            case "1": //north
                 this.getNorth();
                 break;
-            case "S": //south
+            case "2": //south
                 this.getSouth();
                 break;
-            case "W": //west
+            case "3": //west
                 this.getWest();
                 break;
-            case "E": //east
+            case "4": //east
                 this.getEast();
                 break;
             case "C"://Determine weight and type
@@ -58,50 +58,40 @@ public class HuntWithBowView extends View {
         return false;
     }
 
-    private static void viewHunt() {
-        String randomCommand = "NSWE";
-        Random rand = null;
-        int randomNum = rand.nextInt(randomCommand.length() + 1);
-        String selectedRandomCommand = Character.toString(randomCommand.charAt(randomNum));
-
-        if (randomNum == 'W') {
-            HuntingControl getWest = new HuntingControl();
-        } else {
-            return;
-        }
-        if (randomNum == 'N') {
-            HuntingControl getNorth = new HuntingControl();
-        } else {
-            return;
-        }
-        if (randomNum == 'E') {
-            HuntingControl getEast = new HuntingControl();
-        } else {
-            return;
-        }
-        if (randomNum == 'S') {
-            HuntingControl getSouth = new HuntingControl();
-        } else {;
-        }
-    }
-
-    private static void calcHuntWeight() {
-        System.out.println("\n This will be changed");
-    }
-
     private void getNorth() {
-        System.out.println("\n Nothing here, keep searching!");
+        {
+            String[] args = null;
+            HuntingControl.main(args);
+        }
     }
 
     private void getSouth() {
-        System.out.println("\n Nothing here, keep searching!");
+        {
+            String[] args = null;
+            HuntingControl.main(args);
+        }
     }
 
     private void getWest() {
-        System.out.println("\n Nothing here, keep searching!");
+        {
+            String[] args = null;
+            HuntingControl.main(args);        
+        }
     }
 
     private void getEast() {
-        System.out.println("\n Nothing here, keep searching!");
+        {
+            String[] args = null;
+           HuntingControl.main(args);
+        }
+    }  
+    private void calcHuntWeight() {
+        HuntingControl.totalWeight();
+    
     }
-}
+    
+   // Should return to menu to allow player to hunt again,
+        // calculate total meat or quit.
+    }
+
+
