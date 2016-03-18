@@ -1,7 +1,9 @@
 package nephisJourney.src.control;
 
+import java.awt.Point;
 import javafx.scene.Scene;
 import nephisJourney.NephisJourney;
+import nephisJourney.src.enums.Actor;
 import nephisJourney.src.enums.Item;
 import nephisJourney.src.enums.SceneType;
 import nephisJourney.src.model.Game;
@@ -46,7 +48,7 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
 
-     /*   MapControl.moveActorsToStartingLocation(map);*/
+        /*MapControl.moveActorToLocation(Actor actor, Point coordinates);*/
 
     }
 

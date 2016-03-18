@@ -4,6 +4,7 @@ import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
 import java.lang.Character;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -17,7 +18,8 @@ public class TablewareView {
         this.promptMessage = "\nLet's see how much your tableware weighs: ";
     }
 
-    public void displayTablewareView() {
+    public void displayTablewareView() 
+            throws InventoryControlException {
         boolean done = false; // set flag to not done
         do {
             // prompt for and get number of pieces of tableware
@@ -38,7 +40,8 @@ public class TablewareView {
         } while (!done);
     }
 
-    public int getNumTableware() {
+    public int getNumTableware() 
+            throws InventoryControlException {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -68,7 +71,8 @@ public class TablewareView {
 
 }
 
-private boolean doAction(int numTableware) {
+private boolean doAction(int numTableware)
+        throws InventoryControlException {
         // call treasure control to calculate tablewareWeight
         TreasureControl.calcTablewareWeight(numTableware);
         

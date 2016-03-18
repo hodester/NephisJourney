@@ -1,6 +1,7 @@
 package nephisJourney.src.control;
 
 import nephisJourney.NephisJourney;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -8,12 +9,13 @@ import nephisJourney.NephisJourney;
  */
 public class TreasureControl {
 
-    public static int calcJewelryWeight(int numJewelry) {
+    public static int calcJewelryWeight(int numJewelry) 
+            throws InventoryControlException {
 
         int jewelryWeight = numJewelry * 2;
 
         if (jewelryWeight < 0 || jewelryWeight > 50) {
-            return -1;  // weight cannot be negative or over 50 lbs
+            // weight cannot be negative or over 50 lbs
             // option to exit Lehi's house or return
             // to collect more.
         }
@@ -21,12 +23,13 @@ public class TreasureControl {
         return jewelryWeight;
     }
 
-    public static int calcGemsWeight(int numGems) {
+    public static int calcGemsWeight(int numGems) 
+            throws InventoryControlException {
 
         int gemsWeight = numGems * 1;
 
         if (gemsWeight < 0 || gemsWeight > 50) {
-            return -1;  // weight cannot be negative or over 50 lbs
+              // weight cannot be negative or over 50 lbs
             // option to exit Lehi's house or return
             // to collect more.
         }
@@ -34,12 +37,13 @@ public class TreasureControl {
         return gemsWeight;
     }
 
-    public static int calcTablewareWeight(int numTableware) {
+    public static int calcTablewareWeight(int numTableware)
+            throws InventoryControlException {
 
         int tablewareWeight = numTableware * 5;
 
         if (tablewareWeight < 0 || tablewareWeight > 50) {
-            return -1;  // weight cannot be negative or over 50 lbs
+              // weight cannot be negative or over 50 lbs
             // option to exit Lehi's house or return
             // to collect more.
         }
@@ -47,12 +51,13 @@ public class TreasureControl {
         return tablewareWeight;
     }
 
-    public static int calcSilverWeight(int numSilver) {
+    public static int calcSilverWeight(int numSilver)
+            throws InventoryControlException {
 
         int silverWeight = numSilver * 2;
 
         if (silverWeight < 0 || silverWeight > 50) {
-            return -1;  // weight cannot be negative or over 50 lbs  
+              // weight cannot be negative or over 50 lbs  
             // option to exit Lehi's house or return
             // to collect more.
         }
@@ -60,12 +65,13 @@ public class TreasureControl {
         return silverWeight;
     }
 
-    public static int calcGoldWeight(int numGold) {
+    public static int calcGoldWeight(int numGold) 
+            throws InventoryControlException {
 
         int goldWeight = numGold * 10;
 
         if (goldWeight < 0 || goldWeight > 50) {
-            return -1;  // weight cannot be negative or over 50 lbs
+              // weight cannot be negative or over 50 lbs
             // option to exit Lehi's house or return
             // to collect more.
         }
@@ -74,13 +80,14 @@ public class TreasureControl {
     }
 
     public static int calcTreasureWeight(int jewelryWeight, int gemsWeight,
-            int tablewareWeight, int silverWeight, int goldWeight) {
+            int tablewareWeight, int silverWeight, int goldWeight) 
+            throws InventoryControlException {
 
         int totalTreasureWeight = (jewelryWeight + gemsWeight
                 + tablewareWeight + silverWeight + goldWeight);
 
         if (totalTreasureWeight != 50) {
-            return -1;  //weight must be exactly 50 lbs.
+              //weight must be exactly 50 lbs.
             // option to exit Lehi's house or return 
             // to collect more.
         }

@@ -3,6 +3,7 @@ package nephisJourney.src.view;
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -16,7 +17,8 @@ public class GoldView {
         this.promptMessage = "\nLet's see how much your gold weighs: ";
     }
 
-    public void displayGoldView() {
+    public void displayGoldView() 
+            throws InventoryControlException {
         boolean done = false; // set flag to not done
         do {
             // prompt for and get number of bars of gold
@@ -37,7 +39,8 @@ public class GoldView {
         } while (!done);
     }
 
-    public int getNumGold() {
+    public int getNumGold() 
+            throws InventoryControlException {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -61,7 +64,8 @@ public class GoldView {
 
     }
 
-    private boolean doAction(int numGold) {
+    private boolean doAction(int numGold) 
+            throws InventoryControlException {
         // call treasure control to calculate goldWeight
         TreasureControl.calcGoldWeight(numGold);
         

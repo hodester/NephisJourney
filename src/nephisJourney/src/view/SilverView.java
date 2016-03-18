@@ -3,6 +3,7 @@ package nephisJourney.src.view;
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -16,7 +17,8 @@ public class SilverView {
         this.promptMessage = "\nLet's see how much your silver weighs: ";
     }
 
-    public void displaySilverView() {
+    public void displaySilverView() 
+            throws InventoryControlException {
         boolean done = false; // set flag to not done
         do {
             // prompt for and get number of pieces of silver
@@ -37,7 +39,8 @@ public class SilverView {
         } while (!done);
     }
 
-    public int getNumSilver() {
+    public int getNumSilver()
+            throws InventoryControlException {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -61,7 +64,8 @@ public class SilverView {
 
     }
 
-    private boolean doAction(int numSilver) {
+    private boolean doAction(int numSilver)
+            throws InventoryControlException {
         // call treasure control to calculate silverWeight
         TreasureControl.calcSilverWeight(numSilver);
         

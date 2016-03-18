@@ -13,7 +13,7 @@ public class Game implements Serializable{
     private int numPeople;
     private Player player;
     private SupplyInventory[] inventory;
-    /*private Actor[] actor;*/
+    private Actor[] actor;
     private Map map;
     private LiahonaReferences[] liahona;
     

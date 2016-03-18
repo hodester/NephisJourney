@@ -1,6 +1,6 @@
 package nephisJourney.src.control;
 
-import exceptions.MapControlException;
+import nephisJourney.src.exceptions.MapControlException;
 /*import javafx.scene.Scene;*/
 import nephisJourney.NephisJourney;
 import nephisJourney.src.enums.SceneType;
@@ -155,7 +155,7 @@ public class MapControl {
         );
         Nephi4_28_38Scene.setMapSymbol(" SR ");
         Nephi4_28_38Scene.setBlocked(false);
-        /*scenes[SceneType.Nephi4_28_38.ordinal()] = Nephi4_28_38Scene;
+        /*scenes[SceneType.Nephi4_28_38.ordinal()] = Nephi4_28_38Scene;*/
         
         Scene Nephi5_7to8Scene = new Scene();
         Nephi5_7to8Scene.setDescription(
@@ -352,14 +352,18 @@ public class MapControl {
         */
     
 
-    /*public static void moveActorsToStartingLocation(Map map) {
-        System.out.println("moveActorsToStart called");
-        /*Game game = NephisJourney.getCurrentGame();
-        for (Actor actor : actors) {
-            Point position = new Point(0,2);
-            game.getActorsLocation()[actor.ordinal()] = new Point();
-            MapControl.moveActorToLocation(game, actor, position);
-        }*/
+    /*public static int moveActorToLocation(Actor actor, Point coordinates) {
+        
+        Map map = NephisJourney.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow < 0 || newRow >= map.getRowCount() ||
+                newColumn < 0 || newColumn <= map.getColumnCount()){
+            return -1;
+        }
+        return 0;*/
+        
     
        }
 }

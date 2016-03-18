@@ -3,6 +3,7 @@ package nephisJourney.src.view;
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -16,7 +17,8 @@ public class JewelryView {
         this.promptMessage = "\nLet's see how much your jewelry weighs: ";
     }
 
-    public void displayJewelryView() {
+    public void displayJewelryView()
+            throws InventoryControlException{
         boolean done = false; // set flag to not done
         do {
             // prompt for and get number of pieces of jewelry
@@ -37,7 +39,9 @@ public class JewelryView {
         } while (!done);
     }
 
-    public int getNumJewelry() {
+    public int getNumJewelry () 
+            throws InventoryControlException {
+        
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -47,12 +51,12 @@ public class JewelryView {
 
             if (value < 1) { //value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
-                continue;
+               break;
             }
-            if (value > 25) { //value is too high
+            else if (value > 25) { //value is too high
                 System.out.println("\nInvalid value: Please enter how many "
                         + "pieces of jewelry you would like to collect.");
-                continue;
+                break;
             }
             break; //end the loop
         }
@@ -61,7 +65,8 @@ public class JewelryView {
 
     }
 
-    private boolean doAction(int numJewelry) {
+    private boolean doAction(int numJewelry) 
+            throws InventoryControlException {
         // call treasure control to calculate jewelryWeight
         TreasureControl.calcJewelryWeight(numJewelry);
         

@@ -3,6 +3,7 @@ package nephisJourney.src.view;
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -16,7 +17,8 @@ public class GemsView {
         this.promptMessage = "\nLet's see how much your gems weigh: ";
     }
 
-    public void displayGemsView() {
+    public void displayGemsView() 
+            throws InventoryControlException {
         boolean done = false; // set flag to not done
         do {
             // prompt for and get number of gems
@@ -37,7 +39,8 @@ public class GemsView {
         } while (!done);
     }
 
-    public int getNumGems() {
+    public int getNumGems()
+            throws InventoryControlException {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
@@ -61,7 +64,8 @@ public class GemsView {
 
     }
 
-    private boolean doAction(int numGems) {
+    private boolean doAction(int numGems)
+            throws InventoryControlException {
         // call treasure control to calculate gemsWeight
         TreasureControl.calcGemsWeight(numGems);
         

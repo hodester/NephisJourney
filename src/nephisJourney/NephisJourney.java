@@ -54,7 +54,14 @@ public class NephisJourney {
     public static void main(String[] args) {
         //create StartProgramViewOrig and disply the start program view
         StartProgramView startProgramView = new StartProgramView();
+         
+        try {
         startProgramView.displayStartProgramView();
+        } catch (Throwable te) {
+            System.out.println("An error occurred while running the program.");
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+        }
 
         Player playerOne = new Player();
 
