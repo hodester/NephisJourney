@@ -68,9 +68,9 @@ public class CollectTreasureView extends View {
             try {
                 // Jewelry
                 this.collectJewelry();
-            } catch (InventoryControlException ex) {
+            } catch (InventoryControlException ie) {
                 System.out.println("\nPlease enter a valid number of pieces: ");
-                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ie);
             }
         }
                 break;
