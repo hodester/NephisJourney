@@ -46,4 +46,16 @@ public enum Actor implements Serializable {
         System.out.println("*** setCoordinates function was called ***");
     }*/
 
+    public void setName(String lehi) {
+        System.out.println("*** setName function was called ***");
+    }
+
+    public void setDescription(String father_of_Nephi) {
+        System.out.println("*** setDescription function was called ***");
+    }
+
+    public void setCoordinates(int i) {
+        System.out.println("*** setCoordinates function was called ***");
+    }
+
 }

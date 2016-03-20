@@ -49,20 +49,16 @@ public class TablewareView {
     while (!valid) { //loop while an invalid value or char is entered
             System.out.println("\n" + this.promptMessage);
         
-        // if the selection is invalid (is not an integer)
-        //if (!Character.isDigit(value)) { //check for integer.
-        //    System.out.println("Please enter a positive integer.");
-        //    continue; // and repeat again 
-        //}
+        
            
         if (value < 1) { //value is blank
             System.out.println("\nInvalid value: value cannot be blank");
-            continue;
+            break;
         }
         if (value > 10) { //value is too high
             System.out.println("\nInvalid value: Please enter how many "
                     + "pieces of tableware you would like to collect.");
-            continue;
+            break;
         }
         break; //end the loop
     }

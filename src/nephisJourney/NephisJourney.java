@@ -99,7 +99,7 @@ public class NephisJourney {
 
         Scene RegularSceneTypeOne = new Scene();
 
-        /*RegularSceneTypeOne.setRow(3);
+        RegularSceneTypeOne.setRow(3);
         RegularSceneTypeOne.setColumn(3);
         RegularSceneTypeOne.setVisited(true);
         RegularSceneTypeOne.setAmountRemaining(3);
@@ -122,9 +122,7 @@ public class NephisJourney {
         WarehouseSceneTypeOne.setNoOfItems(1);
 
         String WarehouseSceneTypeInfo = WarehouseSceneTypeOne.toString();
-        System.out.println(WarehouseSceneTypeInfo);*/
-
-        Hunting HuntingOne = new Hunting();
+        System.out.println(WarehouseSceneTypeInfo); Hunting HuntingOne = new Hunting();
 
         HuntingOne.setDescription("Deer Meat");
         HuntingOne.setFoodQuantity(1);
@@ -134,7 +132,7 @@ public class NephisJourney {
         String HuntingInfo = HuntingOne.toString();
         System.out.println(HuntingInfo);
 
-      /*  Actor ActorOne = new Actor();
+        /*Actor ActorOne = new Actor();
         ActorOne.setName("Lehi");
         ActorOne.setDescription("father of Nephi");
         ActorOne.setCoordinates(343);

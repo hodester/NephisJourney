@@ -68,8 +68,9 @@ public class CollectTreasureView extends View {
             try {
                 // Jewelry
                 this.collectJewelry();
-            } catch (InventoryControlException ex) {
-                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InventoryControlException ie) {
+                System.out.println("\nPlease enter a valid number of pieces: ");
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ie);
             }
         }
                 break;
@@ -78,6 +79,7 @@ public class CollectTreasureView extends View {
                 // Precious gems
                 this.collectGems();
             } catch (InventoryControlException ex) {
+                System.out.println("\nPlease enter a valid number of gems: ");
                 Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -87,6 +89,7 @@ public class CollectTreasureView extends View {
                 // Fine tableware
                 this.collectTableware();
             } catch (InventoryControlException ex) {
+                System.out.println("\nPlease enter a valid number of pieces: ");
                 Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -96,6 +99,7 @@ public class CollectTreasureView extends View {
                 // Silver coins
                 this.collectSilver();
             } catch (InventoryControlException ex) {
+                System.out.println("\nPlease enter a valid number of pieces: ");
                 Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -105,6 +109,7 @@ public class CollectTreasureView extends View {
                 // Gold coins
                 this.collectGold();
             } catch (InventoryControlException ex) {
+                System.out.println("\nPlease enter a valid number of pieces: ");
                 Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

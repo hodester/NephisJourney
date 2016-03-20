@@ -44,7 +44,7 @@ public enum SceneType {
     Nephi18_5,
     Nephi18_8;
     
-   /* Nephi1_4a("Jerusalem during reign of Zedekiah, king of Judah."),
+    /*Nephi1_4a("Jerusalem during reign of Zedekiah, king of Judah."),
     Nephi1_4("Enters the wilderness, traveled the shores of the Red Sea."),
     Nephi2_4to5("Lehi’s tent by the Red Sea."),
     Nephi3_1("Wilderness - Return to Jerusalem to get the Plates of Brass."),
@@ -76,9 +76,9 @@ public enum SceneType {
     Nephi17_8("Shocking experience."),
     Nephi17_54("Enter the ship."),
     Nephi18_5("Sail to the promised land."),
-    Nephi18_8("Arrive at promised land.");
+    Nephi18_8("Arrive at promised land.");*/
   
-    /*private final String description;
+   /* private final String description;
     private final Point coordinates;
 
     SceneType(String description) {
@@ -99,11 +99,12 @@ public enum SceneType {
         System.out.println("*** setName function was called ***");
     }
 
-    /*public void setDescription(String lehis_house) {
+    public void setDescription(String lehis_house) {
         System.out.println("*** setDescription function was called ***");
-    }*/
+    }
 
-    /*public void setCoordinates(int i) {
+    public void setCoordinates(int i) {
         System.out.println("*** setCoordinates function was called ***");
     }*/
-}
+    }
+

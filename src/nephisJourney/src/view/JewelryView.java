@@ -2,6 +2,7 @@ package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
+import nephisJourney.src.control.InventoryControl;
 import nephisJourney.src.control.TreasureControl;
 import nephisJourney.src.exceptions.InventoryControlException;
 
@@ -45,33 +46,35 @@ public class JewelryView {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
         boolean valid = false; //initialize to not valid
-
         while (!valid) { //loop while an invalid value is enter
             System.out.println("\n" + this.promptMessage);
 
-            if (value < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-               break;
+          if (value < 1) { //value is blank
+               System.out.println("\nInvalid value: value cannot be blank");
+                break;
             }
             else if (value > 25) { //value is too high
-                System.out.println("\nInvalid value: Please enter how many "
+               System.out.println("\nInvalid value: Please enter how many "
                         + "pieces of jewelry you would like to collect.");
                 break;
             }
             break; //end the loop
         }
-
-        return value; //return the value entered
-
+        return value;
     }
 
     private boolean doAction(int numJewelry) 
             throws InventoryControlException {
+        
+        try {
         // call treasure control to calculate jewelryWeight
         TreasureControl.calcJewelryWeight(numJewelry);
         
         // display jewelry weight
         System.out.println(TreasureControl.calcJewelryWeight(numJewelry));
+        } catch(InventoryControlException ie){
+            System.out.println("\nInvalid value: Error thrown.");
+        }
         return true;
     }
 

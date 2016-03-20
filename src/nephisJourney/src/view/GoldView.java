@@ -50,12 +50,12 @@ public class GoldView {
 
             if (value < 1) { //value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
-                continue;
+                break;
             }
             if (value > 5) { //value is too high
                 System.out.println("\nInvalid value: Please enter how many "
                         + "bars of gold you would like to collect.");
-                continue;
+                break;
             }
             break; //end the loop
         }
