@@ -38,28 +38,28 @@ public class ShipLoadingView extends View {
         value = value.toUpperCase(); // convert choice to upper case
 
         switch (value) {
-            case "F": // Jewelry
+            case "F": // Food
                 this.getAmountOfFood();
                 break;
-            case "H": // Precious gems
+            case "H": // Horse
                 this.getNumHorse();
                 break;
-            case "S": // Fine tableware
+            case "S": // Sheep
                 this.getNumSheep();
                 break;
-            case "C": // Silver coins
+            case "C": // Cow
                 this.getNumCow();
                 break;
-            case "A": // Gold coins
+            case "A": // Animal Feed
                 this.getAmountOfAnimalFeed();
                 break;
-            case "R": // Calculate total treasure weight
+            case "R": // Chicken
                 this.getNumChicken();
                 break;
-            case "M": // Gold coins
+            case "M": // Man
                 this.getNumMales();
                 break;
-            case "W": // Calculate total treasure weight
+            case "W": // Woman
                 this.getNumFemales();
                 break;
             default:

@@ -5,6 +5,8 @@
  */
 package nephisJourney.src.control;
 
+import nephisJourney.src.exceptions.AltarControlException;
+
 /**
  *
  * @author Jenaca
@@ -12,14 +14,17 @@ package nephisJourney.src.control;
 public class AltarControl {
 
 //modifiers returnType functionName (datatype paramerer1, ...)
-    public int calcAltarSize(int height, int width) { 
+    public int calcAltarSize(int height, int width) 
+            throws AltarControlException { 
         if (height < 1 || height > 4){  //test to check if the height is 
                                         //in range
-		return -1;
+		throw new AltarControlException("The height of the altar needs"
+                        + "to be between 1 and 4.");
         }
 	if (width < 1 || width > 4) {   //test to check if the width is 
                                         //in range
-		return -2;
+		throw new AltarControlException("The width of the altar needs"
+                        + "to be between 1 and 4.");
         }
         
         double radius = width / 2.0; //divides the width to give the radius
