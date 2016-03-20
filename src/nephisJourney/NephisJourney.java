@@ -1,7 +1,5 @@
 package nephisJourney;
 
-import java.io.BufferedReader;
-import java.io.PrintWriter;
 import nephisJourney.src.control.TreasureControl;
 import nephisJourney.src.enums.Actor;
 import nephisJourney.src.model.Altar;
@@ -28,10 +26,6 @@ public class NephisJourney {
     private static Game currentGame = null;
     private static Player player = null;  
     
-    /*private static PrintWriter outFile = null;
-    private static BufferedReader inFile = null;
-    private static PrintWriter logFile = null;*/
-
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -203,10 +197,5 @@ public class NephisJourney {
         gameMenu.setNumPeople(7);
     }
 
-    public static PrintWriter getOutFile() {
-       System.out.println("*** getOutFile print function was called ***");
-        PrintWriter outFile = null;
-       return outFile;
-    }
-
+   
 }

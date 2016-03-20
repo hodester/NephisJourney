@@ -151,7 +151,7 @@ public class GameMenuView extends View {
     }
 
     public void displayMap() {
-        this.viewMap(NephisJourney.getOutFile());
+        System.out.println("\n*** display Map function called ***");
     }
 
     public void viewMap(PrintWriter out) {

@@ -1,8 +1,11 @@
 package nephisJourney.src.view;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
+import nephisJourney.src.exceptions.InventoryControlException;
 
 /**
  *
@@ -61,20 +64,50 @@ public class CollectTreasureView extends View {
         value = value.toUpperCase(); // convert choice to upper case
 
         switch (value) {
-            case "J": // Jewelry
+            case "J": {
+            try {
+                // Jewelry
                 this.collectJewelry();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
-            case "P": // Precious gems
+            case "P": {
+            try {
+                // Precious gems
                 this.collectGems();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
-            case "T": // Fine tableware
+            case "T": {
+            try {
+                // Fine tableware
                 this.collectTableware();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
-            case "S": // Silver coins
+            case "S": {
+            try {
+                // Silver coins
                 this.collectSilver();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
-            case "G": // Gold coins
+            case "G": {
+            try {
+                // Gold coins
                 this.collectGold();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(CollectTreasureView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case "C": // Calculate total treasure weight
                 this.calcTreasureWeight();
@@ -89,7 +122,7 @@ public class CollectTreasureView extends View {
 
     }
 
-    protected void collectJewelry() {
+    protected void collectJewelry() throws InventoryControlException {
         System.out.println("\nPlease enter how many pieces of jewelry "
                 + "you wish to collect: ");
         JewelryView jewelryView = new JewelryView();
@@ -97,7 +130,7 @@ public class CollectTreasureView extends View {
         jewelryView.displayJewelryView();
     }
 
-    private void collectGems() {
+    private void collectGems() throws InventoryControlException {
         System.out.println("\nPlease enter how many precious gems "
                 + "you wish to collect: ");
         GemsView gemsView = new GemsView();
@@ -105,7 +138,7 @@ public class CollectTreasureView extends View {
         gemsView.displayGemsView();
     }
 
-    private void collectTableware() {
+    private void collectTableware() throws InventoryControlException {
         System.out.println("\nPlease enter how many pieces of fine "
                 + "tableware you wish to collect: ");
         TablewareView tablewareView = new TablewareView();
@@ -113,7 +146,7 @@ public class CollectTreasureView extends View {
         tablewareView.displayTablewareView();
     }
 
-    private void collectSilver() {
+    private void collectSilver() throws InventoryControlException {
         System.out.println("\nPlease enter how many pieces of silver "
                 + "you wish to collect: ");
         SilverView silverView = new SilverView();
@@ -121,7 +154,7 @@ public class CollectTreasureView extends View {
         silverView.displaySilverView();
     }
 
-    private void collectGold() {
+    private void collectGold() throws InventoryControlException {
         System.out.println("\nPlease enter how many bars of gold "
                 + "you wish to collect: ");
         GoldView goldView = new GoldView();
