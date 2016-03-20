@@ -2,6 +2,7 @@ package nephisJourney.src.view;
 
 import java.util.Scanner;
 import nephisJourney.src.control.GameControl;
+import nephisJourney.src.exceptions.GameControlException;
 import nephisJourney.src.model.Player;
 
 /**
@@ -42,7 +43,7 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() {
+    public void displayStartProgramView() throws GameControlException {
         boolean done = false; //set flag to not done
         do {
             //promt for and get players name
@@ -79,26 +80,24 @@ public class StartProgramView {
         return value; //return the value entered
     }
 
-    private boolean doAction(String playerName) {
-
-        if (playerName.length() < 2) {
-            System.out.println("\nInvalid player's name: "
-                    + "The name must be greater than one character in length");
-            return false;
-        }
+    private boolean doAction(String playerName) throws GameControlException {
+                  Scanner scanner = new Scanner(System.in);
+        int x= 1;
+        do { 
+        try{
         //call createPlayer() control function
-        Player player = GameControl.createPlayer(playerName);
-
-        if (player == null) {//if unsuccessful
-            System.out.println("\nError creating the player.");
-            return false;
+        Player player = GameControl.createPlayer(playerName);        
+        x=2;
+      
+        }catch(GameControlException e) {
+            System.out.println(e.getMessage());
+          
         }
-
-        //display next view
-        this.displayNextView(player);
-
-        return true; // success!
+        }while(x==1);
+        return true;
     }
+      
+    
 
     private void displayNextView(Player player) {
 

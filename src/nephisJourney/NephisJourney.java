@@ -1,7 +1,10 @@
 package nephisJourney;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nephisJourney.src.control.TreasureControl;
 import nephisJourney.src.enums.Actor;
+import nephisJourney.src.exceptions.GameControlException;
 import nephisJourney.src.model.Altar;
 import nephisJourney.src.model.Game;
 import nephisJourney.src.model.Hunting;
@@ -54,7 +57,11 @@ public class NephisJourney {
         } catch (Throwable te) {
             System.out.println("An error occurred while running the program.");
             te.printStackTrace();
-            startProgramView.displayStartProgramView();
+            try {
+                startProgramView.displayStartProgramView();
+            } catch (GameControlException ex) {
+                Logger.getLogger(NephisJourney.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         Player playerOne = new Player();

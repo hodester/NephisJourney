@@ -6,6 +6,7 @@ import nephisJourney.NephisJourney;
 import nephisJourney.src.enums.Actor;
 import nephisJourney.src.enums.Item;
 import nephisJourney.src.enums.SceneType;
+import nephisJourney.src.exceptions.GameControlException;
 import nephisJourney.src.model.Game;
 import nephisJourney.src.model.Location;
 import nephisJourney.src.model.Map;
@@ -22,10 +23,13 @@ public class GameControl {
     public GameControl() {
     }
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name) 
+                        throws GameControlException{
 
-        if (name == null) {
-            return null;
+        if (name.length() < 2 ) {
+            throw new GameControlException("Name not accepted "
+                                            + name  + " does not contain more than"
+                                            + " one characture, please try again.");
         }
 
         Player player = new Player();
