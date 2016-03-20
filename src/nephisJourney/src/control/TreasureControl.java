@@ -13,13 +13,12 @@ public class TreasureControl {
             throws InventoryControlException {
 
         int jewelryWeight = numJewelry * 2;
-
+        
         if (jewelryWeight < 0 || jewelryWeight > 50) {
             // weight cannot be negative or over 50 lbs
             // option to exit Lehi's house or return
             // to collect more.
         }
-
         return jewelryWeight;
     }
 
