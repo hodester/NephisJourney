@@ -1,6 +1,9 @@
 package nephisJourney.src.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import nephisJourney.NephisJourney;
 import nephisJourney.src.control.GameControl;
 import nephisJourney.src.exceptions.GameControlException;
 import nephisJourney.src.model.Player;
@@ -13,6 +16,9 @@ public class StartProgramView {
 
     //promptMessage = "Please enter your name"
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = NephisJourney.getInFile();
+    protected final PrintWriter console = NephisJourney.getOutFile();
 
     public StartProgramView() {
 
@@ -43,11 +49,11 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() throws GameControlException {
-        boolean done = false; //set flag to not done
+    public void displayStartProgramView(String playerName) throws GameControlException {
+       boolean done = false; //set flag to not done
         do {
             //promt for and get players name
-            String playerName = this.getPlayerName();
+            playerName = this.getPlayerName();
             if (playerName.toUpperCase().equals("Q")) //user wants to quit
             {
                 return; //exit the game
@@ -59,29 +65,31 @@ public class StartProgramView {
     }
 
     private String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; //value to be returned
+        //Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        String selection = null; //value to be returned
         boolean valid = false; //initialize to not valid
-
+        try {
         while (!valid) { //loop while an invalid value is enter
             System.out.println("\n" + this.promptMessage);
 
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing white space
+            selection = this.keyboard.readLine(); //get next line typed on keyboard
+            selection = selection.trim(); //trim off leading and trailing white space
 
-            if (value.length() < 1) { //value is blank
+            if (selection.length() < 1) { //value is blank
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
             }
 
             break; //end the loop
         }
-
-        return value; //return the value entered
+        } catch (Exception e){
+           System.out.println("Error reading input: " + e.getMessage());
+        }
+        return selection; //return the value entered
     }
 
     private boolean doAction(String playerName) throws GameControlException {
-                  Scanner scanner = new Scanner(System.in);
+                  //Scanner scanner = new Scanner(System.in);
         int x= 1;
         do { 
         try{
@@ -116,4 +124,9 @@ public class StartProgramView {
         mainMenuView.display();
     }
 
+    public void displayStartProgramView() {
+         System.out.println("error message - StartProgramView");
+    }
+
+    
 }

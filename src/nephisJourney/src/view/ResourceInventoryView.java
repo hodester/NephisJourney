@@ -119,4 +119,9 @@ public class ResourceInventoryView extends View {
         System.out.println("\n displays amount in inventory");
     }
 
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

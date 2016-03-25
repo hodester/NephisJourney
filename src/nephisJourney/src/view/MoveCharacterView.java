@@ -68,4 +68,9 @@ public class MoveCharacterView extends View {
         System.out.println("\nMove the Character West to the next spot.");
     }
 
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

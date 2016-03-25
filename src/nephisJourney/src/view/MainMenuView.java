@@ -113,4 +113,8 @@ public class MainMenuView extends View {
     private void displayLocationList() {
         System.out.println("*** displayLocation function was called ***");
     }
+
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

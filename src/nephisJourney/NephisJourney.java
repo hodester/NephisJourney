@@ -1,5 +1,9 @@
 package nephisJourney;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nephisJourney.src.control.TreasureControl;
@@ -27,23 +31,12 @@ import nephisJourney.src.view.StartProgramView;
 public class NephisJourney {
 
     private static Game currentGame = null;
-    private static Player player = null;  
-    
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
+    private static Player player = null;
 
-    public static void setCurrentGame(Game currentGame) {
-        NephisJourney.currentGame = currentGame;
-    }
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
 
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-        NephisJourney.player = player;
-    }
+    private static PrintWriter logFile = null;
 
     /**
      * @param args the command line arguments
@@ -51,16 +44,44 @@ public class NephisJourney {
     public static void main(String[] args) {
         //create StartProgramViewOrig and disply the start program view
         StartProgramView startProgramView = new StartProgramView();
-         
+
         try {
-        startProgramView.displayStartProgramView();
+
+            //open charcter stream files for end user input and output
+            NephisJourney.inFile = new BufferedReader(new InputStreamReader(System.in));
+            NephisJourney.outFile = new PrintWriter(System.out, true);
+            
+            //open log file
+            String filePath = "log.txt";
+            NephisJourney.logFile = new PrintWriter(filePath);
+
+            startProgramView.displayStartProgramView();
         } catch (Throwable te) {
             System.out.println("An error occurred while running the program.");
-            te.printStackTrace();
+            // te.printStackTrace();
             try {
                 startProgramView.displayStartProgramView();
-            } catch (GameControlException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(NephisJourney.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    if (NephisJourney.inFile != null) {
+                        NephisJourney.inFile.close();
+                    }
+
+                    if (NephisJourney.outFile != null) {
+                        NephisJourney.outFile.close();
+                    }
+                    
+                    if (NephisJourney.logFile != null) {
+                        NephisJourney.logFile.close();
+                    }
+                    
+                } catch (IOException ex) {
+                    System.out.println("Error closing files");
+                    return;
+                }
+
             }
         }
 
@@ -122,7 +143,8 @@ public class NephisJourney {
         WarehouseSceneTypeOne.setNoOfItems(1);
 
         String WarehouseSceneTypeInfo = WarehouseSceneTypeOne.toString();
-        System.out.println(WarehouseSceneTypeInfo); Hunting HuntingOne = new Hunting();
+        System.out.println(WarehouseSceneTypeInfo);
+        Hunting HuntingOne = new Hunting();
 
         HuntingOne.setDescription("Deer Meat");
         HuntingOne.setFoodQuantity(1);
@@ -139,7 +161,6 @@ public class NephisJourney {
 
         String ActorInfo = ActorOne.toString();
         System.out.println(ActorOne);*/
-
         Map MapOne = new Map();
 
         MapOne.setRowCount(15);
@@ -202,5 +223,44 @@ public class NephisJourney {
         gameMenu.setNumPeople(7);
     }
 
-   
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        NephisJourney.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        NephisJourney.inFile = inFile;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        NephisJourney.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        NephisJourney.player = player;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        NephisJourney.logFile = logFile;
+    }
+
 }

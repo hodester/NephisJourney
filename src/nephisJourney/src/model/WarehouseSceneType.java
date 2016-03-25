@@ -29,7 +29,7 @@ public class WarehouseSceneType extends Scene {
     }
 
     public void setNoOfItems(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - WarehouseScene");
     }
 
     

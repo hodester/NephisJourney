@@ -92,6 +92,11 @@ public class HuntWithBowView extends View {
     
    // Should return to menu to allow player to hunt again,
         // calculate total meat or quit.
+
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 
 

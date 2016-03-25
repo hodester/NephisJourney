@@ -1,5 +1,7 @@
 package nephisJourney.src.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.TreasureControl;
@@ -11,8 +13,10 @@ import nephisJourney.src.exceptions.InventoryControlException;
  */
 public class GoldView {
 
-    protected String promptMessage;
-
+    private String promptMessage;
+    protected final BufferedReader keyboard = NephisJourney.getInFile();
+    protected final PrintWriter console = NephisJourney.getOutFile();
+    
     public GoldView() {
         this.promptMessage = "\nLet's see how much your gold weighs: ";
     }
@@ -22,8 +26,8 @@ public class GoldView {
         boolean done = false; // set flag to not done
         do {
             // prompt for and get number of bars of gold
-            int numGold = this.getNumGold();
-            if (numGold == 0) // user wants to quit
+            String numGold = this.getNumGold();
+            if (numGold.length() == 0) // user wants to quit
             {
                 //Create collectTreasureView object 
                 //when user quits inventory view
@@ -34,33 +38,37 @@ public class GoldView {
             } else {
             }
             // do the requested action and display the next view
-            done = this.doAction(numGold);
+            done = this.doAction(numGold.length());
 
         } while (!done);
     }
 
-    public int getNumGold() 
+    public String getNumGold() 
             throws InventoryControlException {
-        Scanner in = new Scanner(System.in);
-        int value = in.nextInt();
+        //Scanner in = new Scanner(System.in);
+        //int value = in.nextInt();
         boolean valid = false; //initialize to not valid
-
+        String selection = null;
+        try {
         while (!valid) { //loop while an invalid value is enter
             System.out.println("\n" + this.promptMessage);
 
-            if (value < 1) { //value is blank
+            if (selection.length() < 1) { //value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
                 break;
             }
-            if (value > 5) { //value is too high
+            if (selection.length() > 5) { //value is too high
                 System.out.println("\nInvalid value: Please enter how many "
                         + "bars of gold you would like to collect.");
                 break;
             }
             break; //end the loop
         }
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
 
-        return value; //return the value entered
+        return selection; //return the value entered
 
     }
 

@@ -38,24 +38,28 @@ public class ResourceSceneType extends Scene {
         this.resourceType = resourceType;
     }
 
+    @Override
     public void setRow(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - ResourceScene");
     }
 
+    @Override
     public void setColumn(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - ResourceScene");
     }
 
+    @Override
     public void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - ResourceScene");
     }
 
+    @Override
     public void setAmountRemaining(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - ResourceScene");
     }
 
     public void setResourceType(String treasure) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - ResourceScene");
     }
     
 }

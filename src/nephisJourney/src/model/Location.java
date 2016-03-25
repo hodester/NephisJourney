@@ -127,12 +127,14 @@ public class Location implements Serializable {
     }
 
     public void setAmountRemaining(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("check amounts");
     }
 
     public boolean getMapSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Check the map");
+    return false;
     }
+    
 
 
 

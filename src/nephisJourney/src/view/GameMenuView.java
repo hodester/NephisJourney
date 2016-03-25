@@ -1,5 +1,6 @@
 package nephisJourney.src.view;
 
+import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import javafx.scene.Scene;
@@ -21,7 +22,13 @@ public class GameMenuView extends View {
         this.promptMessage = "\nPlease select the letter corresponding "
                 + "to the menu item: ";
     }*/
-
+    private String displayMessage;
+    
+    protected final BufferedReader keyboard = NephisJourney.getInFile();
+    protected final PrintWriter console = NephisJourney.getOutFile();
+    private String promptMessage;
+    
+    
     public GameMenuView() {
         super(
                 "\n"
@@ -66,31 +73,34 @@ public class GameMenuView extends View {
         } while (!done);
     }*/
 
-    /*private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; //value to be returned
+    private String getMenuOption() {
+        //Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        String selection = null; //value to be returned
         boolean valid = false; //initialize to not valid
-
+        try {
         while (!valid) { //loop while an invalid value is enter
             System.out.println("\n" + this.promptMessage);
+                      
+            selection = keyboard.readLine(); //get next line typed on keyboard
+            selection = selection.trim(); //trim off leading and trailing white space
 
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing white space
-
-            if (value.length() < 1) { //value is blank
+            if (selection.length() < 1) { //value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
             }
-            if (value.length() > 1) { //value is too long
+            if (selection.length() > 1) { //value is too long
                 System.out.println("\nInvalid value: Please select the letter "
                         + "corresponding to the menu item.");
                 continue;
             }
             break; //end the loop
         }
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
 
-        return value; //return the value entered
-    }*/
+        return selection; //return the value entered
+    }
 
     @Override
     public boolean doAction(String menuOption) {
@@ -316,6 +326,11 @@ public class GameMenuView extends View {
                 out.print("-----");
         }
         out.print("-");
+    }
+
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

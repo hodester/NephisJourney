@@ -7,7 +7,7 @@ import nephisJourney.src.model.LiahonaReferences;
  *
  * @author Hodes
  */
-public class LiahonaReferencesView extends View {
+public abstract class LiahonaReferencesView extends View {
 
     private String promptMessage;
     private int nephi2_4;

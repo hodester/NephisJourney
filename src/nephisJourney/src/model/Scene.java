@@ -58,19 +58,19 @@ public class Scene implements Serializable {
     }
 
     public void setRow(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - Scene");
     }
 
     public void setColumn(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - Scene");
     }
 
     public void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - Scene");
     }
 
     public void setAmountRemaining(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("error message - Scene");
     }
 
     
