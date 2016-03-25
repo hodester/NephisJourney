@@ -42,7 +42,7 @@ public class MainMenuView extends View {
                 this.startNewGame();
                 break;
             case "G": // get and start an existing game
-                this.startExistingGame();
+                this.startSavedGame();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
@@ -84,8 +84,20 @@ public class MainMenuView extends View {
         gameMenuView.display();
     }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function was called ***");
+    private void startSavedGame() {
+        this.console.println("\n\nEnter the file path for file where the "
+                + " game is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();        
     }
 
     private void displayHelpMenu() {
@@ -103,7 +115,15 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function was called ***");
+        this.console.println("\n\nEnter the file path for file where the"
+                + " game is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(NephisJourney.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayReferenceMenu() {
@@ -115,6 +135,6 @@ public class MainMenuView extends View {
     }
 
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** MMView display function was called ***");
     }
 }
