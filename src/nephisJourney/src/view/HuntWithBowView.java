@@ -95,7 +95,7 @@ public class HuntWithBowView extends View {
 
     @Override
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Display hunt with bow called");
     }
     }
 

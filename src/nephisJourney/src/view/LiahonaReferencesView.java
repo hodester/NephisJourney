@@ -604,8 +604,8 @@ public abstract class LiahonaReferencesView extends View {
                 + "\n*******************************************************"
         );
     }
-
-    public static void main(String[] args) throws IOException {
+}
+  /*  public static void main(String[] args) throws IOException {
         //get the file name
         Scanner scan = new Scanner(System.in);
         System.out.print("What is the name of your file? ");

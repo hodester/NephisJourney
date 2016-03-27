@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  *
  * @author Hodes
  */
-public class ShipControlTest {
+/* public class ShipControlTest {
     
     public ShipControlTest() {
     }
@@ -21,7 +21,7 @@ public class ShipControlTest {
     /**
      * Test of calcWeightSupplies method, of class ShipControl.
      */
-    @Test
+/*    @Test
     public void testCalcWeightSupplies() {
         System.out.println("calcWeightSupplies");
         double wFood = 4800.0;
@@ -46,7 +46,7 @@ public class ShipControlTest {
      * Test of calcSqFtSupplies method, of class ShipControl.
      * @return 
      */
-    @Test
+/*    @Test
     public void testCalcSqFtSupplies() {
         System.out.println("calcSqFtSupplies");
         double sqFood = 960.0;
@@ -73,7 +73,7 @@ public class ShipControlTest {
     /**
      * Test of shipCapacity method, of class ShipControl.
      */
-    @Test
+ /*   @Test
     public void testShipCapacity() {
         System.out.println("shipCapacity");
         double totalWeightSupplies = 40050.0;
@@ -109,7 +109,7 @@ public class ShipControlTest {
     /**
      * Test of calcSqFtSupplies method, of class ShipControl.
      */
-    @Test
+/*    @Test
     public void testCalcSqFtSupplies2() {
         System.out.println("calcSqFtSupplies");
         double sqFood = 960.0;
@@ -132,7 +132,7 @@ public class ShipControlTest {
     /**
      * Test of shipCapacity method, of class ShipControl.
      */
-    @Test
+ /*   @Test
     public void testShipCapacity2() {
         System.out.println("shipCapacity");
         double totalWeightSupplies = 40000.0;
@@ -145,3 +145,4 @@ public class ShipControlTest {
        
     }
 }
+*/

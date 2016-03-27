@@ -12,7 +12,7 @@ package nephisJourney.src.view;
 class InventoryView {
 
     void JewelryView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Display inventory view called");
     }
     
 }

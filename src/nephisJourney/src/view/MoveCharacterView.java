@@ -70,7 +70,7 @@ public class MoveCharacterView extends View {
 
     @Override
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("display move character view called");
     }
 
 }

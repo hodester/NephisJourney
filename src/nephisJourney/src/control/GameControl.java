@@ -55,7 +55,10 @@ public class GameControl {
     }
 
     public static SupplyInventory[] getSortedInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        System.out.println("getSortedInventory called");
+        SupplyInventory[] SupplyInventory = null;
+        return SupplyInventory;
     }
 
     public GameControl() {

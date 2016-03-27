@@ -57,6 +57,7 @@ public abstract class GameMenuView extends View {
                 + "\nW - Build altar"
                 + "\nP - Pack ship"
                 + "\nJ - Launch ship"
+                + "\nZ - View treasure inventory"
                 + "\nQ - Quit"
                 + "\n--------------------------------------------");
 
