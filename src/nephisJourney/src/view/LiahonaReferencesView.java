@@ -1,5 +1,6 @@
 package nephisJourney.src.view;
 
+import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -181,15 +182,15 @@ public abstract class LiahonaReferencesView extends View {
             case "33": // Arrive at promised land.
                 this.nephi18_23();
                 break;
-            case "P": {
-                /* try {
-                // Print the scripture list to a file.
-               this.printScriptureList();
+            case "P": 
+        {
+            try {
+                this.printScriptureList();
             } catch (IOException ex) {
                 Logger.getLogger(LiahonaReferencesView.class.getName()).log(Level.SEVERE, null, ex);
-            }*/
             }
-            break;
+        }
+                break;
             default:
                 System.out.println("\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
@@ -604,43 +605,62 @@ public abstract class LiahonaReferencesView extends View {
                 + "\n*******************************************************"
         );
     }
-}
-  /*  public static void main(String[] args) throws IOException {
-        //get the file name
-        Scanner scan = new Scanner(System.in);
-        System.out.print("What is the name of your file? ");
-        String theFile = scan.nextLine();
-        File fileIn = new File(theFile);
 
-        while (!fileIn.exists()) {
-            System.out.print("Invalid file name! Try again: ");
-            theFile = scan.nextLine();
-            fileIn = new File(theFile);
-        }
-        Scanner fileScan = new Scanner(fileIn);
-
-        while (fileScan.hasNextLine()) {
+    private void printScriptureList() throws IOException {
+        FileWriter outFile = null; 
+        Console console = System.console();
+        String s = console.readLine();
+        int i = Integer.parseInt(console.readLine());
+        String fileLocation = console.readLine();
+        
+        try{
+            outFile = new FileWriter(fileLocation);
             
-        }
-    }
+            // write the scripture referece and location to a file
+            outFile.write("Nephi1:4a Jerusalem during reign of Zedekiah, king of Judah.\n");
+            outFile.write("Nephi1:4 Enters the wilderness, traveled the shores of the Red Sea.\n");
+            outFile.write("Nephi2:4-5 Lehi’s tent by the Red Sea.\n");
+            outFile.write("Nephi3:1 Wilderness - Return to Jerusalem to get the Plates of Brass.\n");
+            outFile.write("Nephi3:2-3 Jerusalem – House of Laban.\n");
+            outFile.write("Nephi3:10 Lehi’s house – collect treasures.\n");
+            outFile.write("Nephi3:16 House of Laban with treasures.\n");
+            outFile.write("Nephi3:24-25 Wilderness – flee from Laban’s servants.\n");
+            outFile.write("Nephi3:26 Angel visit.\n");
+            outFile.write("Nephi3:29 Streets of Jerusalem, night time – try3 – Nephi slays Laban.\n");
+            outFile.write("Nephi4:7-18 House of Laban, retrieve plates.\n");
+            outFile.write("Nephi4:20 Laban’s treasury.\n");
+            outFile.write("Nephi4:24 Wilderness with Zoram, return to Lehi.\n");
+            outFile.write("Nephi4:28,38 Lehi’s camp, Sariah rejoices.\n");
+            outFile.write("Nephi5:7-8 Ishmael’s home to get Wives.\n");
+            outFile.write("Nephi7:3-5 Wilderness – rebellion of brothers.\n");
+            outFile.write("Nephi7:6-7 Lehi’s camp with Ishmael’s family.\n");
+            outFile.write("Nephi7:22 Plate making – Lehi’s camp.\n");
+            outFile.write("Nephi9:2 Valley of Lemuel, Marriage.\n");
+            outFile.write("Nephi16:7 Lehi’s tent – finds the Liahona.\n");
+            outFile.write("Nephi16:10 River Laman crossing.\n");
+            outFile.write("Nephi16:12 Travel to Shazer.\n");
+            outFile.write("Nephi16:13 Hunting by Shazer.\n");
+            outFile.write("Nephi16:14 Wilderness travel.\n");
+            outFile.write("Nephi16:17 Hunting – Nephi breaks bow.\n");
+            outFile.write("Nephi16:18 Lehi consults Liahona, where Nephi needs to hunt.\n");
+            outFile.write("Nephi16:27-30 Wilderness travel east.\n");
+            outFile.write("Nephi17:1 Land of Bountiful.\n");
+            outFile.write("Nephi17:5 Nephi Builds a ship.\n");
+            outFile.write("Nephi17:8 Shocking experience.\n");
+            outFile.write("Nephi17:54 Enter the ship.\n");
+            outFile.write("Nephi18:5 Sail to the promised land.\n");
+            outFile.write("Nephi18:8 Arrive at promised land.\n");
+            
+            outFile.flush();
+        }catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(),
+                            "Error creating the scripture list");
+        }finally {
+            if (outFile != null) {
+                outFile.close();
+                }
+            }
+}
+    
 }
 
-/*---- test stuff
-public void writefile(){
-
-    try{
-        Writer output = null;
-        File file = new File("results.txt");
-        output = new BufferedWriter(new FileWriter(file));
-
-        for(int i=0; i<100; i++){
-           //CODE TO FETCH RESULTS AND WRITE FILE
-        }
-
-        output.close();
-        System.out.println("File has been written");
-
-    }catch(Exception e){
-        System.out.println("Could not create file");
-    }
-}*/
