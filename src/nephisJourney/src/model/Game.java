@@ -1,6 +1,7 @@
 package nephisJourney.src.model;
 
 import nephisJourney.src.enums.Actor;
+import java.awt.Point;
 import java.io.Serializable;
 
 /**
@@ -13,7 +14,8 @@ public class Game implements Serializable{
     private int numPeople;
     private Player player;
     private SupplyInventory[] inventory;
-    private Actor[] actor;
+    private Point[] actorLocation = new Point[Actor.values().length];
+    /*private Actor[] actor;*/
     private Map map;
     private LiahonaReferences[] liahona;
     
@@ -66,6 +68,14 @@ public class Game implements Serializable{
 
     public void setLiahona(LiahonaReferences[] liahona) {
         this.liahona = liahona;
+    }
+    
+    public Point[] getActorsLocation() {
+        return actorLocation;
+    }
+
+    public void setActorsLocation(Point[] actorsLocation) {
+        this.actorLocation = actorsLocation;
     }
     
     /*@Override

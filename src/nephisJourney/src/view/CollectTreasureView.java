@@ -46,7 +46,14 @@ public class CollectTreasureView extends View {
             {
                 //Create gameMenuView object when user 
                 //quits collect treasure menu
-                GameMenuView gameMenuView = new GameMenuView();
+                GameMenuView gameMenuView;
+                gameMenuView = new GameMenuView() {
+                    @Override
+                    public boolean doAction(String value) {
+                        System.out.println("\ndoAction called ");
+                    return true;
+                    }
+                };
 
                 //display game menu 
                /* gameMenuView.MainMenuView();*/

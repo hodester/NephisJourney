@@ -182,14 +182,14 @@ public abstract class LiahonaReferencesView extends View {
                 this.nephi18_23();
                 break;
             case "P": {
-            try {
+                /* try {
                 // Print the scripture list to a file.
-                this.printScriptureList();
+               this.printScriptureList();
             } catch (IOException ex) {
                 Logger.getLogger(LiahonaReferencesView.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
             }
-        }
-                break;
+            break;
             default:
                 System.out.println("\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
@@ -604,29 +604,28 @@ public abstract class LiahonaReferencesView extends View {
                 + "\n*******************************************************"
         );
     }
-    
+
     public static void main(String[] args) throws IOException {
         //get the file name
         Scanner scan = new Scanner(System.in);
         System.out.print("What is the name of your file? ");
-        String theFile = scan.nextLine();  
+        String theFile = scan.nextLine();
         File fileIn = new File(theFile);
-        
-        while(!fileIn.exists()){
-             System.out.print("Invalid file name! Try again: ");
-             theFile = scan.nextLine();
-             fileIn = new File(theFile);
-          }
+
+        while (!fileIn.exists()) {
+            System.out.print("Invalid file name! Try again: ");
+            theFile = scan.nextLine();
+            fileIn = new File(theFile);
+        }
         Scanner fileScan = new Scanner(fileIn);
-        
-        while(fileScan.hasNextLine())
+
+        while (fileScan.hasNextLine()) {
+            
+        }
     }
-               
-   )
-    
 }
 
----- test stuff
+/*---- test stuff
 public void writefile(){
 
     try{
@@ -644,4 +643,4 @@ public void writefile(){
     }catch(Exception e){
         System.out.println("Could not create file");
     }
-}
+}*/

@@ -22,48 +22,52 @@ import nephisJourney.src.view.GameMenuView;
  *
  * @author Jenaca
  */
-public class GameControl  {
+public class GameControl {
 
-    public static void saveGame(Game game, String filePath) 
+    public static void saveGame(Game game, String filePath)
             throws GameControlException {
-     
-    try (FileOutputStream fops = new FileOutputStream(filePath)) {
-        ObjectOutputStream output = new ObjectOutputStream(fops);
-        
-        output.writeObject(game);
-    
-    } catch (Exception e) {
-        throw new GameControlException(e.getMessage());
-         }
-     
+
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(game);
+
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
     }
 
-    public static void getSavedGame(String filePath) 
-        throws GameControlException {
-        
+    public static void getSavedGame(String filePath)
+            throws GameControlException {
+
         Game game = null;
-        
+
         try (FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream input = new ObjectInputStream(fips);
-            
+
             game = (Game) input.readObject();
-        
+
         } catch (Exception e) {
-            throw new GameControlException (e.getMessage());
+            throw new GameControlException(e.getMessage());
         }
         NephisJourney.setCurrentGame(game);
+    }
+
+    public static SupplyInventory[] getSortedInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public GameControl() {
     }
 
-    public static Player createPlayer(String name) 
-                        throws GameControlException{
+    public static Player createPlayer(String name)
+            throws GameControlException {
 
-        if (name.length() < 2 ) {
+        if (name.length() < 2) {
             throw new GameControlException("Name not accepted "
-                                            + name  + " does not contain more than"
-                                            + " one characture, please try again.");
+                    + name + " does not contain more than"
+                    + " one characture, please try again.");
         }
 
         Player player = new Player();
@@ -87,7 +91,6 @@ public class GameControl  {
         game.setMap(map);
 
         /*MapControl.moveActorToLocation(Actor actor, Point coordinates);*/
-
     }
 
     public static SupplyInventory[] createInventoryList() {
@@ -191,6 +194,7 @@ public class GameControl  {
     public static Location[][] getMapLocations() {
         return NephisJourney.getCurrentGame().getMap().getLocations();
     }
+
     public static SupplyInventory[] getInventory() {
         return NephisJourney.getCurrentGame().getInventory();
     }

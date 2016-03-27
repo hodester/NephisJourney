@@ -3,17 +3,26 @@ package nephisJourney.src.view;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import javafx.scene.Scene;
+/*import javafx.scene.Scene;*/
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.GameControl;
 import nephisJourney.src.model.Location;
 import nephisJourney.src.model.SupplyInventory;
+import nephisJourney.src.control.GameControl;
+import nephisJourney.src.enums.Actor;
+import nephisJourney.src.model.Game;
+import nephisJourney.src.model.Location;
+import nephisJourney.src.model.Scene;
+import java.awt.Point;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
  * @author Jenaca
  */
-public class GameMenuView extends View {
+public abstract class GameMenuView extends View {
 //promptMessage = "Please select a letter...: "
 
     /*private final String promptMessage;
@@ -23,12 +32,11 @@ public class GameMenuView extends View {
                 + "to the menu item: ";
     }*/
     private String displayMessage;
-    
+
     protected final BufferedReader keyboard = NephisJourney.getInFile();
     protected final PrintWriter console = NephisJourney.getOutFile();
     private String promptMessage;
-    
-    
+
     public GameMenuView() {
         super(
                 "\n"
@@ -73,7 +81,7 @@ public class GameMenuView extends View {
         } while (!done);
     }*/
 
-    private String getMenuOption() {
+ /*  private String getMenuOption() {
         //Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String selection = null; //value to be returned
         boolean valid = false; //initialize to not valid
@@ -100,60 +108,63 @@ public class GameMenuView extends View {
         }
 
         return selection; //return the value entered
-    }
+    }*/
+    /* public boolean doAction(String menuOption) {*/
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase(); // convert to all upper case
+        char choice = value.charAt(0); // get first character entered
+       /* menuOption = menuOption.toUpperCase(); // convert choice to upper case*/
 
-    @Override
-    public boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase(); // convert choice to upper case
-
-        switch (menuOption) {
-            case "V": // View map
+        switch (choice) {
+            case 'V': // View map
                 this.displayMap();
                 break;
-            case "I": // View a list of items in inventory
+            case 'I': // View a list of items in inventory
                 this.viewInventory();
                 break;
-            case "A": // View list of characters
+            case 'A': // View list of characters
                 this.viewCharacters();
                 break;
-            case "S": // View path status
+            case 'S': // View path status
                 this.viewStatus();
                 break;
-            case "L": // View contents of the location
+            case 'L': // View contents of the location
                 this.viewLocationContents();
                 break;
-            case "M": // Move person to new location
+            case 'M': // Move person to new location
                 this.moveToNewLocation();
                 break;
-            case "C": // Consult the Liahona 
+            case 'C': // Consult the Liahona 
                 this.consultLiahona();
                 break;
-            case "D": // Design altar
+            case 'D': // Design altar
                 this.designAltar();
                 break;
-            case "T": // Collect treasure
+            case 'T': // Collect treasure
                 this.collectTreasure();
                 break;
-            case "G": // Gather stones
+            case 'Z': // View treasure
+                this.viewTreasure();
+                break;
+            case 'G': // Gather stones
                 this.gatherStones();
                 break;
-            case "B": // Use bow to hunt
+            case 'B': // Use bow to hunt
                 this.huntWithBow();
                 break;
-            case "W": // Build altar
+            case 'W': // Build altar
                 this.buildAltar();
                 break;
-            case "P": // Pack ship
+            case 'P': // Pack ship
                 this.packShip();
                 break;
-            case "J": // Launch ship
+            case 'J': // Launch ship
                 this.launchShip();
                 break;
             default:
-                System.out.println("\n*** Invalid selection ***"
-                        + " Please select a valid display option ***");
-                break;
+                ErrorView.display("GameMenuView", "*** Invalid selection *** Try again");
+              
 
         }
         return false;
@@ -161,7 +172,7 @@ public class GameMenuView extends View {
     }
 
     public void displayMap() {
-        System.out.println("\n*** display Map function called ***");
+       this.viewMap(NephisJourney.getOutFile());
     }
 
     public void viewMap(PrintWriter out) {
@@ -190,7 +201,7 @@ public class GameMenuView extends View {
                 Location location = rowLocations[column];
                 if (location != null && location.isVisited()) { // if location is visited 
 
-                    Scene scene = location.getScene();
+                    javafx.scene.Scene scene = location.getScene();
                     if (scene != null) {
                         out.print(location.getMapSymbol());
                     } else {
@@ -225,8 +236,8 @@ public class GameMenuView extends View {
 
         }
 
-        /* //view treasure menu
-        ResourceInventoryView viewInventory = new ResourceInventoryView();
+        //view treasure menu
+        /*ResourceInventoryView viewInventory = new ResourceInventoryView();
         viewInventory.display();
         //Create collectTreasureView object
         ResourceInventoryView viewInventoryView = new ResourceInventoryView();
@@ -248,7 +259,9 @@ public class GameMenuView extends View {
     }
 
     private void moveToNewLocation() {
-        System.out.println("*** moveToNewLocation function was called ***");
+        MoveActorView moveActorView = new MoveActorView();     
+        moveActorView.display(); 
+      /*  System.out.println("*** moveToNewLocation function was called ***");*/
     }
 
     private void consultLiahona() {
@@ -268,6 +281,32 @@ public class GameMenuView extends View {
 
         //Display the collect treasure view
         collectTreasureView.display();
+    }
+    private void viewTreasure() {
+        this.viewInventory(NephisJourney.getOutFile());
+    }
+    
+    private void viewInventory(PrintWriter out) {
+        // get the sorted list of inventory items for the current game
+        SupplyInventory[] inventory = GameControl.getSortedInventoryList();
+        
+        out.println("\n        LIST OF COLLECTED TREASURE");
+        StringBuilder line = new StringBuilder("                                                          ");
+        line.insert(0, "DESCRIPTION"); 
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        out.println(line.toString());
+        
+        // for each inventory item
+        for (SupplyInventory supplyInventory : inventory) {
+            line = new StringBuilder("                                                          ");
+            line.insert(0, supplyInventory.getDescription());
+            line.insert(23, supplyInventory.getRequiredAmount());
+            line.insert(33, supplyInventory.getQuantityInStock());
+            
+            // DISPLAY COLLECTED TREASURE
+            out.println(line.toString());
+        }   
     }
 
     private void gatherStones() {
@@ -303,7 +342,7 @@ public class GameMenuView extends View {
         int startPosition = (lineLength / 2) - (titleLength / 2);
         out.println("\n");
         for (int i = 0; i < startPosition; i++) {
-            out.print(" ");  
+            out.print(" ");
         }
         out.print(title);
         out.println("\n");
@@ -323,14 +362,24 @@ public class GameMenuView extends View {
         out.println();
         out.print("  ");
         for (int i = 0; i < columnCount; i++) { // print row divider
-                out.print("-----");
+            out.print("-----");
         }
         out.print("-");
     }
 
     @Override
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("*** display 343 function was called ***");
+    }
+
+    private static class MoveActorView {
+
+        public MoveActorView() {
+        }
+
+        private void display() {
+            System.out.println("*** display 353 function was called ***");
+        }
     }
 
 }

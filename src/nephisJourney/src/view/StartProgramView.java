@@ -5,7 +5,9 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.GameControl;
+import nephisJourney.src.control.ProgramControl;
 import nephisJourney.src.exceptions.GameControlException;
+import nephisJourney.src.exceptions.ProgramControlException;
 import nephisJourney.src.model.Player;
 
 /**
@@ -16,7 +18,7 @@ public class StartProgramView {
 
     //promptMessage = "Please enter your name"
     private String promptMessage;
-    
+
     protected final BufferedReader keyboard = NephisJourney.getInFile();
     protected final PrintWriter console = NephisJourney.getOutFile();
 
@@ -29,6 +31,7 @@ public class StartProgramView {
 
     public void displayBanner() {
         System.out.println(
+                /*  super(*/
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* The game is to cover the events which took place in *"
@@ -46,11 +49,15 @@ public class StartProgramView {
                 + "\n* stages.                                             *"
                 + "\n*                                                     *"
                 + "\n*******************************************************"
+                + "\n"
+                + "\nPlease enter your name: "
         );
     }
 
-    public void displayStartProgramView(String playerName) throws GameControlException {
-       boolean done = false; //set flag to not done
+    public void displayStartProgramView(String playerName)
+            throws GameControlException {
+
+        boolean done = false; //set flag to not done
         do {
             //promt for and get players name
             playerName = this.getPlayerName();
@@ -69,50 +76,73 @@ public class StartProgramView {
         String selection = null; //value to be returned
         boolean valid = false; //initialize to not valid
         try {
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
+            while (!valid) { //loop while an invalid value is enter
+                System.out.println("\n" + this.promptMessage);
 
-            selection = this.keyboard.readLine(); //get next line typed on keyboard
-            selection = selection.trim(); //trim off leading and trailing white space
+                selection = this.keyboard.readLine(); //get next line typed on keyboard
+                selection = selection.trim(); //trim off leading and trailing white space
 
-            if (selection.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
+                if (selection.length() < 1) { //value is blank
+                    System.out.println("\nInvalid value: value can not be blank");
+                    continue;
+                }
+
+                break; //end the loop
             }
-
-            break; //end the loop
-        }
-        } catch (Exception e){
-           ErrorView.display(this.getClass().getName(),
-                   "Error reading input: " + e.getMessage());
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
         return selection; //return the value entered
     }
 
     private boolean doAction(String playerName) throws GameControlException {
-                  //Scanner scanner = new Scanner(System.in);
-        int x= 1;
-        do { 
-        try{
-        //call createPlayer() control function
-        Player player = GameControl.createPlayer(playerName);        
-        x=2;
-      
-        }catch(GameControlException e) {
-            ErrorView.display(this.getClass().getName(),
-                    e.getMessage());
-          
-        }
-        }while(x==1);
+        //Scanner scanner = new Scanner(System.in);
+        int x = 1;
+        do {
+            Player player = ProgramControl.createPlayer(playerName);
+            x = 2;
+        } while (x == 1);
         return true;
     }
-      
-    
 
-    private void displayNextView(Player player) {
+    /*  @Override
+    public boolean doAction(Object obj) {
+        
+        boolean valid = false;
+        String playerName = (String) obj;
+        
+        while(!valid) { // while a valid name has not been retrieved
+            playerName = playerName.trim(); 
+            
+            if (playerName.equals("Q")) { // user wants to quit
+                return true;
+            }
+            
+            valid = true; 
+        }
+         
+        // Create the player object and save it in the ProgramControl class
+        Player player = ProgramControl.createPlayer(playerName);
+        if (player == null) {
+            System.out.println("The player's name is invalid");
+        }
+       
+        // Display a personalized welcome message
+        this.displayNextView(player);
+        
+        // Display the Main menu.
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
+        
+        return true;
+
+    }*/
+    public void displayNextView(Player player) {
 
         //display a custom welcome message
         ErrorView.display(this.getClass().getName(),
+                /*this.console.println(*/
                 "\n=============================================="
                 + "\n Welcome to Nephi's Journey, "
                 + player.getName() + "."
@@ -120,17 +150,11 @@ public class StartProgramView {
                 + "\n=============================================="
         );
 
-        //Create mainMenuView object
-        MainMenuView mainMenuView = new MainMenuView();
-
-        //Display the main menu view
-        mainMenuView.display();
     }
 
     public void displayStartProgramView() {
-         ErrorView.display(this.getClass().getName(),
-                 "error message - StartProgramView");
+        ErrorView.display(this.getClass().getName(),
+                "error message - StartProgramView");
     }
 
-    
 }

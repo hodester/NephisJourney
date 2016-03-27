@@ -74,11 +74,23 @@ public class MainMenuView extends View {
         GameControl.createNewGame(NephisJourney.getPlayer());
 
         // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
+        GameMenuView gameMenu = new GameMenuView() {
+            @Override
+            public boolean doAction(String value) {
+                System.out.println("\ngameMenu doActionCalled ");
+                return true;
+            }
+        };
         /*GameMenuView.View();*/
 
         //Create gameMenuView object
-        GameMenuView gameMenuView = new GameMenuView();
+        GameMenuView gameMenuView = new GameMenuView() {
+            @Override
+            public boolean doAction(String value) {
+                System.out.println("\ngameMenu doActionCalled ");
+                return true;
+            }
+        };
 
         //Display the game menu view
         gameMenuView.display();
@@ -96,7 +108,13 @@ public class MainMenuView extends View {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
         
-        GameMenuView gameMenu = new GameMenuView();
+        GameMenuView gameMenu = new GameMenuView() {
+            @Override
+            public boolean doAction(String value) {
+                System.out.println("\ngameMenu doActionCalled ");
+                return true;
+            }
+        };
         gameMenu.display();        
     }
 
