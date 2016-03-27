@@ -1,6 +1,11 @@
 package nephisJourney.src.view;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nephisJourney.src.model.LiahonaReferences;
 
 /**
@@ -64,7 +69,8 @@ public abstract class LiahonaReferencesView extends View {
                 + "\n31 - Enter the ship."
                 + "\n32 - Sail to the promised land."
                 + "\n33 - Arrive at promised land."
-                + "\nQ - Return to previous menu"
+                + "\nP  - Print the list of scriputers"
+                + "\nQ  - Return to previous menu"
                 + "\n--------------------------------------------"
         );
 
@@ -174,6 +180,15 @@ public abstract class LiahonaReferencesView extends View {
                 break;
             case "33": // Arrive at promised land.
                 this.nephi18_23();
+                break;
+            case "P": {
+            try {
+                // Print the scripture list to a file.
+                this.printScriptureList();
+            } catch (IOException ex) {
+                Logger.getLogger(LiahonaReferencesView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             default:
                 System.out.println("\n*** Invalid selection ***"
@@ -588,5 +603,45 @@ public abstract class LiahonaReferencesView extends View {
                 + "\n and we did call it the promised land."
                 + "\n*******************************************************"
         );
+    }
+    
+    public static void main(String[] args) throws IOException {
+        //get the file name
+        Scanner scan = new Scanner(System.in);
+        System.out.print("What is the name of your file? ");
+        String theFile = scan.nextLine();  
+        File fileIn = new File(theFile);
+        
+        while(!fileIn.exists()){
+             System.out.print("Invalid file name! Try again: ");
+             theFile = scan.nextLine();
+             fileIn = new File(theFile);
+          }
+        Scanner fileScan = new Scanner(fileIn);
+        
+        while(fileScan.hasNextLine())
+    }
+               
+   )
+    
+}
+
+---- test stuff
+public void writefile(){
+
+    try{
+        Writer output = null;
+        File file = new File("results.txt");
+        output = new BufferedWriter(new FileWriter(file));
+
+        for(int i=0; i<100; i++){
+           //CODE TO FETCH RESULTS AND WRITE FILE
+        }
+
+        output.close();
+        System.out.println("File has been written");
+
+    }catch(Exception e){
+        System.out.println("Could not create file");
     }
 }

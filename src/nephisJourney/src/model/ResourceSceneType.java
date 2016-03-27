@@ -2,6 +2,7 @@ package nephisJourney.src.model;
 
 import java.util.Objects;
 import nephisJourney.src.enums.Item;
+import nephisJourney.src.view.ErrorView;
 
 /**
  *
@@ -38,28 +39,33 @@ public class ResourceSceneType extends Scene {
         this.resourceType = resourceType;
     }
 
-    @Override
+/*    @Override
     public void setRow(int i) {
-        System.out.println("error message - ResourceScene");
+         ErrorView.display(this.getClass().getName(),
+                 "error message - ResourceScene");
     }
 
     @Override
     public void setColumn(int i) {
-        System.out.println("error message - ResourceScene");
+        ErrorView.display(this.getClass().getName(),
+                 "error message - ResourceScene");
     }
 
     @Override
     public void setVisited(boolean b) {
-        System.out.println("error message - ResourceScene");
+        ErrorView.display(this.getClass().getName(),
+                 "error message - ResourceScene");
     }
 
     @Override
     public void setAmountRemaining(int i) {
-        System.out.println("error message - ResourceScene");
+        ErrorView.display(this.getClass().getName(),
+                 "error message - ResourceScene");
     }
-
+*/
     public void setResourceType(String treasure) {
-        System.out.println("error message - ResourceScene");
+        ErrorView.display(this.getClass().getName(),
+                 "error message - ResourceScene");
     }
     
 }

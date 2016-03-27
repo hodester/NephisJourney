@@ -69,7 +69,7 @@ public class HelpMenuView extends View {
                 this.displayLiahonaReference();
                 break;
             default:
-                System.out.println("\n*** Invalid selection ***"
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
                 break;
 
@@ -78,7 +78,7 @@ public class HelpMenuView extends View {
     }
 
     private void goalOfGame() {
-        System.out.println(
+        ErrorView.display(this.getClass().getName(),
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert GOAL OF GAME help language here              *"
@@ -90,7 +90,7 @@ public class HelpMenuView extends View {
     }
 
     private void howToMove() {
-        System.out.println(
+        ErrorView.display(this.getClass().getName(),
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert HOW TO MOVE help language here               *"
@@ -102,7 +102,7 @@ public class HelpMenuView extends View {
     }
 
     private void estimateResource() {
-        System.out.println(
+        ErrorView.display(this.getClass().getName(),
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert ESTIMATE RESOURCE help language here         *"
@@ -114,7 +114,7 @@ public class HelpMenuView extends View {
     }
 
     private void collectInventory() {
-        System.out.println(
+        ErrorView.display(this.getClass().getName(),
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert COLLECT INVENTORY help language here         *"
@@ -126,7 +126,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayLiahonaReference() {
-                System.out.println(
+                ErrorView.display(this.getClass().getName(),
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert Liahona Reference Menu here                  *"

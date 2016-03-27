@@ -1,6 +1,7 @@
 package nephisJourney.src.model;
 
 import java.util.Objects;
+import nephisJourney.src.view.ErrorView;
 
 /**
  *
@@ -29,7 +30,8 @@ public class WarehouseSceneType extends Scene {
     }
 
     public void setNoOfItems(int i) {
-        System.out.println("error message - WarehouseScene");
+        ErrorView.display(this.getClass().getName(),
+                "error message - WarehouseScene");
     }
 
     

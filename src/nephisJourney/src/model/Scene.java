@@ -2,6 +2,7 @@ package nephisJourney.src.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import nephisJourney.src.view.ErrorView;
 
 /**
  *
@@ -58,19 +59,23 @@ public class Scene implements Serializable {
     }
 
     public void setRow(int i) {
-        System.out.println("error message - Scene");
+        ErrorView.display(this.getClass().getName(),
+                "error message - Scene");
     }
 
     public void setColumn(int i) {
-        System.out.println("error message - Scene");
+        ErrorView.display(this.getClass().getName(),
+                "error message - Scene");
     }
 
     public void setVisited(boolean b) {
-        System.out.println("error message - Scene");
+        ErrorView.display(this.getClass().getName(),
+                "error message - Scene");
     }
 
     public void setAmountRemaining(int i) {
-        System.out.println("error message - Scene");
+        ErrorView.display(this.getClass().getName(),
+                "error message - Scene");
     }
 
     

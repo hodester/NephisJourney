@@ -83,7 +83,8 @@ public class StartProgramView {
             break; //end the loop
         }
         } catch (Exception e){
-           System.out.println("Error reading input: " + e.getMessage());
+           ErrorView.display(this.getClass().getName(),
+                   "Error reading input: " + e.getMessage());
         }
         return selection; //return the value entered
     }
@@ -98,7 +99,8 @@ public class StartProgramView {
         x=2;
       
         }catch(GameControlException e) {
-            System.out.println(e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    e.getMessage());
           
         }
         }while(x==1);
@@ -110,7 +112,8 @@ public class StartProgramView {
     private void displayNextView(Player player) {
 
         //display a custom welcome message
-        System.out.println("\n=============================================="
+        ErrorView.display(this.getClass().getName(),
+                "\n=============================================="
                 + "\n Welcome to Nephi's Journey, "
                 + player.getName() + "."
                 + "\n We hope you have a fun adventure!"
@@ -125,7 +128,8 @@ public class StartProgramView {
     }
 
     public void displayStartProgramView() {
-         System.out.println("error message - StartProgramView");
+         ErrorView.display(this.getClass().getName(),
+                 "error message - StartProgramView");
     }
 
     
