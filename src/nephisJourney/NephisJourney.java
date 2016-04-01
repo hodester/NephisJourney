@@ -4,32 +4,16 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import nephisJourney.src.control.TreasureControl;
-import nephisJourney.src.enums.Actor;
-import nephisJourney.src.exceptions.GameControlException;
-import nephisJourney.src.model.Altar;
-import nephisJourney.src.model.Game;
-import nephisJourney.src.model.Hunting;
-import nephisJourney.src.model.Liahona;
-import nephisJourney.src.model.LiahonaReferences;
-import nephisJourney.src.model.Location;
-import nephisJourney.src.model.Map;
-import nephisJourney.src.model.Player;
-import nephisJourney.src.model.Scene;
-import nephisJourney.src.model.ResourceSceneType;
-import nephisJourney.src.model.Ship;
-import nephisJourney.src.model.SupplyInventory;
-import nephisJourney.src.model.WarehouseSceneType;
 import nephisJourney.src.view.StartProgramView;
+import nephisJourney.src.model.Game;
+import nephisJourney.src.model.Player;
 
 /**
- *
  * @author Jenaca
  */
-public class NephisJourney {
 
+public class NephisJourney {
+    
     private static Game currentGame = null;
     private static Player player = null;
 
@@ -37,25 +21,20 @@ public class NephisJourney {
     private static BufferedReader inFile = null;
 
     private static PrintWriter logFile = null;
-
-    /** 
-     * @param args the command line arguments
-     */
+  
     public static void main(String[] args) {
-        //create StartProgramViewOrig and disply the start program view
-
         try {
-
             //open charcter stream files for end user input and output
-            NephisJourney.inFile
-                    = new BufferedReader(new InputStreamReader(System.in));
+            NephisJourney.inFile = new BufferedReader(new InputStreamReader(System.in));
             NephisJourney.outFile = new PrintWriter(System.out, true);
 
             //open log file
             String filePath = "log.txt";
             NephisJourney.logFile = new PrintWriter(filePath);
 
-            StartProgramView startProgramView = new StartProgramView() {
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+
              /*   @Override
                 public void display() {
                     System.out.println("Error - 61 NephisJourney");
@@ -66,9 +45,7 @@ public class NephisJourney {
                     System.out.println("Error - 66 NephisJourney");
                     return true;
                 }*/
-            };
-            startProgramView.displayStartProgramView();
-            return;
+            //startProgramView.displayStartProgramView();
 
         } catch (Throwable te) {
             System.out.println("Exception: " + te.toString()
@@ -94,7 +71,7 @@ public class NephisJourney {
                 }
 
             } catch (IOException ex) {
-                System.out.println("Error closing files");
+                System.out.println("Error closing files:" + ex);
                 return;
             }
 

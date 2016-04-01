@@ -2,41 +2,47 @@ package nephisJourney.src.view;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import nephisJourney.NephisJourney;
 
-/**
- *
- * @author adamh_000
- */
 public abstract class View implements ViewInterface {
 
     private String displayMessage;
-    
+
     protected final BufferedReader keyboard = NephisJourney.getInFile();
     protected final PrintWriter console = NephisJourney.getOutFile();
-    private boolean message;
+    private boolean message = true;
 
     public View() {
+        this.message = true;
     }
 
     public View(String message) {
+        this.message = true;
         this.displayMessage = message;
     }
 
-    public void display(String selection) {
+    public View(boolean input, String message) {
+        this.message = input;
+        this.displayMessage = message;
+    }
 
-        boolean done = false; // set flag to not done
+    public String getDisplayMessage() {
+        return displayMessage;
+    }
+
+    public void setDisplayMessage(String message) {
+        this.displayMessage = message;
+    }
+
+    public void display() {
+        String value = "";
+        boolean done = false; 
         do {
-            // prompt for and get user's menu option
-            this.console.println(this.message); 
-            selection = this.getInput();
-            if (selection.toUpperCase().equals("Q")) // user wants to quit
-            {
-                return; // exit view
+            this.console.println(this.displayMessage); // prompt only
+            if (this.message) {
+                value = this.getInput(); // get input
             }
-            // do the requested action and display the next view
-            done = this.doAction(selection);
+            done = this.doAction(value); // do the action and return true if working
 
         } while (!done);
     }
@@ -47,25 +53,21 @@ public abstract class View implements ViewInterface {
         boolean valid = false; // set flag to not done
         String selection = null;
         try {
-        while (!valid) {
-            System.out.println("\n" + this.displayMessage);
-            // get the selection entered from the keyboard
-            selection = this.keyboard.readLine();
-            selection = selection.trim();
+            while (!valid) {
+                // get the selection entered from the keyboard
+                selection = this.keyboard.readLine(); //read user input
+                selection = selection.trim();
 
-            if (selection.length() < 1) { //blank selection entered
-                //System.out.println("\n*** You must enter a selection ***");
-                ErrorView.display(this.getClass().getName(), 
-                        "You Must enter a value.");
-                continue;
+                if (selection.length() < 1) { //blank selection entered
+                    ErrorView.display(this.getClass().getName(), "You Must enter a value.");
+                    continue;
+                }
+                break;
             }
-            break;
-        }
         } catch (Exception e) {
-            ErrorView.display(this.getClass().getName(),
-                    "Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             return null;
-            
+
         }
         return selection;
     }

@@ -22,43 +22,30 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Jenaca
  */
-public abstract class GameMenuView extends View {
-//promptMessage = "Please select a letter...: "
-
-    /*private final String promptMessage;
-
-    public GameMenuView() {
-        this.promptMessage = "\nPlease select the letter corresponding "
-                + "to the menu item: ";
-    }*/
-    private String displayMessage;
-
-    protected final BufferedReader keyboard = NephisJourney.getInFile();
-    protected final PrintWriter console = NephisJourney.getOutFile();
-    private String promptMessage;
-
+public class GameMenuView extends View {
+    
     public GameMenuView() {
         super(
                 "\n"
                 + "\n--------------------------------------------"
-                + "\n|Game Menu                                 |"
+                + "\n|                   Game Menu              |"
                 + "\n--------------------------------------------"
-                + "\nV - View map"
-                + "\nI - View Inventory"
-                + "\nA - View list of characters"
-                + "\nS - View path status"
-                + "\nL - View contents of location"
-                + "\nM - Move person to a new location"
-                + "\nC - Consult the Liahona"
-                + "\nD - Design altar"
-                + "\nT - Collect treasure"
-                + "\nG - Gather stones"
-                + "\nB - Use bow to hunt"
-                + "\nW - Build altar"
-                + "\nP - Pack ship"
-                + "\nJ - Launch ship"
-                + "\nZ - View treasure inventory"
-                + "\nQ - Quit"
+                + "\n V - View map"
+                + "\n I - View Inventory"
+                + "\n A - View list of characters"
+                + "\n S - View path status"
+                + "\n L - View contents of location"
+                + "\n M - Move person to a new location"
+                + "\n C - Consult the Liahona"
+                + "\n D - Design altar"
+                + "\n T - Collect treasure"
+                + "\n G - Gather stones"
+                + "\n B - Use bow to hunt"
+                + "\n W - Build altar"
+                + "\n P - Pack ship"
+                + "\n J - Launch ship"
+                + "\n Z - View treasure inventory"
+                + "\n Q - Quit"
                 + "\n--------------------------------------------");
 
     }

@@ -1,32 +1,27 @@
 package nephisJourney.src.view;
 
-import java.util.Scanner;
-
 /**
- *
  * @author Jenaca
  */
 public class HelpMenuView extends View {
-
-    //promptMessage = "Please select from the following options: "
-    private String promptMessage;
 
     public HelpMenuView() {
 
         super(
                 "\n"
                 + "\n--------------------------------------------"
-                + "\n|Help Menu                                 |"
+                + "\n|                 Help Menu                |"
                 + "\n--------------------------------------------"
-                + "\nG - What is the goal of the game"
-                + "\nM - How to move"
-                + "\nE - Estimating the amount of resources"
-                + "\nI - Collect Inventory"
-                + "\nL - Liahona References"
-                + "\nQ - Quit"
+                + "\n G - What is the goal of the game"
+                + "\n M - How to move"
+                + "\n E - Estimating the amount of resources"
+                + "\n I - Collect Inventory"
+                + "\n L - Liahona References"
+                + "\n Q - Quit"
                 + "\n--------------------------------------------");
 
     }
+
     @Override
     public void display() {
 
@@ -48,28 +43,31 @@ public class HelpMenuView extends View {
     }
 
     @Override
-    public boolean doAction(String value) {
+    public boolean doAction(Object obj) {
 
-        value = value.toUpperCase(); // convert choice to upper case
+        String value = (String) obj;
+        char choice = value.toUpperCase().charAt(0);
 
-        switch (value) {
-            case "G": // get goal of game instructions
+        switch (choice) {
+            case 'G': // get goal of game instructions
                 this.goalOfGame();
                 break;
-            case "M": // how to move instructions
+            case 'M': // how to move instructions
                 this.howToMove();
                 break;
-            case "E": // estimate resource instructions
+            case 'E': // estimate resource instructions
                 this.estimateResource();
                 break;
-            case "I": // collect inventory instructions
+            case 'I': // collect inventory instructions
                 this.collectInventory();
                 break;
-            case "L": //Display the Liahona Reference menu
+            case 'L': //Display the Liahona Reference menu
                 this.displayLiahonaReference();
                 break;
+            case 'Q':
+                return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection ***"
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection ***"
                         + " Please select a valid display option ***");
                 break;
 
@@ -126,7 +124,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayLiahonaReference() {
-                ErrorView.display(this.getClass().getName(),
+        ErrorView.display(this.getClass().getName(),
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* Insert Liahona Reference Menu here                  *"

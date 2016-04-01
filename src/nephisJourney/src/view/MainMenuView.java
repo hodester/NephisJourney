@@ -1,134 +1,98 @@
 package nephisJourney.src.view;
 
-import java.util.Scanner;
 import nephisJourney.NephisJourney;
 import nephisJourney.src.control.GameControl;
+import nephisJourney.src.view.HelpMenuView;
 
 /**
- *
  * @author Hodes
  */
 public class MainMenuView extends View {
 
-    //promptMessage = "Please select from the following options: "
-    private String promptMessage;
-
     public MainMenuView() {
-        super(
-                "\n"
-                + "\n--------------------------------------------"
-                + "\n|Main Menu                                 |"
-                + "\n--------------------------------------------"
-                + "\nN - Start new game"
-                + "\nG - Get and start saved game"
-                + "\nH - Get help on how to play the game"
-                + "\nT - High Scores"
-                + "\nS - Save game"
-                + "\nR - Reference Menu"
-                + "\nL - Location List"
-                + "\nQ - Quit"
-                + "\n--------------------------------------------");
+        super("\n"
+                + "\n*****************************************"
+                + "\n*                Main Menu              *"
+                + "\n*****************************************"
+                + "\n N - Start new game"
+                + "\n G - Get and start saved game"
+                + "\n H - Get help on how to play the game"
+                + "\n T - High Scores"
+                + "\n S - Save game"
+                + "\n R - Reference Menu"
+                + "\n L - Location List"
+                + "\n Q - Quit"
+                + "\n*****************************************");
 
     }
 
-    
-   @Override
-    public boolean doAction(String value) { 
+    @Override
+    public boolean doAction(Object obj) {
 
-        value = value.toUpperCase(); // convert choice to upper case
+        String value = (String) obj;
+        char choice = value.toUpperCase().charAt(0); // get first upper case character
 
-        switch (value) {
-            case "N": // create and start a new game
+        switch (choice) {
+            case 'N': // create and start a new game
                 this.startNewGame();
                 break;
-            case "G": // get and start an existing game
+            case 'G': // get and start an existing game
                 this.startSavedGame();
                 break;
-            case "H": // display the help menu
+            case 'H': // display the help menu
                 this.displayHelpMenu();
                 break;
-            case "T":
+            case 'T':
                 this.playerView();
                 break;
-            case "S": // save the current game
+            case 'S': // save the current game
                 this.saveGame();
                 break;
-            case "R": // display Reference Menu
+            case 'R': // display Reference Menu
                 this.displayReferenceMenu();
                 break;
-            case "L": // display Location list
+            case 'L': // display Location list
                 this.displayLocationList();
                 break;
             default:
-                System.out.println("\n*** Invalid selection ***"
-                        + " Please select a valid display option ***");
+                ErrorView.display("Main Menu View Error", " >>> Invalid Selection <<< Try again.");
                 break;
-
         }
         return false;
 
     }
 
     private void startNewGame() {
-        // create a new game
         GameControl.createNewGame(NephisJourney.getPlayer());
-
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView() {
-            @Override
-            public boolean doAction(String value) {
-                System.out.println("\ngameMenu doActionCalled ");
-                return true;
-            }
-        };
-        /*GameMenuView.View();*/
-
-        //Create gameMenuView object
-        GameMenuView gameMenuView = new GameMenuView() {
-            @Override
-            public boolean doAction(String value) {
-                System.out.println("\ngameMenu doActionCalled ");
-                return true;
-            }
-        };
-
-        //Display the game menu view
-        gameMenuView.display();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void startSavedGame() {
         this.console.println("\n\nEnter the file path for file where the "
-                + " game is to be saved.");
-        
+                + " game is saved.");
+
         String filePath = this.getInput();
-        
+
         try {
             GameControl.getSavedGame(filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
-        
-        GameMenuView gameMenu = new GameMenuView() {
-            @Override
-            public boolean doAction(String value) {
-                System.out.println("\ngameMenu doActionCalled ");
-                return true;
-            }
-        };
-        gameMenu.display();        
+
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
         //Create helpMenuView object
         HelpMenuView helpMenuView = new HelpMenuView();
-
         //Display the help menu view
         helpMenuView.display();
     }
-    
+
     private void playerView() {
         PlayerView playerView = new PlayerView();
-        
         playerView.display();
     }
 
@@ -136,7 +100,7 @@ public class MainMenuView extends View {
         this.console.println("\n\nEnter the file path for file where the"
                 + " game is to be saved.");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.saveGame(NephisJourney.getCurrentGame(), filePath);
         } catch (Exception ex) {
@@ -152,7 +116,4 @@ public class MainMenuView extends View {
         System.out.println("*** displayLocation function was called ***");
     }
 
-    public void display() {
-        System.out.println("*** MMView display function was called ***");
-    }
 }

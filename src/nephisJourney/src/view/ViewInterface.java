@@ -10,6 +10,6 @@ public interface ViewInterface {
 
     public String getInput();
 
-    public boolean doAction(String value);
+    public boolean doAction(Object obj);
 
 }
